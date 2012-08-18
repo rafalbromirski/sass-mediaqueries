@@ -1,0 +1,107 @@
+// --- media queries (>= sass 3.2.0) -----------------------------------------------------------------------------------
+
+// --- ipad ------------------------------------------------------------------------------------------------------------
+
+@mixin ipad-portrait
+{
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait)
+  {
+    @content;
+  }
+}
+
+@mixin ipad-landscape
+{
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:landscape)
+  {
+    @content;
+  }
+}
+
+@mixin ipad
+{
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px)
+  {
+    @content;
+  }
+}
+
+
+// --- ipad-retina -----------------------------------------------------------------------------------------------------
+
+@mixin ipad-retina-portrait
+{
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
+@mixin ipad-retina-landscape
+{
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:landscape) and (-webkit-min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
+@mixin ipad-retina
+{
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
+
+// --- iphone ----------------------------------------------------------------------------------------------------------
+
+@mixin iphone-portrait
+{
+  @media screen and (max-device-width: 320px) and (orientation:portrait)
+  {
+    @content;
+  }
+}
+
+@mixin iphone-landscape
+{
+  @media screen and (max-device-width: 480px) and (orientation:landscape)
+  {
+    @content;
+  }
+}
+
+@mixin iphone
+{
+  @media screen and (max-device-width: 480px)
+  {
+    @content;
+  }
+}
+
+// --- iphone-retina ---------------------------------------------------------------------------------------------------
+
+@mixin iphone-retina-portrait
+{
+  @media screen and (max-device-width: 320px) and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
+@mixin iphone-retina-landscape
+{
+  @media screen and (max-device-width: 480px) and (orientation:landscape) and (-webkit-min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
+@mixin iphone-retina
+{
+  @media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
