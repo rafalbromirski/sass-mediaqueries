@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Sass-mediaqueries by paranoida</title>
+    <title>Media Queries Mixins for Sass - by Rafal Bromirski</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -15,61 +15,211 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Sass-mediaqueries</h1>
-        <p>Collection of media queries mixins for iOS devices like iPhone, iPhone Retina, iPad, iPad Retina and perhaps more in the future.</p>
+        <h1>Media Queries Mixins for Sass</h1>
 
+        <hr>
         <p class="view"><a href="https://github.com/paranoida/sass-mediaqueries">View the Project on GitHub <small>paranoida/sass-mediaqueries</small></a></p>
-
-
         <ul>
           <li><a href="https://github.com/paranoida/sass-mediaqueries/zipball/master">Download <strong>ZIP File</strong></a></li>
           <li><a href="https://github.com/paranoida/sass-mediaqueries/tarball/master">Download <strong>TAR Ball</strong></a></li>
           <li><a href="https://github.com/paranoida/sass-mediaqueries">View On <strong>GitHub</strong></a></li>
         </ul>
+        <hr>
+
       </header>
+
       <section>
-        <h3>Welcome to GitHub Pages.</h3>
+        <h3>What is it?</h3>
+        <p>It's a collection of useful <strong>media queries mixins</strong> for <strong>Sass 3.2.0+</strong> (from this version they started supporting <a href="http://sass-lang.com/docs/yardoc/file.SASS_CHANGELOG.html">@content</a> block).</p>
+        <p>This project doesn't follow 'mobile first' philosophy. Why? Well, in my opinion 'mobile first' is good if you are building app from scratch, but when your team have spent ~10'000h developing big platform it could be a bit difficult. That's why I've created this tool. Don't blame me for that - blame IE's creators.</p>
+        <p>I've tested it on multiple web browsers, iPhones & iPads with iOS 5.x.</p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+        <h3>Who did it?</h3>
+        <p>Just me - <a href="http://paranoida.com">Rafal Bromirski</a> - if you want you can follow me on <a href="https://twitter.com/paranoida">twitter</a> or check my works on <a href="http://dribbble.com/paranoida">dribbble</a>.</p>
 
-<hr><div class="highlight"><pre><span class="nc">.test</span>
-<span class="err">{</span>
-  <span class="k">@include</span><span class="nd"> abc</span>
-  <span class="err">{</span>
-    <span class="na">background</span><span class="o">:</span> <span class="nb">red</span><span class="err">;</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</pre></div>
+        <h3>Browser support</h3>
+        <p>Only modern browsers that support media queries. </p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+        <h3>Bug tracking & features</h3>
+        <p>"Woohoo! I've found a bug!" - that's cool, you can go <a href="https://github.com/paranoida/sass-mediaqueries/issues">here</a> and describe your story.<br/>"That might be cool..." - use pull request - I will review your code.</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+        <h3>What you can find inside?</h3>
 
-<h3>Designer Templates</h3>
+        <pre class="prettyprint"><code>Requirements:
+  Sass 3.2.0+
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+Version:
+  1.0                            // developed on 19/08/2012
 
-<h3>Rather Drive Stick?</h3>
+Config:
+  $units: 'px';                  // default units for 'screen' mixin
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+Mixins:
+  @ screen(screen-size)
+  ---
+  @ ipad                         // iPad & iPad with retina, landscape & portrait
+  @ ipad-landscape               // iPad & iPad with retina, only landscape
+  @ ipad-portrait                // iPad & iPad with retina, only portrait
+  ---
+  @ ipad-retina                  // iPad with retina, landscape & portrait
+  @ ipad-retina-landscape        // iPad with retina, only landscape
+  @ ipad-retina-portrait         // iPad with retina, only portrait
+  ---
+  @ iphone                       // iPhone & iPhone with retina, landscape & portrait
+  @ iphone-landscape             // iPhone & iPhone with retina, only landscape
+  @ iphone-portrait              // iPhone & iPhone with retina, only portrait
+  ---
+  @ iphone-retina                // iPhone with retina, landscape & portrait
+  @ iphone-retina-landscape      // iPhone with retina, only landscape
+  @ iphone-retina-portrait       // iPhone with retina, only portrait
+  ---
+  @ retina                       // devices with retina (can someone test it on mbp with retina?)</code></pre>
 
-<h3>Authors and Contributors</h3>
+        <hr>
+        <h2>How does it work?</h2>
+        <p><strong>Tip: </strong>You should start from the widest screen resolution and proceed to the narrowest one (styles are inherited from previous conditions)</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+        <h3>Example 1 - 'screen' mixin</h3>
+        <p>Instead of writing new condition for another screen resolution you can use 'screen' mixin and put new size as a parameter.</p>
+        <pre class="prettyprint lang-scss"><code>.container
+{
+  width: 1200px;
 
-<h3>Support or Contact</h3>
+  // you can type units if you want - "1024px" or "1024" - both versions are valid
+  @include screen(1024) { width: 1000px; }
+  @include screen(768)  { width: 700px; }
+}</code></pre>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+      <p>It will be compiled to:</p>
+
+      <pre class="prettyprint lang-css"><code>.container
+{
+  width: 1200px;
+}
+
+@media screen and ( max-width: 1024px) )
+{
+  .container
+  {
+    width: 1000px;
+  }
+}
+
+@media screen and ( max-width: 768px) )
+{
+  .container
+  {
+    width: 700px;
+  }
+}</code></pre>
+
+      <hr>
+      <h3>Example 2 - iOS devices</h3>
+      <p>You can easily manage styles for iOS devices:</p>
+      <pre class="prettyprint lang-scss"><code>.container
+{
+  width: 1200px;
+  background-image: url("images/bg-wrapper.png");
+
+  @include ipad   { width: 700px; }
+  @include iphone { width: 100%; }
+  @include retina { background-image: url("images/bg-wrapper-2x.png"); }
+  }
+}</code></pre>
+
+      <p>It will be compiled to:</p>
+      <pre class="prettyprint lang-css"><code>.container
+{
+  width: 1200px;
+  background-image: url("images/bg-wrapper.png");
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px)
+{
+  .container
+  {
+    width: 700px;
+  }
+}
+
+@media screen and (max-device-width: 480px)
+{
+  .container
+  {
+    width: 100%;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.5)
+{
+  .container
+  {
+    background-image: url("images/bg-wrapper-2x.png");
+  }
+}</code></pre>
+
+      <hr>
+      <h3>Example 3 - device orientation - 'landscape' and 'portrait'</h3>
+      <p>Want to add extra stuff only in landscape / portrait mode? Piece of cake:</p>
+
+      <pre class="prettyprint lang-scss"><code>.example
+{
+  ...
+
+  @include ipad { ... } // common part for iPad (landscape & portrait)
+  @include ipad-landscape { ... }
+  @include ipad-portrait  { ... }
+
+  @include iphone { ... } // common part for iPhone (landscape & portrait)
+  @include iphone-landscape { ... }
+  @include iphone-portrait  { ... }
+  }
+}</code></pre>
+
+      <p>or another one:</p>
+      <pre class="prettyprint lang-scss"><code>.example
+{
+  ...
+
+  @include ipad-landscape { ... }           // iPad & iPad with retina
+  @include ipad-retina-landscape { ... }    // only for iPad with retina
+
+  @include iphone-portrait  { ... }         // iPhone & iPhone with retina
+  @include iphone-retina-portrait { ... }   // only for iPhone with retina
+  }
+}</code></pre>
+
+      <hr>
+      <h3>Example 4 - other</h3>
+      <p>You can use mixins together but you should be careful - one mixin can override another.<br/>It's like in Ghostbusters: "Don't cross the streams!". They did it eventually but it wasn't very pleasant for them :)</p>
+      <pre class="prettyprint lang-scss"><code>.example
+{
+  ...
+
+  @include screen(1200px) { ... }
+  @include screen(1000px) { ... }
+  @include screen(800px)  { ... }
+  ...
+  @include retina { ... }
+  @include iphone { ... }
+  }
+}</code></pre>
+
       </section>
+
       <footer>
-        <p>This project is maintained by <a href="https://github.com/paranoida">paranoida</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a> & improved by <a href="http://paranoida.com">Rafal Bromirski</a></small></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/prettify.js"></script>
+    <script type="text/javascript" src="javascripts/lang-scss.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            prettyPrint();
+        });
+    </script>
   </body>
 </html>
