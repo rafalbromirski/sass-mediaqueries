@@ -9,11 +9,51 @@
 //
 // ---------------------------------------------------------------------------------------------------------------------
 //
-//  Requirements:
-//  * Sass 3.2.0+
+// Requirements:
+//   Sass 3.2.0+
+//
+//  Version:
+//   1.0                            // developed on 19/08/2012
+//
+// Variables:
+//   $units: 'px'; // default units for 'screen' mixin
+//
+// Mixins:
+//   @ screen(screen-size)
+//   ---
+//   @ ipad                         // iPad & iPad with retina, landscape & portrait
+//   @ ipad-landscape               // iPad & iPad with retina, only landscape
+//   @ ipad-portrait                // iPad & iPad with retina, only portrait
+//   ---
+//   @ ipad-retina                  // iPad with retina, landscape & portrait
+//   @ ipad-retina-landscape        // iPad with retina, only landscape
+//   @ ipad-retina-portrait         // iPad with retina, only portrait
+//   ---
+//   @ iphone                       // iPhone & iPhone with retina, landscape & portrait
+//   @ iphone-landscape             // iPhone & iPhone with retina, only landscape
+//   @ iphone-portrait              // iPhone & iPhone with retina, only portrait
+//   ---
+//   @ iphone-retina                // iPhone with retina, landscape & portrait
+//   @ iphone-retina-landscape      // iPhone with retina, only landscape
+//   @ iphone-retina-portrait       // iPhone with retina, only portrait
+//   ---
+//   @ retina                       // devices with retina
 //
 // ---------------------------------------------------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------------------------------------------------
+// --- screen ----------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+$units: "px";
+
+@mixin screen($res)
+{
+  @media screen and ( max-width: if(unitless($res), $res+$units, $res) )
+  {
+    @content;
+  }
+}
 
 // ---------------------------------------------------------------------------------------------------------------------
 // --- ipad ------------------------------------------------------------------------------------------------------------
@@ -49,7 +89,8 @@
 
 @mixin ipad-retina-portrait
 {
-  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 1.5)
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px)
+  and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 1.5)
   {
     @content;
   }
@@ -57,7 +98,8 @@
 
 @mixin ipad-retina-landscape
 {
-  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:landscape) and (-webkit-min-device-pixel-ratio: 1.5)
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px)
+  and (orientation:landscape) and (-webkit-min-device-pixel-ratio: 1.5)
   {
     @content;
   }
@@ -65,7 +107,8 @@
 
 @mixin ipad-retina
 {
-  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5)
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1.5)
   {
     @content;
   }
@@ -105,7 +148,8 @@
 
 @mixin iphone-retina-portrait
 {
-  @media screen and (max-device-width: 320px) and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 1.5)
+  @media screen and (max-device-width: 320px)
+  and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 1.5)
   {
     @content;
   }
@@ -113,7 +157,8 @@
 
 @mixin iphone-retina-landscape
 {
-  @media screen and (max-device-width: 480px) and (orientation:landscape) and (-webkit-min-device-pixel-ratio: 1.5)
+  @media screen and (max-device-width: 480px)
+  and (orientation:landscape) and (-webkit-min-device-pixel-ratio: 1.5)
   {
     @content;
   }
@@ -121,7 +166,20 @@
 
 @mixin iphone-retina
 {
-  @media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1.5)
+  @media screen and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// --- retina ----------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+@mixin retina
+{
+  @media screen and (-webkit-min-device-pixel-ratio: 1.5)
   {
     @content;
   }
