@@ -14,7 +14,7 @@ Only modern browsers that support media queries.
 
 ##Bug tracking & features
 
-"Woohoo! I've found a bug!" - that's cool, you can go <a href="https://github.com/paranoida/sass-mediaqueries/issues">here</a> and describe your story.<br/>"That might be cool..." - use pull request - I will review your code.</p>
+"Woohoo! I've found a bug!" - that's cool, you can go <a href="https://github.com/paranoida/sass-mediaqueries/issues">here</a> and describe your story.<br/>"That might be cool..." - use pull request - I will review your code.
 
 ##What you can find inside?
 
@@ -53,7 +53,7 @@ Mixins:
 <strong>Tip: </strong>You should start from the widest screen resolution and proceed to the narrowest one (styles are inherited from previous conditions)
 
 ###Example 1 - 'screen' mixin
-Instead of writing new condition for another screen resolution you can use 'screen' mixin and put new size as a parameter.</p>
+Instead of writing new condition for another screen resolution you can use 'screen' mixin and put new size as a parameter.
 ```scss
 .container
 {
