@@ -390,6 +390,12 @@ section {
   padding-bottom: 50px;
 }
 
+.addthis_toolbox {
+  left: auto !important;
+  margin-left: -40px;
+  background: transparent;
+}
+
 @media print, screen and (max-width: 960px) {
   div.wrapper {
     width: auto;
