@@ -13,13 +13,15 @@
 //   Sass 3.2.0+
 //
 //  Version:
-//   1.0                            // developed on 19/08/2012
+//   1.0                            // developed on 20/08/2012
 //
 // Variables:
-//   $units: 'px'; // default units for 'screen' mixin
+//   $units: '1px';                 // default units for 'screen' mixins - it must include a digit!
 //
 // Mixins:
-//   @ screen(screen-size)
+//   @ min-screen(width)            // 'Mobile First' approach
+//   @ screen(width)                // 'Mobile Last' approach
+//   @ screen(min-width, max-width) // extra stuff
 //   ---
 //   @ ipad                         // iPad & iPad with retina, landscape & portrait
 //   @ ipad-landscape               // iPad & iPad with retina, only landscape
@@ -45,11 +47,30 @@
 // --- screen ----------------------------------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------------------------------------------
 
-$units: "px";
+$units: "1px";
 
-@mixin screen($res)
+@mixin screen($res-first, $res-last: $res-first)
 {
-  @media screen and ( max-width: if(unitless($res), $res+$units, $res) )
+  @if $res-first == $res-last
+  {
+    @media screen and ( max-width: if(unitless($res-first), $res-first*$units, $res-first) )
+    {
+      @content;
+    }
+  }
+  @else if $res-first < $res-last
+  {
+    @media screen and ( min-width: if(unitless($res-first), $res-first*$units, $res-first) ) and ( max-width: if(unitless($res-last), $res-last*$units, $res-last) )
+    {
+      @content;
+    }
+  }
+
+}
+
+@mixin min-screen($res)
+{
+  @media screen and ( min-width: if(unitless($res), $res*$units, $res) )
   {
     @content;
   }
