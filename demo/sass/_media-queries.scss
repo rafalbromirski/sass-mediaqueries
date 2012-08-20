@@ -1,0 +1,207 @@
+// ---------------------------------------------------------------------------------------------------------------------
+//
+//  Author: Rafal Bromirski
+//  www: http://paranoida.com/
+//  twitter: http://twitter.com/paranoida
+//  dribbble: http://dribbble.com/paranoida
+//
+//  Licensed under a MIT License
+//
+// ---------------------------------------------------------------------------------------------------------------------
+//
+// Requirements:
+//   Sass 3.2.0+
+//
+//  Version:
+//   1.0                            // developed on 20/08/2012
+//
+// Variables:
+//   $units: 1px;                   // default units for 'screen' mixins - it must include a digit!
+//
+// Mixins:
+//   @ min-screen(width)            // 'Mobile First' approach
+//   @ screen(width)                // 'Mobile Last' approach
+//   @ screen(min-width, max-width) // extra stuff
+//   ---
+//   @ ipad                         // iPad & iPad with retina, landscape & portrait
+//   @ ipad-landscape               // iPad & iPad with retina, only landscape
+//   @ ipad-portrait                // iPad & iPad with retina, only portrait
+//   ---
+//   @ ipad-retina                  // iPad with retina, landscape & portrait
+//   @ ipad-retina-landscape        // iPad with retina, only landscape
+//   @ ipad-retina-portrait         // iPad with retina, only portrait
+//   ---
+//   @ iphone                       // iPhone & iPhone with retina, landscape & portrait
+//   @ iphone-landscape             // iPhone & iPhone with retina, only landscape
+//   @ iphone-portrait              // iPhone & iPhone with retina, only portrait
+//   ---
+//   @ iphone-retina                // iPhone with retina, landscape & portrait
+//   @ iphone-retina-landscape      // iPhone with retina, only landscape
+//   @ iphone-retina-portrait       // iPhone with retina, only portrait
+//   ---
+//   @ retina                       // devices with retina
+//
+// ---------------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------------
+// --- screen ----------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+$units: 1px;
+
+@mixin screen($res-first, $res-last: $res-first)
+{
+  @if $res-first == $res-last
+  {
+    @media screen and ( max-width: if(unitless($res-first), $res-first*$units, $res-first) )
+    {
+      @content;
+    }
+  }
+  @else if $res-first < $res-last
+  {
+    @media screen and ( min-width: if(unitless($res-first), $res-first*$units, $res-first) ) and ( max-width: if(unitless($res-last), $res-last*$units, $res-last) )
+    {
+      @content;
+    }
+  }
+
+}
+
+@mixin min-screen($res)
+{
+  @media screen and ( min-width: if(unitless($res), $res*$units, $res) )
+  {
+    @content;
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// --- ipad ------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+@mixin ipad-portrait
+{
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait)
+  {
+    @content;
+  }
+}
+
+@mixin ipad-landscape
+{
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:landscape)
+  {
+    @content;
+  }
+}
+
+@mixin ipad
+{
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px)
+  {
+    @content;
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// --- ipad-retina -----------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+@mixin ipad-retina-portrait
+{
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px)
+  and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
+@mixin ipad-retina-landscape
+{
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px)
+  and (orientation:landscape) and (-webkit-min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
+@mixin ipad-retina
+{
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// --- iphone ----------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+@mixin iphone-portrait
+{
+  @media screen and (max-device-width: 320px) and (orientation:portrait)
+  {
+    @content;
+  }
+}
+
+@mixin iphone-landscape
+{
+  @media screen and (max-device-width: 480px) and (orientation:landscape)
+  {
+    @content;
+  }
+}
+
+@mixin iphone
+{
+  @media screen and (max-device-width: 480px)
+  {
+    @content;
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// --- iphone-retina ---------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+@mixin iphone-retina-portrait
+{
+  @media screen and (max-device-width: 320px)
+  and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
+@mixin iphone-retina-landscape
+{
+  @media screen and (max-device-width: 480px)
+  and (orientation:landscape) and (-webkit-min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
+@mixin iphone-retina
+{
+  @media screen and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// --- retina ----------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+@mixin retina
+{
+  @media screen and (-webkit-min-device-pixel-ratio: 1.5)
+  {
+    @content;
+  }
+}
