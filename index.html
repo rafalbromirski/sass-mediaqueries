@@ -40,14 +40,13 @@
       <section>
         <h3>What is it?</h3>
         <p>It's a collection of useful <strong>media queries mixins</strong> for <strong>Sass 3.2.0+</strong> (from this version they started supporting <a href="http://sass-lang.com/docs/yardoc/file.SASS_CHANGELOG.html">@content</a> block).</p>
-        <p>This project doesn't follow 'mobile first' philosophy. Why? Well, in my opinion 'mobile first' is good if you are building app from scratch, but when your team have spent ~10'000h developing big platform it could be a bit difficult. That's why I've created this tool. Don't blame me for that - blame IE's creators.</p>
         <p>I've tested it on multiple web browsers, iPhones & iPads with iOS 5.x.</p>
 
         <h3>Who did it?</h3>
         <p>Just me - <a href="http://paranoida.com">Rafal Bromirski</a> - if you want you can follow me on <a href="https://twitter.com/paranoida">twitter</a> or check my works on <a href="http://dribbble.com/paranoida">dribbble</a>.</p>
 
         <h3>Browser support</h3>
-        <p>Only modern browsers that support media queries. </p>
+        <p>Only modern browsers that support media queries.</p>
 
         <h3>Bug tracking & features</h3>
         <p>"Woohoo! I've found a bug!" - that's cool, you can go <a href="https://github.com/paranoida/sass-mediaqueries/issues">here</a> and describe your story.<br/>"That might be cool..." - use pull request - I will review your code.</p>
@@ -58,13 +57,15 @@
   Sass 3.2.0+
 
 Version:
-  1.0                            // developed on 19/08/2012
+  1.0 ß                         // developed on 19/08/2012
 
 Config:
-  $units: 'px';                  // default units for 'screen' mixin
+  $units: 1px;                  // default units for 'screen' & 'min-screen' mixin
 
 Mixins:
-  @ screen(screen-size)
+  @ min-screen(min-width)        // 'Mobile First' approach
+  @ screen(max-width)            // 'Mobile Last' approach
+  @ screen(min-width, max-width) // extra stuff
   ---
   @ ipad                         // iPad & iPad with retina, landscape & portrait
   @ ipad-landscape               // iPad & iPad with retina, only landscape
@@ -86,46 +87,121 @@ Mixins:
 
         <hr>
         <h2>How does it work?</h2>
-        <p><strong>Tip: </strong>You should start from the widest screen resolution and proceed to the narrowest one (styles are inherited from previous conditions)</p>
 
-        <h3>Example 1 - 'screen' mixin</h3>
-        <p>Instead of writing new condition for another screen resolution you can use 'screen' mixin and put new size as a parameter.</p>
-        <pre class="prettyprint lang-scss"><code>.container
+        <h3>Example 1 - 'min-screen(min-width)'</h3>
+        <p>If you like 'mobile first' philosophy this mixin is there for you! (read more: <a href="http://www.lukew.com/ff/entry.asp?933">here</a> & <a href="http://www.abookapart.com/products/mobile-first">here</a>)</p>
+        <pre class="prettyprint lang-scss"><code>.example
+{
+  @include min-screen(320)  { width: 300px; }
+  @include min-screen(480)  { width: 400px; }
+  @include min-screen(768)  { width: 700px; }
+  @include min-screen(1024) { width: 960px; }
+}</code></pre>
+
+        <p>It will be compiled to:</p>
+        <pre class="prettyprint lang-css"><code>@media screen and ( min-width: 320px) )
+{
+  .example
+  {
+    width: 300px;
+  }
+}
+@media screen and ( min-width: 480px )
+{
+  .example
+  {
+    width: 400px;
+  }
+}
+@media screen and ( min-width: 768px )
+{
+  .example
+  {
+    width: 700px;
+  }
+}
+@media screen and ( min-width: 1024px )
+{
+  .example
+  {
+    width: 960px;
+  }
+}</code></pre>
+
+        <hr>
+        <h3>Example 2 - 'screen(max-width)'</h3>
+        <p>'Mobile first' is good if you are building app from scratch, but when your team have spent ~10'000h developing big platform it could be a bit difficult. I've decided to go with another philosophy and I called it <strong>'Mobile Last'</strong> (or just <strong>'smart little bastard'</strong>).</p>
+        <p><strong>How to use it properly?</strong> You should start from the widest screen resolution and proceed to the narrowest one (styles are inherited from previous conditions)</p>
+        <pre class="prettyprint lang-scss"><code>.example
 {
   width: 1200px;
 
-  // you can type units if you want - "1024px" or "1024" - both versions are valid
-  @include screen(1024) { width: 1000px; }
-  @include screen(768)  { width: 700px; }
+  @include screen(1024) { width: 1000px; color: red; }
+  @include screen(768)  { width: 700px; }              // 'color' will be inherited by lower resolutions (<= 1024)
 }</code></pre>
 
       <p>It will be compiled to:</p>
 
-      <pre class="prettyprint lang-css"><code>.container
+      <pre class="prettyprint lang-css"><code>.example
 {
   width: 1200px;
 }
 
-@media screen and ( max-width: 1024px) )
+@media screen and ( max-width: 1024px )
 {
-  .container
+  .example
   {
     width: 1000px;
+    color: red;
   }
 }
 
-@media screen and ( max-width: 768px) )
+@media screen and ( max-width: 768px )
 {
-  .container
+  .example
   {
     width: 700px;
   }
 }</code></pre>
 
+        <hr>
+        <h3>Example 3 - 'min-screen(min-width, max-width)'</h3>
+        <p>Do targetowanie konkretnych rozdzielczości</p>
+        <pre class="prettyprint lang-scss"><code>.example
+{
+  background: red;
+
+  @include screen(768, 1024)  { background: black; }
+  @include screen(1024, 1280) { background: white; }
+}</code></pre>
+
+      <p>It will be compiled to:</p>
+
+      <pre class="prettyprint lang-css"><code>.example
+{
+  background: red;
+}
+
+@media screen and ( min-width: 768px ) and ( max-width: 1024px )
+{
+  .example
+  {
+    background: black;
+  }
+}
+
+@media screen and ( min-width: 1024px ) and ( max-width: 1280px )
+{
+  .example
+  {
+    background: white;
+  }
+}</code></pre>
+
       <hr>
-      <h3>Example 2 - iOS devices</h3>
+      <h3>Example 3 - iOS devices</h3>
       <p>You can easily manage styles for iOS devices:</p>
-      <pre class="prettyprint lang-scss"><code>.container
+      <pre class="prettyprint lang-scss"><code>.example
 {
   width: 1200px;
   background-image: url("images/bg-wrapper.png");
@@ -137,7 +213,7 @@ Mixins:
 }</code></pre>
 
       <p>It will be compiled to:</p>
-      <pre class="prettyprint lang-css"><code>.container
+      <pre class="prettyprint lang-css"><code>.example
 {
   width: 1200px;
   background-image: url("images/bg-wrapper.png");
@@ -145,7 +221,7 @@ Mixins:
 
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px)
 {
-  .container
+  .example
   {
     width: 700px;
   }
@@ -153,7 +229,7 @@ Mixins:
 
 @media screen and (max-device-width: 480px)
 {
-  .container
+  .example
   {
     width: 100%;
   }
@@ -161,14 +237,14 @@ Mixins:
 
 @media screen and (-webkit-min-device-pixel-ratio: 1.5)
 {
-  .container
+  .example
   {
     background-image: url("images/bg-wrapper-2x.png");
   }
 }</code></pre>
 
       <hr>
-      <h3>Example 3 - device orientation - 'landscape' and 'portrait'</h3>
+      <h3>Example 4 - device orientation - 'landscape' and 'portrait'</h3>
       <p>Want to add extra stuff only in landscape / portrait mode? Piece of cake:</p>
 
       <pre class="prettyprint lang-scss"><code>.example
@@ -200,7 +276,7 @@ Mixins:
 
       <hr>
       <h3>Example 4 - other</h3>
-      <p>You can use mixins together but you should be careful - one mixin can override another.<br/>It's like in Ghostbusters: "Don't cross the streams!". They did it eventually but it wasn't very pleasant for them :)</p>
+      <p>You can use mixins together but you should be careful - one mixin can override another.<br/>It's like in Ghostbusters: "Don't cross the streams!". They did it eventually and pieces of Stay Puft Marshmallow Man were everywhere.</p>
       <pre class="prettyprint lang-scss"><code>.example
 {
   ...
