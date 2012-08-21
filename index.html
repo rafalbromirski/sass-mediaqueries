@@ -24,7 +24,8 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Media Queries Mixins for Sass</h1>
+        <div class="logo"><img src="images/logo.jpg" alt="Sass" /></div>
+        <h1>Media Queries Mixins for <a href="http://sass-lang.com/">Sass.</a></h1>
 
         <hr>
         <p class="view"><a href="https://github.com/paranoida/sass-mediaqueries">View the Project on GitHub <small>paranoida/sass-mediaqueries</small></a></p>
@@ -33,14 +34,11 @@
           <li><a href="https://github.com/paranoida/sass-mediaqueries/tarball/master">Download <strong>TAR Ball</strong></a></li>
           <li><a href="https://github.com/paranoida/sass-mediaqueries">View On <strong>GitHub</strong></a></li>
         </ul>
-        <hr>
-
       </header>
 
       <section>
         <h3>What is it?</h3>
-        <p>It's a collection of useful <strong>media queries mixins</strong> for <strong>Sass 3.2.0+</strong> (from this version they started supporting <a href="http://sass-lang.com/docs/yardoc/file.SASS_CHANGELOG.html">@content</a> block).</p>
-        <p>I've tested it on multiple web browsers, iPhones & iPads with iOS 5.x.</p>
+        <p>It's a collection of useful <strong>media queries mixins</strong> for <strong>Sass 3.2.0+</strong> (from this version they started supporting <a href="http://sass-lang.com/docs/yardoc/file.SASS_CHANGELOG.html">@content</a> block).<br/>I've tested it on multiple web browsers, iPhones & iPads with iOS 5.x.</p>
 
         <h3>Who did it?</h3>
         <p>Just me - <a href="http://paranoida.com">Rafal Bromirski</a> - if you want you can follow me on <a href="https://twitter.com/paranoida">twitter</a> or check my works on <a href="http://dribbble.com/paranoida">dribbble</a>.</p>
@@ -49,7 +47,7 @@
         <p>Only modern browsers that support media queries.</p>
 
         <h3>Bug tracking & features</h3>
-        <p>"Woohoo! I've found a bug!" - that's cool, you can go <a href="https://github.com/paranoida/sass-mediaqueries/issues">here</a> and describe your story.<br/>"That might be cool..." - use pull request - I will review your code.</p>
+        <p>"Woohoo! I've found a bug!" - that's cool, you can go <a href="https://github.com/paranoida/sass-mediaqueries/issues">here</a> and describe your story.<br/>"That might be cool..." - use pull request or create an issue - I will review your code.</p>
 
         <h3>What you can find inside?</h3>
 
@@ -89,7 +87,7 @@ Mixins:
         <h2>How does it work?</h2>
 
         <h3>Example 1 - 'min-screen(min-width)'</h3>
-        <p>If you like 'mobile first' philosophy this mixin is there for you! (read more: <a href="http://www.lukew.com/ff/entry.asp?933">here</a> & <a href="http://www.abookapart.com/products/mobile-first">here</a>)</p>
+        <p>If you like <a href="http://www.lukew.com/ff/entry.asp?933">mobile first</a> philosophy this mixin is there for you!
         <pre class="prettyprint lang-scss"><code>.example
 {
   @include min-screen(320)  { width: 300px; }
@@ -165,14 +163,14 @@ Mixins:
 }</code></pre>
 
         <hr>
-        <h3>Example 3 - 'min-screen(min-width, max-width)'</h3>
-        <p>Do targetowanie konkretnych rozdzielczości</p>
+        <h3>Example 3 - 'screen(min-width, max-width)'</h3>
+        <p>You can add style rules for range. It could be really helpful if you want to target <strong>group of devices</strong> or just <strong>only one</strong> with particular screen resolution.</p>
         <pre class="prettyprint lang-scss"><code>.example
 {
   background: red;
 
-  @include screen(768, 1024)  { background: black; }
-  @include screen(1024, 1280) { background: white; }
+  @include screen(768, 1280) { background: black; }
+  @include screen(320, 640)  { background: white; }
 }</code></pre>
 
       <p>It will be compiled to:</p>
@@ -182,7 +180,7 @@ Mixins:
   background: red;
 }
 
-@media screen and ( min-width: 768px ) and ( max-width: 1024px )
+@media screen and ( min-width: 768px ) and ( max-width: 1280px )
 {
   .example
   {
@@ -190,7 +188,7 @@ Mixins:
   }
 }
 
-@media screen and ( min-width: 1024px ) and ( max-width: 1280px )
+@media screen and ( min-width: 320px ) and ( max-width: 640px )
 {
   .example
   {
@@ -199,7 +197,7 @@ Mixins:
 }</code></pre>
 
       <hr>
-      <h3>Example 3 - iOS devices</h3>
+      <h3>Example 4 - iOS devices</h3>
       <p>You can easily manage styles for iOS devices:</p>
       <pre class="prettyprint lang-scss"><code>.example
 {
@@ -244,7 +242,7 @@ Mixins:
 }</code></pre>
 
       <hr>
-      <h3>Example 4 - device orientation - 'landscape' and 'portrait'</h3>
+      <h3>Example 5 - device orientation - 'landscape' and 'portrait'</h3>
       <p>Want to add extra stuff only in landscape / portrait mode? Piece of cake:</p>
 
       <pre class="prettyprint lang-scss"><code>.example
@@ -261,7 +259,7 @@ Mixins:
   }
 }</code></pre>
 
-      <p>or another one:</p>
+      <p>another one:</p>
       <pre class="prettyprint lang-scss"><code>.example
 {
   ...
@@ -274,9 +272,21 @@ Mixins:
   }
 }</code></pre>
 
+      <p>or:</p>
+      <pre class="prettyprint lang-scss"><code>.example
+{
+  ...
+
+  @include ipad { ... }                     // iPad & iPad with retina
+
+  @include iphone-retina-portrait  { ... }  // iPhone with retina (portrait)
+  @include iphone-retina-landscape { ... }  // iPhone with retina (landscape)
+  }
+}</code></pre>
+
       <hr>
-      <h3>Example 4 - other</h3>
-      <p>You can use mixins together but you should be careful - one mixin can override another.<br/>It's like in Ghostbusters: "Don't cross the streams!". They did it eventually and pieces of Stay Puft Marshmallow Man were everywhere.</p>
+      <h3>Example 6 - other</h3>
+      <p>You can use mixins together but you should be careful - one mixin can override another.<br/>It's like in Ghostbusters: <strong>"Don't cross the streams!"</strong>. They did it eventually and pieces of <a href="http://en.wikipedia.org/wiki/Stay_Puft_Marshmallow_Man">Marshmallow Man</a> were everywhere.</p>
       <pre class="prettyprint lang-scss"><code>.example
 {
   ...
@@ -290,6 +300,10 @@ Mixins:
   }
 }</code></pre>
 
+      <hr>
+      <h3>Like it? Tweet about it!</h3>
+      <p>I've spent a lot of hours to crete this, now you can repay and tweet, like or use the plugin at the right-top corner and spread the word.</p>
+
       </section>
 
       <footer>
@@ -297,7 +311,7 @@ Mixins:
       </footer>
 
       <!-- AddThis Button BEGIN -->
-      <div class="addthis_toolbox addthis_floating_style addthis_16x16_style" style="left:50px;top:50px;">
+      <div class="addthis_toolbox addthis_floating_style addthis_32x32_style">
           <a class="addthis_button_twitter"></a>
           <a class="addthis_button_facebook"></a>
           <a class="addthis_button_linkedin"></a>

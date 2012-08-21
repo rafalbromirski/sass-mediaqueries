@@ -11,7 +11,7 @@
 
 body
 {
-  padding: 50px;
+  padding: 20px 50px 30px 40px;
   font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
@@ -36,7 +36,7 @@ h1, h2, h3
 
 h1
 {
-  font-size: 38px;
+  font-size: 36px;
 }
 
 h2
@@ -54,13 +54,14 @@ h3
 
 a
 {
-  color: #F52954;
+  color: #D148D8;
   font-weight: bold;
   text-decoration: none;
 
   &:hover
   {
     text-decoration: underline;
+    color: lighten(#D148D8, 10%);
   }
 
   small
@@ -148,6 +149,11 @@ strong
 {
   width: 860px;
   margin: 0 auto;
+
+  pre
+  {
+    overflow-x: auto;
+  }
 }
 
 header
@@ -155,9 +161,34 @@ header
   position: relative;
   margin-bottom: 15px;
 
+  .logo
+  {
+    margin-left: -50px;
+  }
+
   h1
   {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    display: none;
+
+    a
+    {
+      background: #D148D8;
+      color: #fff;
+      padding: 3px 15px 3px 10px;
+      font: normal 32px Georgia, Garamond, Times, "Times New Roman", serif;
+
+      &:hover
+      {
+        background: lighten(#D148D8, 10%);
+        color: #fff;
+      }
+    }
+  }
+
+  .view
+  {
+    display: none;
   }
 
   ul
@@ -167,9 +198,10 @@ header
     width: 270px;
     border: 1px solid #d2d2d2;
     padding: 0;
+    margin: 0;
     position: absolute;
     right: 0;
-    bottom: -3px;
+    bottom: 20px;
 
     background: #eee;
     @include background-image( linear-gradient(#f8f8f8, #dddddd) );
@@ -237,8 +269,8 @@ footer
 
 .addthis_toolbox
 {
-  left: auto !important;
-  margin-left: -40px;
+  right: 15px;
+  top: 25px;
   background: transparent;
 }
 
@@ -247,40 +279,14 @@ footer
 
 @media print, screen and (max-width: 960px)
 {
-
-  div.wrapper
+  .wrapper
   {
     width: auto;
     margin: 0;
   }
-
-  header
-  {
-    padding-right: 320px;
-  }
-
-  section
-  {
-    border: 1px solid #e5e5e5;
-    border-width: 1px 0;
-    padding: 20px 0;
-    margin: 0 0 20px;
-  }
-
-  header a small
-  {
-    display: inline;
-  }
-
-  header ul
-  {
-    position: absolute;
-    right: 50px;
-    top: 52px;
-  }
 }
 
-@media print, screen and (max-width: 720px)
+@media print, screen and (max-width: 768px)
 {
   body
   {
@@ -290,16 +296,16 @@ footer
   header
   {
     padding: 0;
-  }
 
-  header ul, header p.view
-  {
-    position: static;
-  }
+    .logo
+    {
+      margin: 0;
+    }
 
-  pre, code
-  {
-    word-wrap: normal;
+    ul, p.view
+    {
+      position: static;
+    }
   }
 }
 
@@ -311,6 +317,11 @@ footer
   }
 
   header ul
+  {
+    display: none;
+  }
+
+  .addthis_toolbox
   {
     display: none;
   }

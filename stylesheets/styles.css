@@ -71,7 +71,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
   /* a keyword */
   .kwd {
-    color: #cc99cc;
+    color: #09B7FA;
   }
 
   /* a comment */
@@ -215,7 +215,7 @@ li.L9 {
 }
 
 body {
-  padding: 50px;
+  padding: 20px 50px 30px 40px;
   font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
@@ -234,7 +234,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 38px;
+  font-size: 36px;
 }
 
 h2 {
@@ -246,12 +246,13 @@ h3 {
 }
 
 a {
-  color: #F52954;
+  color: #D148D8;
   font-weight: bold;
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
+  color: #dc72e1;
 }
 a small {
   font-size: 11px;
@@ -322,13 +323,33 @@ strong {
   width: 860px;
   margin: 0 auto;
 }
+.wrapper pre {
+  overflow-x: auto;
+}
 
 header {
   position: relative;
   margin-bottom: 15px;
 }
+header .logo {
+  margin-left: -50px;
+}
 header h1 {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  display: none;
+}
+header h1 a {
+  background: #D148D8;
+  color: #fff;
+  padding: 3px 15px 3px 10px;
+  font: normal 32px Georgia, Garamond, Times, "Times New Roman", serif;
+}
+header h1 a:hover {
+  background: #dc72e1;
+  color: #fff;
+}
+header .view {
+  display: none;
 }
 header ul {
   list-style: none;
@@ -336,9 +357,10 @@ header ul {
   width: 270px;
   border: 1px solid #d2d2d2;
   padding: 0;
+  margin: 0;
   position: absolute;
   right: 0;
-  bottom: -3px;
+  bottom: 20px;
   background: #eee;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f8f8f8), color-stop(100%, #dddddd));
   background-image: -webkit-linear-gradient(#f8f8f8, #dddddd);
@@ -391,39 +413,18 @@ section {
 }
 
 .addthis_toolbox {
-  left: auto !important;
-  margin-left: -40px;
+  right: 15px;
+  top: 25px;
   background: transparent;
 }
 
 @media print, screen and (max-width: 960px) {
-  div.wrapper {
+  .wrapper {
     width: auto;
     margin: 0;
   }
-
-  header {
-    padding-right: 320px;
-  }
-
-  section {
-    border: 1px solid #e5e5e5;
-    border-width: 1px 0;
-    padding: 20px 0;
-    margin: 0 0 20px;
-  }
-
-  header a small {
-    display: inline;
-  }
-
-  header ul {
-    position: absolute;
-    right: 50px;
-    top: 52px;
-  }
 }
-@media print, screen and (max-width: 720px) {
+@media print, screen and (max-width: 768px) {
   body {
     word-wrap: break-word;
   }
@@ -431,13 +432,11 @@ section {
   header {
     padding: 0;
   }
-
+  header .logo {
+    margin: 0;
+  }
   header ul, header p.view {
     position: static;
-  }
-
-  pre, code {
-    word-wrap: normal;
   }
 }
 @media print, screen and (max-width: 480px) {
@@ -446,6 +445,10 @@ section {
   }
 
   header ul {
+    display: none;
+  }
+
+  .addthis_toolbox {
     display: none;
   }
 }
