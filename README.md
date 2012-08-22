@@ -56,7 +56,7 @@ Mixins:
 ##How does it work?
 <strong>Important: </strong>Whenever you use screen mixins (min-screen, screen, ...) there is no need for using units. However, if you want to use units different than 'px' remember about overriding them inside your scss / sass file.
 
-###Example 1 - 'min-screen(min-width)' - <a href="demo/index.html">demo</a>
+###Example 1 - 'min-screen(min-width)' - <a href="http://paranoida.github.com/sass-mediaqueries/demo">demo</a>
 
 If you like <a href="http://www.lukew.com/ff/entry.asp?933">mobile first</a> philosophy this mixin is there for you!
 ```scss
@@ -99,7 +99,7 @@ It will be compiled to:
   }
 }
 ```
-###Example 2 - 'screen(max-width)' - <a href="demo/index.html">demo</a>
+###Example 2 - 'screen(max-width)' - <a href="http://paranoida.github.com/sass-mediaqueries/demo">demo</a>
 'Mobile first' is good if you are building app from scratch, but when your team have spent ~10'000h developing big platform it could be a bit difficult. I've decided to go with another philosophy and I called it <strong>'Mobile Last'</strong> (or just <strong>'smart little bastard'</strong>).
 <strong>How to use it properly?</strong> You should start from the widest screen resolution and proceed to the narrowest one (styles are inherited from previous conditions)
 ```scss
@@ -135,7 +135,7 @@ It will be compiled to:
   }
 }
 ```
-###Example 3 - 'screen(min-width, max-width)' - <a href="demo/index.html">demo</a>
+###Example 3 - 'screen(min-width, max-width)' - <a href="http://paranoida.github.com/sass-mediaqueries/demo">demo</a>
 You can add style rules for ranges. It could be really helpful if you want to target <strong>group of devices</strong> or just <strong>one</strong> with particular screen resolution.
 ```scss
 .example
@@ -169,7 +169,7 @@ It will be compiled to:
   }
 }
 ```
-###Example 4 - iOS devices - <a href="demo/index.html">demo</a>
+###Example 4 - iOS devices - <a href="http://paranoida.github.com/sass-mediaqueries/demo">demo</a>
 You can easily manage styles for iOS devices:
 ```scss
 .example
@@ -215,7 +215,7 @@ It will be compiled to:
   }
 }
 ```
-###Example 5 - device orientation - 'landscape' and 'portrait' - <a href="demo/index.html">demo</a>
+###Example 5 - device orientation - 'landscape' and 'portrait' - <a href="http://paranoida.github.com/sass-mediaqueries/demo">demo</a>
 Want to add extra stuff only in landscape / portrait mode? Piece of cake:
 ```scss
 .example
@@ -259,7 +259,7 @@ or:
   }
 }
 ```
-###Example 6 - other - <a href="demo/index.html">demo</a>
+###Example 6 - other - <a href="http://paranoida.github.com/sass-mediaqueries/demo">demo</a>
 You can use mixins together but you should be careful - one mixin can override another.<br/>It's like in Ghostbusters: <strong>"Don't cross the streams!"</strong>. They did it eventually and pieces of <a href="http://en.wikipedia.org/wiki/Stay_Puft_Marshmallow_Man">Marshmallow Man</a> were everywhere.
 ```scss
 .example
