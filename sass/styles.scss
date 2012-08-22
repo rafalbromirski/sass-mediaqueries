@@ -145,6 +145,20 @@ strong
 
 // --- content ---------------------------------------------------------------------------------------------------------
 
+.share-links
+{
+  position: absolute;
+  top: 25px;
+  right: 0;
+
+  .share-bt
+  {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 5px;
+  }
+}
+
 .wrapper
 {
   width: 860px;
