@@ -3,7 +3,7 @@
 
 // --- content variables -----------------------------------------------------------------------------------------------
 
-$background: #f2f2f2;
+$background: #fff;
 $text-color: #444;
 
 // --- content ---------------------------------------------------------------------------------------------------------
@@ -23,6 +23,11 @@ body
   font-size: 18px;
   font-weight: bold;
   text-shadow: 0 1px 0 #fff;
+
+  @include screen(480)
+  {
+    font-size: 14px;
+  }
 }
 
 .true, .false
@@ -46,6 +51,25 @@ hr
   background: #ddd;
   height: 1px;
   margin: 10px 0;
+}
+
+h1
+{
+  color: #000;
+  font-size: 24px;
+}
+
+.back
+{
+  font-size: 14px;
+
+  a
+  {
+    color: #D148D8;
+    text-decoration: none;
+    vertical-align: 2px;
+    display: inline-block;
+  }
 }
 
 // --- attr ------------------------------------------------------------------------------------------------------------

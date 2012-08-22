@@ -61,7 +61,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   font: 12px Helvetica, Arial, sans-serif;
-  background: #f2f2f2;
+  background: white;
   color: #444444;
 }
 
@@ -70,6 +70,11 @@ body {
   font-size: 18px;
   font-weight: bold;
   text-shadow: 0 1px 0 #fff;
+}
+@media screen and (max-width: 480px) {
+  .content {
+    font-size: 14px;
+  }
 }
 
 .true, .false {
@@ -89,6 +94,21 @@ hr {
   background: #ddd;
   height: 1px;
   margin: 10px 0;
+}
+
+h1 {
+  color: #000;
+  font-size: 24px;
+}
+
+.back {
+  font-size: 14px;
+}
+.back a {
+  color: #D148D8;
+  text-decoration: none;
+  vertical-align: 2px;
+  display: inline-block;
 }
 
 p[class*="attr"] {

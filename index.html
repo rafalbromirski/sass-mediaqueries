@@ -22,10 +22,11 @@
 
   </head>
   <body>
+    <a href="https://github.com/paranoida/sass-mediaqueries"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:10" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
     <div class="wrapper">
       <header>
         <div class="logo"><img src="images/logo.jpg" alt="Sass" /></div>
-        <h1>Media Queries Mixins for <a href="http://sass-lang.com/">Sass.</a></h1>
+        <h1>Media Queries Mixins for Sass.</h1>
 
         <hr>
         <p class="view"><a href="https://github.com/paranoida/sass-mediaqueries">View the Project on GitHub <small>paranoida/sass-mediaqueries</small></a></p>
@@ -34,11 +35,19 @@
           <li><a href="https://github.com/paranoida/sass-mediaqueries/tarball/master">Download <strong>TAR Ball</strong></a></li>
           <li><a href="https://github.com/paranoida/sass-mediaqueries">View On <strong>GitHub</strong></a></li>
         </ul>
+
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style ">
+          <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+          <a class="addthis_button_tweet"></a>
+        </div>
+        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fe8badb0b3cdf55"></script>
+        <!-- AddThis Button END -->
       </header>
 
       <section>
         <h3>What is it?</h3>
-        <p>It's a collection of useful <strong>media queries mixins</strong> for <strong>Sass 3.2.0+</strong> (from this version they started supporting <a href="http://sass-lang.com/docs/yardoc/file.SASS_CHANGELOG.html">@content</a> block).<br/>I've tested it on multiple web browsers, iPhones & iPads with iOS 5.x.</p>
+        <p>Do you like Responsive Web Design? Everyone does!<br/>Here you can find a collection of useful <strong>media queries mixins</strong> for <strong>Sass 3.2.0+</strong> (from this version Sass started supporting <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixin-content">@content</a>).</p>
 
         <h3>Who did it?</h3>
         <p>Just me - <a href="http://paranoida.com">Rafal Bromirski</a> - if you want you can follow me on <a href="https://twitter.com/paranoida">twitter</a> or check my works on <a href="http://dribbble.com/paranoida">dribbble</a>.</p>
@@ -55,7 +64,7 @@
   Sass 3.2.0+
 
 Version:
-  1.0 ß                         // developed on 19/08/2012
+  1.0 ß                         // developed on 22/08/2012
 
 Config:
   $units: 1px;                  // default units for 'screen' & 'min-screen' mixin
@@ -85,8 +94,9 @@ Mixins:
 
         <hr>
         <h2>How does it work?</h2>
+        <p><strong>Important: </strong>Whenever you use screen mixins (min-screen, screen, ...) there is no need for using units. However, if you want to use units different than 'px' remember about overriding them inside your scss / sass file.</p>
 
-        <h3>Example 1 - 'min-screen(min-width)'</h3>
+        <h3>Example 1 - 'min-screen(min-width)' - <a href="demo/index.html">demo</a></h3>
         <p>If you like <a href="http://www.lukew.com/ff/entry.asp?933">mobile first</a> philosophy this mixin is there for you!
         <pre class="prettyprint lang-scss"><code>.example
 {
@@ -127,7 +137,7 @@ Mixins:
 }</code></pre>
 
         <hr>
-        <h3>Example 2 - 'screen(max-width)'</h3>
+        <h3>Example 2 - 'screen(max-width)' - <a href="demo/index.html">demo</a></h3>
         <p>'Mobile first' is good if you are building app from scratch, but when your team have spent ~10'000h developing big platform it could be a bit difficult. I've decided to go with another philosophy and I called it <strong>'Mobile Last'</strong> (or just <strong>'smart little bastard'</strong>).</p>
         <p><strong>How to use it properly?</strong> You should start from the widest screen resolution and proceed to the narrowest one (styles are inherited from previous conditions)</p>
         <pre class="prettyprint lang-scss"><code>.example
@@ -163,8 +173,8 @@ Mixins:
 }</code></pre>
 
         <hr>
-        <h3>Example 3 - 'screen(min-width, max-width)'</h3>
-        <p>You can add style rules for range. It could be really helpful if you want to target <strong>group of devices</strong> or just <strong>only one</strong> with particular screen resolution.</p>
+        <h3>Example 3 - 'screen(min-width, max-width)' - <a href="demo/index.html">demo</a></h3>
+        <p>You can add style rules for ranges. It could be really helpful if you want to target <strong>group of devices</strong> or just <strong>one</strong> with particular screen resolution.</p>
         <pre class="prettyprint lang-scss"><code>.example
 {
   background: red;
@@ -197,7 +207,7 @@ Mixins:
 }</code></pre>
 
       <hr>
-      <h3>Example 4 - iOS devices</h3>
+      <h3>Example 4 - iOS devices - <a href="demo/index.html">demo</a></h3>
       <p>You can easily manage styles for iOS devices:</p>
       <pre class="prettyprint lang-scss"><code>.example
 {
@@ -242,7 +252,7 @@ Mixins:
 }</code></pre>
 
       <hr>
-      <h3>Example 5 - device orientation - 'landscape' and 'portrait'</h3>
+      <h3>Example 5 - device orientation - 'landscape' and 'portrait' - <a href="demo/index.html">demo</a></h3>
       <p>Want to add extra stuff only in landscape / portrait mode? Piece of cake:</p>
 
       <pre class="prettyprint lang-scss"><code>.example
@@ -285,7 +295,7 @@ Mixins:
 }</code></pre>
 
       <hr>
-      <h3>Example 6 - other</h3>
+      <h3>Example 6 - other - <a href="demo/index.html">demo</a></h3>
       <p>You can use mixins together but you should be careful - one mixin can override another.<br/>It's like in Ghostbusters: <strong>"Don't cross the streams!"</strong>. They did it eventually and pieces of <a href="http://en.wikipedia.org/wiki/Stay_Puft_Marshmallow_Man">Marshmallow Man</a> were everywhere.</p>
       <pre class="prettyprint lang-scss"><code>.example
 {
@@ -302,24 +312,14 @@ Mixins:
 
       <hr>
       <h3>Like it? Tweet about it!</h3>
-      <p>I've spent a lot of hours to crete this, now you can repay and tweet, like or use the plugin at the right-top corner and spread the word.</p>
+      <p>I've spent a lot of hours creating this, so if you like it spread the word!</p>
+      <p>CHEERS!</p>
 
       </section>
 
       <footer>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a> & improved by <a href="http://paranoida.com">Rafal Bromirski</a></small></p>
       </footer>
-
-      <!-- AddThis Button BEGIN -->
-      <div class="addthis_toolbox addthis_floating_style addthis_32x32_style">
-          <a class="addthis_button_twitter"></a>
-          <a class="addthis_button_facebook"></a>
-          <a class="addthis_button_linkedin"></a>
-          <a class="addthis_button_gmail"></a>
-          <a class="addthis_button_compact"></a>
-      </div>
-      <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fe8badb0b3cdf55"></script>
-      <!-- AddThis Button END -->
 
     </div>
 
