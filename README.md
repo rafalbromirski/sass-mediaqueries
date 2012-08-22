@@ -1,3 +1,5 @@
+![Media Queries Mixins for Sass](http://paranoida.github.com/sass-mediaqueries/images/logo.jpg)
+
 ##Online version
 <a href="http://paranoida.github.com/sass-mediaqueries">http://paranoida.github.com/sass-mediaqueries</a>
 

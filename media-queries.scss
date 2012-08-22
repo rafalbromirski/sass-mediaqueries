@@ -16,7 +16,7 @@
 //   1.0                            // developed on 20/08/2012
 //
 // Variables:
-//   $units: '1px';                 // default units for 'screen' mixins - it must include a digit!
+//   $units: 1px;                   // default units for 'screen' mixins - it must include a digit!
 //
 // Mixins:
 //   @ min-screen(width)            // 'Mobile First' approach
@@ -47,7 +47,7 @@
 // --- screen ----------------------------------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------------------------------------------
 
-$units: "1px";
+$units: 1px;
 
 @mixin screen($res-first, $res-last: $res-first)
 {
