@@ -258,6 +258,7 @@ or:
   @include iphone-retina-landscape { ... }  // iPhone with retina (landscape)
   }
 }
+```
 ###Example 6 - other - <a href="demo/index.html">demo</a>
 You can use mixins together but you should be careful - one mixin can override another.<br/>It's like in Ghostbusters: <strong>"Don't cross the streams!"</strong>. They did it eventually and pieces of <a href="http://en.wikipedia.org/wiki/Stay_Puft_Marshmallow_Man">Marshmallow Man</a> were everywhere.
 ```scss
