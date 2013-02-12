@@ -69,7 +69,7 @@ body {
   padding: 20px;
   font-size: 18px;
   font-weight: bold;
-  text-shadow: 0 1px 0 #fff;
+  text-shadow: 0 1px 0 white;
 }
 @media screen and (max-width: 480px) {
   .content {
@@ -118,7 +118,7 @@ p[class*="attr"] .true {
   display: none;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+@media only screen and (-webkit-device-pixel-ratio: 2) {
   p.attr-retina .true {
     display: inline-block;
   }
@@ -127,25 +127,7 @@ p[class*="attr"] .true {
   }
 }
 
-@media screen and (max-device-width: 480px) {
-  p.attr-iphone .true {
-    display: inline-block;
-  }
-  p.attr-iphone .false {
-    display: none;
-  }
-}
-
-@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1.5) {
-  p.attr-iphone-retina .true {
-    display: inline-block;
-  }
-  p.attr-iphone-retina .false {
-    display: none;
-  }
-}
-
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 1) {
   p.attr-ipad .true {
     display: inline-block;
   }
@@ -154,7 +136,7 @@ p[class*="attr"] .true {
   }
 }
 
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5) {
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) {
   p.attr-ipad-retina .true {
     display: inline-block;
   }
@@ -163,43 +145,88 @@ p[class*="attr"] .true {
   }
 }
 
-@media screen and (max-device-width: 480px) and (orientation: landscape) {
-  p.attr-iphone-landscape .true {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) {
+  p.attr-iphone3 .true {
     display: inline-block;
   }
-  p.attr-iphone-landscape .false {
+  p.attr-iphone3 .false {
     display: none;
   }
 }
 
-@media screen and (max-device-width: 320px) and (orientation: portrait) {
-  p.attr-iphone-portrait .true {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) and (orientation: landscape) {
+  p.attr-iphone3-landscape .true {
     display: inline-block;
   }
-  p.attr-iphone-portrait .false {
+  p.attr-iphone3-landscape .false {
     display: none;
   }
 }
 
-@media screen and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
-  p.attr-iphone-retina-landscape .true {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) and (orientation: portrait) {
+  p.attr-iphone3-portrait .true {
     display: inline-block;
   }
-  p.attr-iphone-retina-landscape .false {
+  p.attr-iphone3-portrait .false {
     display: none;
   }
 }
 
-@media screen and (max-device-width: 320px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
-  p.attr-iphone-retina-portrait .true {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
+  p.attr-iphone4 .true {
     display: inline-block;
   }
-  p.attr-iphone-retina-portrait .false {
+  p.attr-iphone4 .false {
     display: none;
   }
 }
 
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) and (orientation: landscape) {
+  p.attr-iphone4-landscape .true {
+    display: inline-block;
+  }
+  p.attr-iphone4-landscape .false {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) and (orientation: portrait) {
+  p.attr-iphone4-portrait .true {
+    display: inline-block;
+  }
+  p.attr-iphone4-portrait .false {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) {
+  p.attr-iphone5 .true {
+    display: inline-block;
+  }
+  p.attr-iphone5 .false {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: landscape) {
+  p.attr-iphone5-landscape .true {
+    display: inline-block;
+  }
+  p.attr-iphone5-landscape .false {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: portrait) {
+  p.attr-iphone5-portrait .true {
+    display: inline-block;
+  }
+  p.attr-iphone5-portrait .false {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 1) and (orientation: landscape) {
   p.attr-ipad-landscape .true {
     display: inline-block;
   }
@@ -208,7 +235,7 @@ p[class*="attr"] .true {
   }
 }
 
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 1) and (orientation: portrait) {
   p.attr-ipad-portrait .true {
     display: inline-block;
   }
@@ -217,7 +244,7 @@ p[class*="attr"] .true {
   }
 }
 
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
   p.attr-ipad-retina-landscape .true {
     display: inline-block;
   }
@@ -226,7 +253,7 @@ p[class*="attr"] .true {
   }
 }
 
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
   p.attr-ipad-retina-portrait .true {
     display: inline-block;
   }

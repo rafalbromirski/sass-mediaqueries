@@ -93,24 +93,6 @@ p.attr-retina
   }
 }
 
-p.attr-iphone
-{
-  @include iphone
-  {
-    .true  { display: inline-block;}
-    .false { display: none;}
-  }
-}
-
-p.attr-iphone-retina
-{
-  @include iphone-retina
-  {
-    .true  { display: inline-block;}
-    .false { display: none;}
-  }
-}
-
 p.attr-ipad
 {
   @include ipad
@@ -131,36 +113,85 @@ p.attr-ipad-retina
 
 // ---------------------------------------------------------------------------------------------------------------------
 
-p.attr-iphone-landscape
+p.attr-iphone3
 {
-  @include iphone-landscape
+  @include iphone3
   {
     .true  { display: inline-block;}
     .false { display: none;}
   }
 }
 
-p.attr-iphone-portrait
+p.attr-iphone3-landscape
 {
-  @include iphone-portrait
+  @include iphone3-landscape
   {
     .true  { display: inline-block;}
     .false { display: none;}
   }
 }
 
-p.attr-iphone-retina-landscape
+p.attr-iphone3-portrait
 {
-  @include iphone-retina-landscape
+  @include iphone3-portrait
   {
     .true  { display: inline-block;}
     .false { display: none;}
   }
 }
 
-p.attr-iphone-retina-portrait
+// ---------------------------------------------------------------------------------------------------------------------
+
+p.attr-iphone4
 {
-  @include iphone-retina-portrait
+  @include iphone4
+  {
+    .true  { display: inline-block;}
+    .false { display: none;}
+  }
+}
+
+p.attr-iphone4-landscape
+{
+  @include iphone4-landscape
+  {
+    .true  { display: inline-block;}
+    .false { display: none;}
+  }
+}
+
+p.attr-iphone4-portrait
+{
+  @include iphone4-portrait
+  {
+    .true  { display: inline-block;}
+    .false { display: none;}
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+p.attr-iphone5
+{
+  @include iphone5
+  {
+    .true  { display: inline-block;}
+    .false { display: none;}
+  }
+}
+
+p.attr-iphone5-landscape
+{
+  @include iphone5-landscape
+  {
+    .true  { display: inline-block;}
+    .false { display: none;}
+  }
+}
+
+p.attr-iphone5-portrait
+{
+  @include iphone5-portrait
   {
     .true  { display: inline-block;}
     .false { display: none;}
