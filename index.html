@@ -62,15 +62,15 @@
   Sass 3.2.0+
 
 Version:
-  2.0                              // developed on 12/02/2013
+  2.1                              // developed on 16/02/2013
 
 Variables:
   $units: 1px;                     // default units for 'screen' mixins - it must include a digit!
 
 Mixins:
-  @ min-screen(width)              // 'Mobile First' approach
-  @ screen(width)                  // 'Mobile Last' approach
-  @ screen(min-width, max-width)   // extra stuff
+  @ min-screen(width)              // shortcut for @media screen and (min-width ...)
+  @ max-screen(width)              // shortcut for @media screen and (max-width ...)
+  @ screen(min-width, max-width)   // shortcut for @media screen and (min-width ...) and (max-width ...)
   ---
   @ iphone3                        // only iPhone (2, 3G, 3GS) landscape & portrait
   @ iphone3-landscape              // only iPhone (2, 3G, 3GS) only landscape
@@ -96,10 +96,10 @@ Mixins:
 
         <hr>
         <h2>How does it work?</h2>
-        <p><strong>Important: </strong>Whenever you use screen mixins (min-screen, screen, ...) there is no need for using units. However, if you want to use units different than 'px' remember about overriding them inside your scss / sass file.</p>
+        <p><strong>Important: </strong>Whenever you use screen mixins (min-screen, max-screen, screen) there is no need for using units. However, if you want to use units different than 'px' remember about overriding them inside your scss / sass file.</p>
 
-        <h3>Example 1 - 'min-screen(min-width)' - <a href="demo/index.html">demo</a></h3>
-        <p>If you like <a href="http://www.lukew.com/ff/entry.asp?933">mobile first</a> philosophy this mixin is there for you!
+        <h3>Example 1 - min-screen(min-width) - <a href="demo/index.html">demo</a></h3>
+        <p>It's a shortcut for <strong>@media screen and (min-width ... ) { ... }</strong>. Works great with <a href="http://www.lukew.com/ff/entry.asp?933">mobile first</a> philosophy.
         <pre class="prettyprint lang-scss"><code>@include min-screen(320)  { ... }
 @include min-screen(480)  { ... }
 @include min-screen(768)  { ... }
@@ -125,12 +125,12 @@ Mixins:
 }</code></pre>
 
         <hr>
-        <h3>Example 2 - 'screen(max-width)' - <a href="demo/index.html">demo</a></h3>
-        <p>'Mobile first' is good if you are building app from scratch, but when your team have spent ~10'000h developing big platform it could be a bit difficult.</p>
+        <h3>Example 2 - screen(max-width) - <a href="demo/index.html">demo</a></h3>
+        <p>It's a shortcut for <strong>@media screen and (max-width ... ) { ... }</strong>.</p>
         <p><strong>How to use it properly?</strong> You should start from the widest screen resolution and proceed to the narrowest one (styles are inherited from previous conditions)</p>
-        <pre class="prettyprint lang-scss"><code>@include screen(1024) { ... }
-@include screen(768)  { ... }
-@include screen(640)  { ... }
+        <pre class="prettyprint lang-scss"><code>@include max-screen(1024) { ... }
+@include max-screen(768)  { ... }
+@include max-screen(640)  { ... }
 </code></pre>
 
       <p>It will be compiled to:</p>
@@ -151,7 +151,7 @@ Mixins:
 }</code></pre>
 
         <hr>
-        <h3>Example 3 - 'screen(min-width, max-width)' - <a href="demo/index.html">demo</a></h3>
+        <h3>Example 3 - screen(min-width, max-width) - <a href="demo/index.html">demo</a></h3>
         <p>You can add style rules for ranges. It could be really helpful if you want to target <strong>group of devices</strong> or just <strong>one</strong> with particular screen resolution.</p>
         <pre class="prettyprint lang-scss"><code>@include screen(768, 1280) { ... }
 @include screen(320, 640)  { ... }

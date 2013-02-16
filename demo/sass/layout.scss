@@ -24,7 +24,7 @@ body
   font-weight: bold;
   text-shadow: 0 1px 0 #fff;
 
-  @include screen(480)
+  @include max-screen(480)
   {
     font-size: 14px;
   }
@@ -254,7 +254,7 @@ p.attr-max-width
   {
     span.max-width-#{$res}
     {
-      @include screen($res) { color: #00c30e; }
+      @include max-screen($res) { color: #00c30e; }
     }
   }
 }

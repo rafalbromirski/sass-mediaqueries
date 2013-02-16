@@ -13,15 +13,15 @@
 //   Sass 3.2.0+
 //
 //  Version:
-//   2.0                              // developed on 12/02/2013
+//   2.1                              // developed on 16/02/2013
 //
 // Variables:
 //   $units: 1px;                     // default units for 'screen' mixins - it must include a digit!
 //
 // Mixins:
-//   @ min-screen(width)              // 'Mobile First' approach
-//   @ screen(width)                  // 'Mobile Last' approach
-//   @ screen(min-width, max-width)   // extra stuff
+//   @ min-screen(width)              // shortcut for @media screen and (min-width ...)
+//   @ max-screen(width)              // shortcut for @media screen and (max-width ...)
+//   @ screen(min-width, max-width)   // shortcut for @media screen and (min-width ...) and (max-width ...)
 //   ---
 //   @ iphone3                        // only iPhone (2, 3G, 3GS) landscape & portrait
 //   @ iphone3-landscape              // only iPhone (2, 3G, 3GS) only landscape
@@ -53,23 +53,20 @@
 
 $units: 1px !default;
 
-@mixin screen($res-first, $res-last: $res-first)
+@mixin screen($res-min, $res-max)
 {
-  @if $res-first == $res-last
+  @media screen and ( min-width: if(unitless($res-min), $res-min*$units, $res-min) ) and ( max-width: if(unitless($res-max), $res-max*$units, $res-max) )
   {
-    @media screen and ( max-width: if(unitless($res-first), $res-first*$units, $res-first) )
-    {
-      @content;
-    }
+    @content;
   }
-  @else if $res-first < $res-last
-  {
-    @media screen and ( min-width: if(unitless($res-first), $res-first*$units, $res-first) ) and ( max-width: if(unitless($res-last), $res-last*$units, $res-last) )
-    {
-      @content;
-    }
-  }
+}
 
+@mixin max-screen($res)
+{
+  @media screen and ( max-width: if(unitless($res), $res*$units, $res) )
+  {
+    @content;
+  }
 }
 
 @mixin min-screen($res)
