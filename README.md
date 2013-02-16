@@ -29,15 +29,15 @@ Requirements:
   Sass 3.2.0+
 
 Version:
-  2.0                              // developed on 12/02/2013
+  2.1                              // developed on 16/02/2013
 
 Variables:
   $units: 1px;                     // default units for 'screen' mixins - it must include a digit!
 
 Mixins:
-  @ min-screen(width)              // 'Mobile First' approach
-  @ screen(width)                  // 'Mobile Last' approach
-  @ screen(min-width, max-width)   // extra stuff
+  @ min-screen(width)              // shortcut for @media screen and (min-width ...)
+  @ max-screen(width)              // shortcut for @media screen and (max-width ...)
+  @ screen(min-width, max-width)   // shortcut for @media screen and (min-width ...) and (max-width ...)
   ---
   @ iphone3                        // only iPhone (2, 3G, 3GS) landscape & portrait
   @ iphone3-landscape              // only iPhone (2, 3G, 3GS) only landscape
@@ -67,8 +67,7 @@ Mixins:
 
 ## Example 1
 ### min-screen(min-width) - [demo](http://paranoida.github.com/sass-mediaqueries/demo)
-
-If you like [mobile first](http://www.lukew.com/ff/entry.asp?933) philosophy this mixin is there for you!
+It's a shortcut for **@media screen and (min-width ... ) { ... }**. Works great with [mobile first](http://www.lukew.com/ff/entry.asp?933) philosophy
 
 ```
 @include min-screen(320)  { ... }
@@ -98,16 +97,16 @@ It will be compiled to:
 ```
 
 ## Example 2
-### screen(max-width) - [demo](http://paranoida.github.com/sass-mediaqueries/demo)
+### max-screen(max-width) - [demo](http://paranoida.github.com/sass-mediaqueries/demo)
 
-'Mobile first' is good if you are building app from scratch, but when your team have spent ~10'000h developing big platform it could be a bit difficult.
+It's a shortcut for **@media screen and (max-width ... ) { ... }**.
 
 **How to use it properly?** You should start from the widest screen resolution and proceed to the narrowest one (styles are inherited from previous conditions).
 
 ```
-@include screen(1024) { ... }
-@include screen(768)  { ... }
-@include screen(640)  { ... }
+@include max-screen(1024) { ... }
+@include max-screen(768)  { ... }
+@include max-screen(640)  { ... }
 ```
 It will be compiled to:
 
