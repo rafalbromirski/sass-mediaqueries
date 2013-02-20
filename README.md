@@ -1,26 +1,34 @@
 ![Media Queries Mixins for Sass](http://paranoida.github.com/sass-mediaqueries/images/logo.jpg)
 
-##Online version
-<http://paranoida.github.com/sass-mediaqueries>
+---
 
-##What is it?
+### View it online: <http://paranoida.github.com/sass-mediaqueries>
+
 
 Do you like Responsive Web Design? Everyone does!
 Here you can find a collection of useful **media queries mixins** (including iOS devices like iPhones and iPads) for **Sass 3.2.0+**.
 
-##Who did it?
+### Who did it?
 
 Just me - [Rafal Bromirski](http://paranoida.com) - if you want you can follow me on [twitter](https://twitter.com/paranoida) or check my works on [dribbble](http://dribbble.com/paranoida).
 
-##Browser support
+### Browser support
 
 Only modern browsers that support media queries.
 
-##Bug tracking & features
+## How to install
 
-"Woohoo! I've found a bug!" - that's cool, you can go [here](https://github.com/paranoida/sass-mediaqueries/issues) and describe your story.
+Download it manually or use the terminal:
 
-"That might be cool..." - use pull request or create an issue - I will review your code.
+```
+curl -O https://raw.github.com/paranoida/sass-mediaqueries/master/_media-queries.scss
+```
+Inside your sass/scss file (ie. `application.scss`) add:
+
+```
+@import "media_queries";           // remember about a correct path
+```
+
 
 ##What you can find inside?
 
