@@ -84,9 +84,9 @@ p[class*="attr"]
   }
 }
 
-p.attr-retina
+p.attr-hdpi
 {
-  @include retina
+  @include hdpi
   {
     .true  { display: inline-block;}
     .false { display: none;}

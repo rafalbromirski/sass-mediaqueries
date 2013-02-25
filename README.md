@@ -67,7 +67,7 @@ Mixins:
   @ ipad-retina-landscape          // only iPad (3, 4) only landscape
   @ ipad-retina-portrait           // only iPad (3, 4) only portrait
   ---
-  @ retina                         // devices with retina
+  @ hdpi(ratio)                    // devices with hidpi displays (default ratio: 1.3)
 ```
 ##How does it work?
 
@@ -203,14 +203,26 @@ another one:
 ```
 
 ## Example 6
-### retina - [demo](http://paranoida.github.com/sass-mediaqueries/demo)
+### hdpi(ratio) - [demo](http://paranoida.github.com/sass-mediaqueries/demo)
 
 ```
 .example
 {
   ...
 
-  @include retina { ... }                  // only devices with retina
+  @include hdpi { ... }                   // only devices with hidpi displays (including retina)
+}
+```
+
+or to narrow down:
+
+
+```
+.example
+{
+  ...
+
+  @include hdpi(2) { ... }                // only devices with retina
 }
 ```
 ---

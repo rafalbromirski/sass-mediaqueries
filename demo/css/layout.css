@@ -118,11 +118,11 @@ p[class*="attr"] .true {
   display: none;
 }
 
-@media only screen and (-webkit-device-pixel-ratio: 2) {
-  p.attr-retina .true {
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+  p.attr-hdpi .true {
     display: inline-block;
   }
-  p.attr-retina .false {
+  p.attr-hdpi .false {
     display: none;
   }
 }

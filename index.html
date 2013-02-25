@@ -67,7 +67,7 @@
   Sass 3.2.0+
 
 Version:
-  2.1                              // developed on 16/02/2013
+  2.2                              // developed on 25/02/2013
 
 Variables:
   $units: 1px;                     // default units for 'screen' mixins - it must include a digit!
@@ -97,7 +97,7 @@ Mixins:
   @ ipad-retina-landscape          // only iPad (3, 4) only landscape
   @ ipad-retina-portrait           // only iPad (3, 4) only portrait
   ---
-  @ retina                         // devices with retina</code></pre>
+  @ hdpi(ratio)                    // devices with hidpi displays (default ratio: 1.3)</code></pre>
 
         <hr>
         <h2>How does it work?</h2>
@@ -212,12 +212,20 @@ Mixins:
 </code></pre>
 
       <hr>
-      <h3>Example 6 - retina - <a href="demo/index.html">demo</a></h3>
+      <h3>Example 6 - hdpi(ratio) - <a href="demo/index.html">demo</a></h3>
       <pre class="prettyprint lang-scss"><code>.example
 {
   ...
 
-  @include retina { ... }                  // only devices with retina
+  @include hdpi { ... }                   // only devices with hidpi displays (including retina)
+}</code></pre>
+
+      <p>or to narrow down:</p>
+      <pre class="prettyprint lang-scss"><code>.example
+{
+  ...
+
+  @include hdpi(2) { ... }                // only devices with retina
 }</code></pre>
 
       <hr>
