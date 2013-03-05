@@ -37,7 +37,7 @@ Requirements:
   Sass 3.2.0+
 
 Version:
-  2.1                              // developed on 16/02/2013
+  2.2                              // developed on 25/02/2013
 
 Variables:
   $units: 1px;                     // default units for 'screen' mixins - it must include a digit!
