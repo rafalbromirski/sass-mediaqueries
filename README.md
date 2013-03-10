@@ -37,51 +37,53 @@ Requirements:
   Sass 3.2.0+
 
 Version:
-  2.2                              // developed on 25/02/2013
-
-Variables:
-  $units: 1px;                     // default units for 'screen' mixins - it must include a digit!
+  2.3                                      // developed on 10/03/2013
 
 Mixins:
-  @ min-screen(width)              // shortcut for @media screen and (min-width ...)
-  @ max-screen(width)              // shortcut for @media screen and (max-width ...)
-  @ screen(min-width, max-width)   // shortcut for @media screen and (min-width ...) and (max-width ...)
+  @ min-screen(width)                      // shortcut for @media screen and (min-width ...)
+  @ max-screen(width)                      // shortcut for @media screen and (max-width ...)
+  @ screen(min-width, max-width)           // shortcut for @media screen and (min-width ...) and (max-width ...)
   ---
-  @ iphone3                        // only iPhone (2, 3G, 3GS) landscape & portrait
-  @ iphone3-landscape              // only iPhone (2, 3G, 3GS) only landscape
-  @ iphone3-portrait               // only iPhone (2, 3G, 3GS) only portrait
+  @ min-screen-height(height)              // shortcut for @media screen and (min-height ...)
+  @ max-screen-height(height)              // shortcut for @media screen and (max-height ...)
+  @ screen-height(min-height, max-height)  // shortcut for @media screen and (min-height ...) and (max-height ...)
   ---
-  @ iphone4                        // only iPhone (4, 4S) landscape & portrait
-  @ iphone4-landscape              // only iPhone (4, 4S) only landscape
-  @ iphone4-portrait               // only iPhone (4, 4S) only portrait
+  @ iphone3                                // only iPhone (2, 3G, 3GS) landscape & portrait
+  @ iphone3-landscape                      // only iPhone (2, 3G, 3GS) only landscape
+  @ iphone3-portrait                       // only iPhone (2, 3G, 3GS) only portrait
   ---
-  @ iphone5                        // only iPhone (5) landscape & portrait
-  @ iphone5-landscape              // only iPhone (5) only landscape
-  @ iphone5-portrait               // only iPhone (5) only portrait
+  @ iphone4                                // only iPhone (4, 4S) landscape & portrait
+  @ iphone4-landscape                      // only iPhone (4, 4S) only landscape
+  @ iphone4-portrait                       // only iPhone (4, 4S) only portrait
   ---
-  @ ipad                           // only iPad (1, 2, Mini) landscape & portrait
-  @ ipad-landscape                 // only iPad (1, 2, Mini) only landscape
-  @ ipad-portrait                  // only iPad (1, 2, Mini) only portrait
+  @ iphone5                                // only iPhone (5) landscape & portrait
+  @ iphone5-landscape                      // only iPhone (5) only landscape
+  @ iphone5-portrait                       // only iPhone (5) only portrait
   ---
-  @ ipad-retina                    // only iPad (3, 4) landscape & portrait
-  @ ipad-retina-landscape          // only iPad (3, 4) only landscape
-  @ ipad-retina-portrait           // only iPad (3, 4) only portrait
+  @ ipad                                   // all iPads (1, 2, 3, 4, Mini) landscape & portrait
+  @ ipad-landscape                         // all iPads (1, 2, 3, 4, Mini) only landscape
+  @ ipad-portrait                          // all iPads (1, 2, 3, 4, Mini) only portrait
   ---
-  @ hdpi(ratio)                    // devices with hidpi displays (default ratio: 1.3)
+  @ ipad-retina                            // only iPad (3, 4) landscape & portrait
+  @ ipad-retina-landscape                  // only iPad (3, 4) only landscape
+  @ ipad-retina-portrait                   // only iPad (3, 4) only portrait
+  ---
+  @ hdpi(ratio)                            // devices with hidpi displays (default ratio: 1.3)
 ```
+
 ##How does it work?
 
-**Important**: Whenever you use screen mixins (min-screen, screen, ...) there is no need for using units. However, if you want to use units different than 'px' remember about overriding them inside your scss / sass file.
+**Important**: Whenever you use screen mixins (min-screen, max-screen, screen, etc) you must use units!
 
 ## Example 1
 ### min-screen(min-width) - [demo](http://paranoida.github.com/sass-mediaqueries/demo)
 It's a shortcut for **@media screen and (min-width ... ) { ... }**. Works great with [mobile first](http://www.lukew.com/ff/entry.asp?933) philosophy
 
 ```
-@include min-screen(320)  { ... }
-@include min-screen(480)  { ... }
-@include min-screen(768)  { ... }
-@include min-screen(1024) { ... }
+@include min-screen(320px)  { ... }
+@include min-screen(480px)  { ... }
+@include min-screen(768px)  { ... }
+@include min-screen(1024px) { ... }
 ```
 It will be compiled to:
 
@@ -112,9 +114,9 @@ It's a shortcut for **@media screen and (max-width ... ) { ... }**.
 **How to use it properly?** You should start from the widest screen resolution and proceed to the narrowest one (styles are inherited from previous conditions).
 
 ```
-@include max-screen(1024) { ... }
-@include max-screen(768)  { ... }
-@include max-screen(640)  { ... }
+@include max-screen(1024px) { ... }
+@include max-screen(768px)  { ... }
+@include max-screen(640px)  { ... }
 ```
 It will be compiled to:
 
@@ -141,8 +143,8 @@ It will be compiled to:
 You can add style rules for ranges. It could be really helpful if you want to target **group of devices** or just **one** with particular screen resolution.
 
 ```
-@include screen(768, 1280) { ... }
-@include screen(320, 640)  { ... }
+@include screen(768px, 1280px) { ... }
+@include screen(320px, 640px)  { ... }
 ```
 It will be compiled to:
 
@@ -164,8 +166,8 @@ It will be compiled to:
 You can easily manage styles for particular iOS devices:
 
 ```
+@include ipad { ... }                     // all iPads
 @include ipad-retina { ... }              // only iPad with retina
-@include ipad { ... }                     // only iPad with retina (1, 2, Mini)
 
 @include iphone5 { ... }                  // only iPhone 5
 @include iphone4 { ... }                  // only iPhone 4/4S
@@ -194,7 +196,7 @@ Want to add extra stuff only in landscape / portrait mode? Piece of cake:
 another one:
 
 ```
-@include ipad-landscape { ... }           // only iPad (1, 2, Mini) - landscape
+@include ipad-landscape { ... }           // all iPads - landscape
 @include ipad-retina-landscape { ... }    // only iPad (3, 4) - landscape
 
 @include iphone3-landscape { ... }        // only iPhone 2/3G/3GS - landscape

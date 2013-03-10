@@ -58,7 +58,7 @@
         <p>Download it manually or use the terminal:</p>
         <pre class="prettyprint lang-sh"><code>curl -O https://raw.github.com/paranoida/sass-mediaqueries/master/_media-queries.scss</code></pre>
         <p>Inside your sass/scss file (ie. application.scss) add:</p>
-        <pre class="prettyprint lang-scss"><code>@import "media_queries";           // remember about a correct path</code></pre>
+        <pre class="prettyprint lang-scss"><code>@import "media_queries";                   // remember about a correct path</code></pre>
 
         <hr>
         <h2>What you can find inside?</h2>
@@ -67,48 +67,49 @@
   Sass 3.2.0+
 
 Version:
-  2.2                              // developed on 25/02/2013
-
-Variables:
-  $units: 1px;                     // default units for 'screen' mixins - it must include a digit!
+  2.3                                      // developed on 10/03/2013
 
 Mixins:
-  @ min-screen(width)              // shortcut for @media screen and (min-width ...)
-  @ max-screen(width)              // shortcut for @media screen and (max-width ...)
-  @ screen(min-width, max-width)   // shortcut for @media screen and (min-width ...) and (max-width ...)
+  @ min-screen(width)                      // shortcut for @media screen and (min-width ...)
+  @ max-screen(width)                      // shortcut for @media screen and (max-width ...)
+  @ screen(min-width, max-width)           // shortcut for @media screen and (min-width ...) and (max-width ...)
   ---
-  @ iphone3                        // only iPhone (2, 3G, 3GS) landscape & portrait
-  @ iphone3-landscape              // only iPhone (2, 3G, 3GS) only landscape
-  @ iphone3-portrait               // only iPhone (2, 3G, 3GS) only portrait
+  @ min-screen-height(height)              // shortcut for @media screen and (min-height ...)
+  @ max-screen-height(height)              // shortcut for @media screen and (max-height ...)
+  @ screen-height(min-height, max-height)  // shortcut for @media screen and (min-height ...) and (max-height ...)
   ---
-  @ iphone4                        // only iPhone (4, 4S) landscape & portrait
-  @ iphone4-landscape              // only iPhone (4, 4S) only landscape
-  @ iphone4-portrait               // only iPhone (4, 4S) only portrait
+  @ iphone3                                // only iPhone (2, 3G, 3GS) landscape & portrait
+  @ iphone3-landscape                      // only iPhone (2, 3G, 3GS) only landscape
+  @ iphone3-portrait                       // only iPhone (2, 3G, 3GS) only portrait
   ---
-  @ iphone5                        // only iPhone (5) landscape & portrait
-  @ iphone5-landscape              // only iPhone (5) only landscape
-  @ iphone5-portrait               // only iPhone (5) only portrait
+  @ iphone4                                // only iPhone (4, 4S) landscape & portrait
+  @ iphone4-landscape                      // only iPhone (4, 4S) only landscape
+  @ iphone4-portrait                       // only iPhone (4, 4S) only portrait
   ---
-  @ ipad                           // only iPad (1, 2, Mini) landscape & portrait
-  @ ipad-landscape                 // only iPad (1, 2, Mini) only landscape
-  @ ipad-portrait                  // only iPad (1, 2, Mini) only portrait
+  @ iphone5                                // only iPhone (5) landscape & portrait
+  @ iphone5-landscape                      // only iPhone (5) only landscape
+  @ iphone5-portrait                       // only iPhone (5) only portrait
   ---
-  @ ipad-retina                    // only iPad (3, 4) landscape & portrait
-  @ ipad-retina-landscape          // only iPad (3, 4) only landscape
-  @ ipad-retina-portrait           // only iPad (3, 4) only portrait
+  @ ipad                                   // all iPads (1, 2, 3, 4, Mini) landscape & portrait
+  @ ipad-landscape                         // all iPads (1, 2, 3, 4, Mini) only landscape
+  @ ipad-portrait                          // all iPads (1, 2, 3, 4, Mini) only portrait
   ---
-  @ hdpi(ratio)                    // devices with hidpi displays (default ratio: 1.3)</code></pre>
-
+  @ ipad-retina                            // only iPad (3, 4) landscape & portrait
+  @ ipad-retina-landscape                  // only iPad (3, 4) only landscape
+  @ ipad-retina-portrait                   // only iPad (3, 4) only portrait
+  ---
+  @ hdpi(ratio)                            // devices with hidpi displays (default ratio: 1.3)
+</code></pre>
         <hr>
         <h2>How does it work?</h2>
-        <p><strong>Important: </strong>Whenever you use screen mixins (min-screen, max-screen, screen) there is no need for using units. However, if you want to use units different than 'px' remember about overriding them inside your scss / sass file.</p>
+        <p><strong>Important: </strong>Whenever you use screen mixins (min-screen, max-screen, screen, etc) you must use units!</p>
 
         <h3>Example 1 - min-screen(min-width) - <a href="demo/index.html">demo</a></h3>
         <p>It's a shortcut for <strong>@media screen and (min-width ... ) { ... }</strong>. Works great with <a href="http://www.lukew.com/ff/entry.asp?933">mobile first</a> philosophy.
         <pre class="prettyprint lang-scss"><code>@include min-screen(320)  { ... }
-@include min-screen(480)  { ... }
-@include min-screen(768)  { ... }
-@include min-screen(1024) { ... }
+@include min-screen(480px)  { ... }
+@include min-screen(768px)  { ... }
+@include min-screen(1024px) { ... }
 </code></pre>
 
         <p>It will be compiled to:</p>
@@ -130,12 +131,12 @@ Mixins:
 }</code></pre>
 
         <hr>
-        <h3>Example 2 - screen(max-width) - <a href="demo/index.html">demo</a></h3>
+        <h3>Example 2 - max-screen(max-width) - <a href="demo/index.html">demo</a></h3>
         <p>It's a shortcut for <strong>@media screen and (max-width ... ) { ... }</strong>.</p>
         <p><strong>How to use it properly?</strong> You should start from the widest screen resolution and proceed to the narrowest one (styles are inherited from previous conditions)</p>
-        <pre class="prettyprint lang-scss"><code>@include max-screen(1024) { ... }
-@include max-screen(768)  { ... }
-@include max-screen(640)  { ... }
+        <pre class="prettyprint lang-scss"><code>@include max-screen(1024px) { ... }
+@include max-screen(768px)  { ... }
+@include max-screen(640px)  { ... }
 </code></pre>
 
       <p>It will be compiled to:</p>
@@ -158,8 +159,8 @@ Mixins:
         <hr>
         <h3>Example 3 - screen(min-width, max-width) - <a href="demo/index.html">demo</a></h3>
         <p>You can add style rules for ranges. It could be really helpful if you want to target <strong>group of devices</strong> or just <strong>one</strong> with particular screen resolution.</p>
-        <pre class="prettyprint lang-scss"><code>@include screen(768, 1280) { ... }
-@include screen(320, 640)  { ... }
+        <pre class="prettyprint lang-scss"><code>@include screen(768px, 1280px) { ... }
+@include screen(320px, 640px)  { ... }
 </code></pre>
 
       <p>It will be compiled to:</p>
@@ -177,8 +178,8 @@ Mixins:
       <hr>
       <h3>Example 4 - iOS devices - <a href="demo/index.html">demo</a></h3>
       <p>You can easily manage styles for particular iOS devices:</p>
-      <pre class="prettyprint lang-scss"><code>@include ipad-retina { ... }              // only iPad with retina
-@include ipad { ... }                     // only iPad with retina (1, 2, Mini)
+      <pre class="prettyprint lang-scss"><code>@include ipad { ... }                     // all iPads
+@include ipad-retina { ... }              // only iPad with retina
 
 @include iphone5 { ... }                  // only iPhone 5
 @include iphone4 { ... }                  // only iPhone 4/4S
@@ -203,7 +204,7 @@ Mixins:
 </code></pre>
 
       <p>another one:</p>
-      <pre class="prettyprint lang-scss"><code>@include ipad-landscape { ... }           // only iPad (1, 2, Mini) - landscape
+      <pre class="prettyprint lang-scss"><code>@include ipad-landscape { ... }           // all iPads - landscape
 @include ipad-retina-landscape { ... }    // only iPad (3, 4) - landscape
 
 @include iphone3-landscape { ... }        // only iPhone 2/3G/3GS - landscape

@@ -127,7 +127,7 @@ p[class*="attr"] .true {
   }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   p.attr-ipad .true {
     display: inline-block;
   }
@@ -226,7 +226,7 @@ p[class*="attr"] .true {
   }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 1) and (orientation: landscape) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   p.attr-ipad-landscape .true {
     display: inline-block;
   }
@@ -235,7 +235,7 @@ p[class*="attr"] .true {
   }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 1) and (orientation: portrait) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   p.attr-ipad-portrait .true {
     display: inline-block;
   }
@@ -342,6 +342,90 @@ p.attr-min-width span[class*="min-width"] {
 }
 @media screen and (min-width: 1600px) {
   p.attr-min-width span.min-width-1600 {
+    color: #00c30e;
+  }
+}
+
+p.attr-min-screen-height span[class*="min-screen-heigh"] {
+  display: inline-block;
+  padding-right: 5px;
+  color: #bbb;
+}
+
+@media screen and (min-height: 320px) {
+  p.attr-min-screen-height span.min-screen-height-320 {
+    color: #00c30e;
+  }
+}
+@media screen and (min-height: 480px) {
+  p.attr-min-screen-height span.min-screen-height-480 {
+    color: #00c30e;
+  }
+}
+@media screen and (min-height: 768px) {
+  p.attr-min-screen-height span.min-screen-height-768 {
+    color: #00c30e;
+  }
+}
+@media screen and (min-height: 1024px) {
+  p.attr-min-screen-height span.min-screen-height-1024 {
+    color: #00c30e;
+  }
+}
+@media screen and (min-height: 1200px) {
+  p.attr-min-screen-height span.min-screen-height-1200 {
+    color: #00c30e;
+  }
+}
+@media screen and (min-height: 1400px) {
+  p.attr-min-screen-height span.min-screen-height-1400 {
+    color: #00c30e;
+  }
+}
+@media screen and (min-height: 1600px) {
+  p.attr-min-screen-height span.min-screen-height-1600 {
+    color: #00c30e;
+  }
+}
+
+p.attr-max-screen-height span[class*="max-screen-heigh"] {
+  display: inline-block;
+  padding-right: 5px;
+  color: #bbb;
+}
+
+@media screen and (max-height: 320px) {
+  p.attr-max-screen-height span.max-screen-height-320 {
+    color: #00c30e;
+  }
+}
+@media screen and (max-height: 480px) {
+  p.attr-max-screen-height span.max-screen-height-480 {
+    color: #00c30e;
+  }
+}
+@media screen and (max-height: 768px) {
+  p.attr-max-screen-height span.max-screen-height-768 {
+    color: #00c30e;
+  }
+}
+@media screen and (max-height: 1024px) {
+  p.attr-max-screen-height span.max-screen-height-1024 {
+    color: #00c30e;
+  }
+}
+@media screen and (max-height: 1200px) {
+  p.attr-max-screen-height span.max-screen-height-1200 {
+    color: #00c30e;
+  }
+}
+@media screen and (max-height: 1400px) {
+  p.attr-max-screen-height span.max-screen-height-1400 {
+    color: #00c30e;
+  }
+}
+@media screen and (max-height: 1600px) {
+  p.attr-max-screen-height span.max-screen-height-1600 {
     color: #00c30e;
   }
 }

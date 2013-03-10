@@ -24,7 +24,7 @@ body
   font-weight: bold;
   text-shadow: 0 1px 0 #fff;
 
-  @include max-screen(480)
+  @include max-screen(480px)
   {
     font-size: 14px;
   }
@@ -254,7 +254,8 @@ p.attr-max-width
   {
     span.max-width-#{$res}
     {
-      @include max-screen($res) { color: #00c30e; }
+
+      @include max-screen($res * 1px) { color: #00c30e; }
     }
   }
 }
@@ -277,7 +278,53 @@ p.attr-min-width
   {
     span.min-width-#{$res}
     {
-      @include min-screen($res) { color: #00c30e; }
+      @include min-screen( $res * 1px) { color: #00c30e; }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+p.attr-min-screen-height
+{
+  span[class*="min-screen-heigh"]
+  {
+    display: inline-block;
+    padding-right: 5px;
+    color: #bbb;
+  }
+}
+
+p.attr-min-screen-height
+{
+  @each $res in 320,480,768,1024,1200,1400,1600
+  {
+    span.min-screen-height-#{$res}
+    {
+      @include min-screen-height( $res * 1px) { color: #00c30e; }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+p.attr-max-screen-height
+{
+  span[class*="max-screen-heigh"]
+  {
+    display: inline-block;
+    padding-right: 5px;
+    color: #bbb;
+  }
+}
+
+p.attr-max-screen-height
+{
+  @each $res in 320,480,768,1024,1200,1400,1600
+  {
+    span.max-screen-height-#{$res}
+    {
+      @include max-screen-height( $res * 1px) { color: #00c30e; }
     }
   }
 }
