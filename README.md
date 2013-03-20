@@ -18,15 +18,28 @@ Only modern browsers that support media queries.
 
 ## How to install
 
-Download it manually or use the terminal:
+### Manually
+
+Download it or use `curl`:
 
 ```
 curl -O https://raw.github.com/paranoida/sass-mediaqueries/master/_media-queries.scss
 ```
+
+### Or as a [gem](http://github.com/paranoida/sass-mediaqueries-rails) in your Gemfile (inside assets group):
+
+```
+group :assets do
+	...
+	gem 'sass-mediaqueries-rails'
+end
+```
+
+
 Inside your sass/scss file (ie. `application.scss`) add:
 
 ```
-@import "media_queries";           // remember about a correct path
+@import "media_queries";
 ```
 
 
@@ -37,7 +50,7 @@ Requirements:
   Sass 3.2.0+
 
 Version:
-  2.3                                      // developed on 10/03/2013
+  1.2.3                                    // developed on 10/03/2013
 
 Mixins:
   @ min-screen(width)                      // shortcut for @media screen and (min-width ...)

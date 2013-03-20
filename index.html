@@ -55,8 +55,18 @@
         <hr>
 
         <h2>How to install</h2>
-        <p>Download it manually or use the terminal:</p>
+
+        <h3>Manually</h3>
+        <p>Download it or use curl:</p>
         <pre class="prettyprint lang-sh"><code>curl -O https://raw.github.com/paranoida/sass-mediaqueries/master/_media-queries.scss</code></pre>
+
+        <h3>Or as a <a href="http://github.com/paranoida/sass-mediaqueries-rails">gem</a> in your Gemfile (inside assets group):</h3>
+        <pre class="prettyprint lang-rb"><code>group :assets do
+  ...
+  gem 'sass-mediaqueries-rails'
+end
+</code></pre>
+
         <p>Inside your sass/scss file (ie. application.scss) add:</p>
         <pre class="prettyprint lang-scss"><code>@import "media_queries";                   // remember about a correct path</code></pre>
 
@@ -67,7 +77,7 @@
   Sass 3.2.0+
 
 Version:
-  2.3                                      // developed on 10/03/2013
+  1.2.3                                    // developed on 10/03/2013
 
 Mixins:
   @ min-screen(width)                      // shortcut for @media screen and (min-width ...)
