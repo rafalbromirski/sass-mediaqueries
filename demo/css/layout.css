@@ -69,7 +69,7 @@ body {
   padding: 20px;
   font-size: 18px;
   font-weight: bold;
-  text-shadow: 0 1px 0 white;
+  text-shadow: 0 1px 0 #fff;
 }
 @media screen and (max-width: 480px) {
   .content {
