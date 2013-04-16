@@ -39,7 +39,7 @@ end
 Inside your sass/scss file (ie. `application.scss`) add:
 
 ```
-@import "media_queries";
+@import "media-queries";
 ```
 
 
