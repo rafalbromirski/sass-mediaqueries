@@ -59,19 +59,6 @@ h1
   font-size: 24px;
 }
 
-.back
-{
-  font-size: 14px;
-
-  a
-  {
-    color: #D148D8;
-    text-decoration: none;
-    vertical-align: 2px;
-    display: inline-block;
-  }
-}
-
 // --- attr ------------------------------------------------------------------------------------------------------------
 
 p[class*="attr"]
@@ -124,7 +111,7 @@ p.attr-iphone3
 
 p.attr-iphone3-landscape
 {
-  @include iphone3-landscape
+  @include iphone3(landscape)
   {
     .true  { display: inline-block;}
     .false { display: none;}
@@ -133,7 +120,7 @@ p.attr-iphone3-landscape
 
 p.attr-iphone3-portrait
 {
-  @include iphone3-portrait
+  @include iphone3(portrait)
   {
     .true  { display: inline-block;}
     .false { display: none;}
@@ -153,7 +140,7 @@ p.attr-iphone4
 
 p.attr-iphone4-landscape
 {
-  @include iphone4-landscape
+  @include iphone4(landscape)
   {
     .true  { display: inline-block;}
     .false { display: none;}
@@ -162,7 +149,7 @@ p.attr-iphone4-landscape
 
 p.attr-iphone4-portrait
 {
-  @include iphone4-portrait
+  @include iphone4(portrait)
   {
     .true  { display: inline-block;}
     .false { display: none;}
@@ -182,7 +169,7 @@ p.attr-iphone5
 
 p.attr-iphone5-landscape
 {
-  @include iphone5-landscape
+  @include iphone5(landscape)
   {
     .true  { display: inline-block;}
     .false { display: none;}
@@ -191,7 +178,7 @@ p.attr-iphone5-landscape
 
 p.attr-iphone5-portrait
 {
-  @include iphone5-portrait
+  @include iphone5(portrait)
   {
     .true  { display: inline-block;}
     .false { display: none;}
@@ -202,7 +189,7 @@ p.attr-iphone5-portrait
 
 p.attr-ipad-landscape
 {
-  @include ipad-landscape
+  @include ipad(landscape)
   {
     .true  { display: inline-block;}
     .false { display: none;}
@@ -211,7 +198,7 @@ p.attr-ipad-landscape
 
 p.attr-ipad-portrait
 {
-  @include ipad-portrait
+  @include ipad(portrait)
   {
     .true  { display: inline-block;}
     .false { display: none;}
@@ -220,7 +207,7 @@ p.attr-ipad-portrait
 
 p.attr-ipad-retina-landscape
 {
-  @include ipad-retina-landscape
+  @include ipad-retina(landscape)
   {
     .true  { display: inline-block;}
     .false { display: none;}
@@ -229,7 +216,7 @@ p.attr-ipad-retina-landscape
 
 p.attr-ipad-retina-portrait
 {
-  @include ipad-retina-portrait
+  @include ipad-retina(portrait)
   {
     .true  { display: inline-block;}
     .false { display: none;}

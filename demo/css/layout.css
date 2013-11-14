@@ -101,16 +101,6 @@ h1 {
   font-size: 24px;
 }
 
-.back {
-  font-size: 14px;
-}
-.back a {
-  color: #D148D8;
-  text-decoration: none;
-  vertical-align: 2px;
-  display: inline-block;
-}
-
 p[class*="attr"] {
   padding: 3px 0;
 }
@@ -136,7 +126,7 @@ p[class*="attr"] .true {
   }
 }
 
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) {
   p.attr-ipad-retina .true {
     display: inline-block;
   }
@@ -244,7 +234,7 @@ p[class*="attr"] .true {
   }
 }
 
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
   p.attr-ipad-retina-landscape .true {
     display: inline-block;
   }
@@ -253,7 +243,7 @@ p[class*="attr"] .true {
   }
 }
 
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
   p.attr-ipad-retina-portrait .true {
     display: inline-block;
   }
