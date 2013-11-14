@@ -1,0 +1,20 @@
+{
+  "name": "sass-mediaqueries",
+  "version": "1.3",
+  "homepage": "https://github.com/paranoida/sass-mediaqueries",
+  "authors": [
+    "Rafal Bromirski <rafal.bromirski@gmail.com>"
+  ],
+  "description": "It is a collection of useful media queries mixins for Sass. Great extension for compass or bourbon.",
+  "main": "_media-queries.scss",
+  "keywords": [
+    "sass",
+    "scss",
+    "css",
+    "media",
+    "queries",
+    "mediaqueries",
+    "responsive"
+  ],
+  "license": "MIT"
+}
