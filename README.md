@@ -6,7 +6,7 @@
 
 
 Do you like Responsive Web Design? Everyone does!
-Here you can find a collection of useful **media queries mixins** (including iOS devices like iPhones and iPads) for **Sass 3.2.0+**.
+Here you can find a collection of useful **media queries mixins** (including iOS devices like iPhones and iPads) for **Sass**.
 
 ### Who did it?
 
@@ -50,7 +50,7 @@ Requirements:
   Sass 3.2.0+
 
 Version:
-  1.2.3                                    // developed on 10/03/2013
+  1.3                                      // developed on 14/11/2013
 
 Mixins:
   @ min-screen(width)                      // shortcut for @media screen and (min-width ...)
@@ -62,24 +62,24 @@ Mixins:
   @ screen-height(min-height, max-height)  // shortcut for @media screen and (min-height ...) and (max-height ...)
   ---
   @ iphone3                                // only iPhone (2, 3G, 3GS) landscape & portrait
-  @ iphone3-landscape                      // only iPhone (2, 3G, 3GS) only landscape
-  @ iphone3-portrait                       // only iPhone (2, 3G, 3GS) only portrait
+  @ iphone3(landscape)                     // only iPhone (2, 3G, 3GS) only landscape
+  @ iphone3(portrait)                      // only iPhone (2, 3G, 3GS) only portrait
   ---
   @ iphone4                                // only iPhone (4, 4S) landscape & portrait
-  @ iphone4-landscape                      // only iPhone (4, 4S) only landscape
-  @ iphone4-portrait                       // only iPhone (4, 4S) only portrait
+  @ iphone4(landscape)                     // only iPhone (4, 4S) only landscape
+  @ iphone4(portrait)                      // only iPhone (4, 4S) only portrait
   ---
   @ iphone5                                // only iPhone (5) landscape & portrait
-  @ iphone5-landscape                      // only iPhone (5) only landscape
-  @ iphone5-portrait                       // only iPhone (5) only portrait
+  @ iphone5(landscape)                     // only iPhone (5) only landscape
+  @ iphone5(portrait)                      // only iPhone (5) only portrait
   ---
   @ ipad                                   // all iPads (1, 2, 3, 4, Mini) landscape & portrait
-  @ ipad-landscape                         // all iPads (1, 2, 3, 4, Mini) only landscape
-  @ ipad-portrait                          // all iPads (1, 2, 3, 4, Mini) only portrait
+  @ ipad(landscape)                        // all iPads (1, 2, 3, 4, Mini) only landscape
+  @ ipad(portrait)                         // all iPads (1, 2, 3, 4, Mini) only portrait
   ---
   @ ipad-retina                            // only iPad (3, 4) landscape & portrait
-  @ ipad-retina-landscape                  // only iPad (3, 4) only landscape
-  @ ipad-retina-portrait                   // only iPad (3, 4) only portrait
+  @ ipad-retina(landscape)                 // only iPad (3, 4) only landscape
+  @ ipad-retina(portrait)                  // only iPad (3, 4) only portrait
   ---
   @ hdpi(ratio)                            // devices with hidpi displays (default ratio: 1.3)
 ```
@@ -101,19 +101,19 @@ It's a shortcut for **@media screen and (min-width ... ) { ... }**. Works great 
 It will be compiled to:
 
 ```
-@media screen and ( min-width: 320px) )
+@media screen and (min-width: 320px)
 {
   ...
 }
-@media screen and ( min-width: 480px )
+@media screen and (min-width: 480px)
 {
   ...
 }
-@media screen and ( min-width: 768px )
+@media screen and (min-width: 768px)
 {
   ...
 }
-@media screen and ( min-width: 1024px )
+@media screen and (min-width: 1024px)
 {
   ...
 }
@@ -134,17 +134,17 @@ It's a shortcut for **@media screen and (max-width ... ) { ... }**.
 It will be compiled to:
 
 ```
-@media screen and ( max-width: 1024px )
+@media screen and (max-width: 1024px)
 {
   ...
 }
 
-@media screen and ( max-width: 768px )
+@media screen and (max-width: 768px)
 {
   ...
 }
 
-@media screen and ( max-width: 640px )
+@media screen and (max-width: 640px)
 {
   ...
 }
@@ -162,12 +162,12 @@ You can add style rules for ranges. It could be really helpful if you want to ta
 It will be compiled to:
 
 ```
-@media screen and ( min-width: 768px ) and ( max-width: 1280px )
+@media screen and (min-width: 768px) and (max-width: 1280px)
 {
   ...
 }
 
-@media screen and ( min-width: 320px ) and ( max-width: 640px )
+@media screen and (min-width: 320px) and (max-width: 640px)
 {
   ...
 }
@@ -194,27 +194,27 @@ Want to add extra stuff only in landscape / portrait mode? Piece of cake:
 
 ```
 @include ipad-retina { ... }              // common part only for iPad (3, 4) - landscape & portrait
-@include ipad-retina-landscape { ... }
-@include ipad-retina-portrait  { ... }
+@include ipad-retina(landscape) { ... }
+@include ipad-retina(portrait)  { ... }
 
 @include iphone5 { ... }                  // common part only for iPhone 5 - landscape & portrait
-@include iphone5-landscape { ... }
-@include iphone5-portrait  { ... }
+@include iphone5(landscape) { ... }
+@include iphone5(portrait)  { ... }
 
 @include iphone4 { ... }                  // common part only for iPhone 4/4S - landscape & portrait
-@include iphone4-landscape { ... }
-@include iphone4-portrait  { ... }
+@include iphone4(landscape) { ... }
+@include iphone4(portrait)  { ... }
 ```
 
 another one:
 
 ```
-@include ipad-landscape { ... }           // all iPads - landscape
-@include ipad-retina-landscape { ... }    // only iPad (3, 4) - landscape
+@include ipad(landscape) { ... }          // all iPads - landscape
+@include ipad-retina(landscape) { ... }   // only iPad (3, 4) - landscape
 
-@include iphone3-landscape { ... }        // only iPhone 2/3G/3GS - landscape
-@include iphone4-landscape { ... }        // only iPhone 4/4S - landscape
-@include iphone5-landscape { ... }        // only iPhone 5 - landscape
+@include iphone3(landscape) { ... }       // only iPhone 2/3G/3GS - landscape
+@include iphone4(landscape) { ... }       // only iPhone 4/4S - landscape
+@include iphone5(landscape) { ... }       // only iPhone 5 - landscape
 ```
 
 ## Example 6
