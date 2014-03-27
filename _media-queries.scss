@@ -45,6 +45,7 @@
 //   @ ipad-retina(portrait)                  // only iPad (3, 4) only portrait
 //   ---
 //   @ hdpi(ratio)                            // devices with hidpi displays (default ratio: 1.3)
+//   @ hdtv(min-device-width, min-device-height, min-width, min-height) // HDTV's (and large monitors)
 //
 // ---------------------------------------------------------------------------------------------------------------------
 
@@ -117,6 +118,31 @@
   {
     @content;
   }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// --- hdtv ------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Because televisions can be used as monitors, we must be sure that the min-width and min-height are taken in to consideration in addition to the device-min-width and device-min-height.
+
+@mixin hdtv($standard: 1080p)
+{
+  @if $standard == 1080p
+  {
+    $deviceMinWidth: 1920px;
+    $devideMinHeight: 1080px;
+  }
+  @if $standard == 4K
+  {
+    $deviceMinWidth: 4096px;
+    $devideMinHeight: 2160px;    
+  }
+
+  @media only screen and (min-device-width: $deviceMinWidth) and (min-device-height: $deviceMinHeight) and (min-width: $deviceMinWidth) and (min-height: $deviceMinHeight) {
+    @content;
+  }
+
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
