@@ -128,15 +128,18 @@
 
 @mixin hdtv($standard: 1080p)
 {
+  $deviceMinWidth: null;
+  $deviceMinHeight: null;
+
   @if $standard == 1080p
   {
     $deviceMinWidth: 1920px;
-    $devideMinHeight: 1080px;
+    $deviceMinHeight: 1080px;
   }
-  @if $standard == 4K
+  @else if $standard == 4K
   {
     $deviceMinWidth: 4096px;
-    $devideMinHeight: 2160px;    
+    $deviceMinHeight: 2160px;    
   }
 
   @media only screen and (min-device-width: $deviceMinWidth) and (min-device-height: $deviceMinHeight) and (min-width: $deviceMinWidth) and (min-height: $deviceMinHeight) {
