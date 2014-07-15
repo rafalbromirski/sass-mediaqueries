@@ -1,0 +1,5 @@
+{
+  "name": "sass-mediaqueries",
+  "description": "It is a collection of useful media queries mixins for Sass. Great extension for compass or bourbon.",
+  "tags": ["media-queries", "media", "queries", "responsive", "rwd", "mixins", "sass", "compass", "bourbon"]
+}
