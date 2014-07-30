@@ -23,7 +23,7 @@ Only modern browsers that support media queries.
 Download it or use `curl`:
 
 ```
-curl -O https://raw.github.com/paranoida/sass-mediaqueries/master/_media-queries.scss
+curl -O https://raw.githubusercontent.com/paranoida/sass-mediaqueries/master/_media-queries.scss
 ```
 
 ### Or as a [gem](http://github.com/paranoida/sass-mediaqueries-rails) in your Gemfile (inside assets group):
