@@ -224,7 +224,7 @@
   @else
   {
     @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
-    and (orientation:#{$orientation})
+    and (orientation: #{$orientation})
     {
       @content;
     }
