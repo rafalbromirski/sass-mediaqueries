@@ -1,281 +1,44 @@
 <!doctype html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Media Queries Mixins for Sass</title>
-    <meta name="description" content="Do you like Responsive Web Design? Everyone does! Here you can find a collection of useful media queries mixins for Sass 3.2.0+.">
+    <title>Media Queries Mixins for Sass - by Rafal Bromirski</title>
+    <meta name="description" content="Do you like Responsive Web Design? Everyone does! Here you can find a collection of useful media queries mixins for Sass.">
     <meta name="author" content="Rafal Bromirski">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/application.css">
+</head>
+<body>
+  <a href="https://github.com/paranoida/sass-mediaqueries"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:10" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/pl_PL/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+  <header class="header">
+    <h2 class="header__title">Sass MediaQueries</h2>
+    <h3 class="header__subtitle">Media Queries mixins - fully customizable and very easy to use.</h3>
+    <a href="https://github.com/paranoida/sass-mediaqueries/zipball/master" class="header__btn">Download ZIP</a>
+    <a href="https://github.com/paranoida/sass-mediaqueries/zipball/master" class="header__btn">Download TAR</a>
+    <a href="https://github.com/paranoida/sass-mediaqueries" class="header__btn" target="_blank">View On GitHub</a>
+  </header>
 
-    <a href="https://github.com/paranoida/sass-mediaqueries"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:10" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-    <div class="wrapper">
-      <header>
-        <div class="logo"><img src="images/logo.jpg" alt="Media Queries Mixins for Sass" /></div>
-        <h1>Media Queries Mixins for Sass.</h1>
+  <div class="l-container">
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">How to install?</h3>
+      </div>
+      <div class="section__body">
+        <p>Using bower:</p>
 
-        <hr>
-        <p class="view"><a href="https://github.com/paranoida/sass-mediaqueries">View the Project on GitHub <small>paranoida/sass-mediaqueries</small></a></p>
-        <ul>
-          <li><a href="https://github.com/paranoida/sass-mediaqueries/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/paranoida/sass-mediaqueries/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/paranoida/sass-mediaqueries">View On <strong>GitHub</strong></a></li>
-        </ul>
+        bower install sass-mediaqueries --save-dev
 
-        <div class="share-links">
-          <div class="share-bt">
-            <div class="fb-like" data-href="http://paranoida.github.com/sass-mediaqueries/" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false"></div>
-          </div>
-          <div class="share-bt">
-              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://paranoida.github.com/sass-mediaqueries" data-text="Media Queries Mixins for Sass 3.2.0+" data-via="paranoida">Tweet</a>
-              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-          </div>
-        </div>
+        <p>Or manually using curl:</p>
 
-      </header>
+          curl -O https://raw.github.com/paranoida/sass-mediaqueries/master/_media-queries.scss
 
-      <section>
-        <h3>What is it?</h3>
-        <p>Do you like Responsive Web Design? Everyone does!<br/>Here you can find a collection of useful <strong>media queries mixins</strong> (including iOS devices like iPhones and iPads) for <strong>Sass</strong></p>
+        <p>After that, at the top of your sass/scss file (ie. application.scss) add:</p>
 
-        <h3>Who did it?</h3>
-        <p>Just me - <a href="http://paranoida.com">Rafal Bromirski</a> - if you want you can follow me on <a href="https://twitter.com/paranoida">twitter</a> or check my works on <a href="http://dribbble.com/paranoida">dribbble</a>.</p>
-
-        <h3>Browser support</h3>
-        <p>Only modern browsers that support media queries.</p>
-        <hr>
-
-        <h2>How to install</h2>
-
-        <h3>Manually</h3>
-        <p>Download it or use curl:</p>
-        <pre class="prettyprint lang-sh"><code>curl -O https://raw.github.com/paranoida/sass-mediaqueries/master/_media-queries.scss</code></pre>
-
-        <h3>Or as a <a href="http://github.com/paranoida/sass-mediaqueries-rails">gem</a> in your Gemfile (inside assets group):</h3>
-        <pre class="prettyprint lang-rb"><code>group :assets do
-  ...
-  gem 'sass-mediaqueries-rails'
-end
-</code></pre>
-
-        <p>Inside your sass/scss file (ie. application.scss) add:</p>
-        <pre class="prettyprint lang-scss"><code>@import "media-queries";                   // remember about a correct path</code></pre>
-
-        <hr>
-        <h2>What you can find inside?</h2>
-
-        <pre class="prettyprint"><code>Requirements:
-  Sass 3.2.0+
-
-Version:
-  1.3                                      // developed on 14/11/2013
-
-Mixins:
-  @ min-screen(width)                      // shortcut for @media screen and (min-width ...)
-  @ max-screen(width)                      // shortcut for @media screen and (max-width ...)
-  @ screen(min-width, max-width)           // shortcut for @media screen and (min-width ...) and (max-width ...)
-  ---
-  @ min-screen-height(height)              // shortcut for @media screen and (min-height ...)
-  @ max-screen-height(height)              // shortcut for @media screen and (max-height ...)
-  @ screen-height(min-height, max-height)  // shortcut for @media screen and (min-height ...) and (max-height ...)
-  ---
-  @ iphone3                                // only iPhone (2, 3G, 3GS) landscape & portrait
-  @ iphone3(landscape)                     // only iPhone (2, 3G, 3GS) only landscape
-  @ iphone3(portrait)                      // only iPhone (2, 3G, 3GS) only portrait
-  ---
-  @ iphone4                                // only iPhone (4, 4S) landscape & portrait
-  @ iphone4(landscape)                     // only iPhone (4, 4S) only landscape
-  @ iphone4(portrait)                      // only iPhone (4, 4S) only portrait
-  ---
-  @ iphone5                                // only iPhone (5) landscape & portrait
-  @ iphone5(landscape)                     // only iPhone (5) only landscape
-  @ iphone5(portrait)                      // only iPhone (5) only portrait
-  ---
-  @ ipad                                   // all iPads (1, 2, 3, 4, Mini) landscape & portrait
-  @ ipad(landscape)                        // all iPads (1, 2, 3, 4, Mini) only landscape
-  @ ipad(portrait)                         // all iPads (1, 2, 3, 4, Mini) only portrait
-  ---
-  @ ipad-retina                            // only iPad (3, 4) landscape & portrait
-  @ ipad-retina(landscape)                 // only iPad (3, 4) only landscape
-  @ ipad-retina(portrait)                  // only iPad (3, 4) only portrait
-  ---
-  @ hdpi(ratio)                            // devices with hidpi displays (default ratio: 1.3)
-</code></pre>
-        <hr>
-        <h2>How does it work?</h2>
-        <p><strong>Important: </strong>Whenever you use screen mixins (min-screen, max-screen, screen, etc) you must use units!</p>
-
-        <h3>Example 1 - min-screen(min-width) - <a href="demo/index.html">demo</a></h3>
-        <p>It's a shortcut for <strong>@media screen and (min-width ... ) { ... }</strong>. Works great with <a href="http://www.lukew.com/ff/entry.asp?933">mobile first</a> philosophy.
-        <pre class="prettyprint lang-scss"><code>@include min-screen(320px)  { ... }
-@include min-screen(480px)  { ... }
-@include min-screen(768px)  { ... }
-@include min-screen(1024px) { ... }
-</code></pre>
-
-        <p>It will be compiled to:</p>
-        <pre class="prettyprint lang-css"><code>@media screen and (min-width: 320px)
-{
-  ...
-}
-@media screen and (min-width: 480px)
-{
-  ...
-}
-@media screen and (min-width: 768px)
-{
-  ...
-}
-@media screen and (min-width: 1024px)
-{
-  ...
-}</code></pre>
-
-        <hr>
-        <h3>Example 2 - max-screen(max-width) - <a href="demo/index.html">demo</a></h3>
-        <p>It's a shortcut for <strong>@media screen and (max-width ... ) { ... }</strong>.</p>
-        <p><strong>How to use it properly?</strong> You should start from the widest screen resolution and proceed to the narrowest one (styles are inherited from previous conditions)</p>
-        <pre class="prettyprint lang-scss"><code>@include max-screen(1024px) { ... }
-@include max-screen(768px)  { ... }
-@include max-screen(640px)  { ... }
-</code></pre>
-
-      <p>It will be compiled to:</p>
-
-      <pre class="prettyprint lang-css"><code>@media screen and (max-width: 1024px)
-{
-  ...
-}
-
-@media screen and (max-width: 768px)
-{
-  ...
-}
-
-@media screen and (max-width: 640px)
-{
-  ...
-}</code></pre>
-
-        <hr>
-        <h3>Example 3 - screen(min-width, max-width) - <a href="demo/index.html">demo</a></h3>
-        <p>You can add style rules for ranges. It could be really helpful if you want to target <strong>group of devices</strong> or just <strong>one</strong> with particular screen resolution.</p>
-        <pre class="prettyprint lang-scss"><code>@include screen(768px, 1280px) { ... }
-@include screen(320px, 640px)  { ... }
-</code></pre>
-
-      <p>It will be compiled to:</p>
-
-      <pre class="prettyprint lang-css"><code>@media screen and (min-width: 768px) and (max-width: 1280px)
-{
-  ...
-}
-
-@media screen and (min-width: 320px) and (max-width: 640px)
-{
-  ...
-}</code></pre>
-
-      <hr>
-      <h3>Example 4 - iOS devices - <a href="demo/index.html">demo</a></h3>
-      <p>You can easily manage styles for particular iOS devices:</p>
-      <pre class="prettyprint lang-scss"><code>@include ipad { ... }                     // all iPads
-@include ipad-retina { ... }              // only iPad with retina
-
-@include iphone5 { ... }                  // only iPhone 5
-@include iphone4 { ... }                  // only iPhone 4/4S
-@include iphone3 { ... }                  // only iPhone 2/3G/3GS
-</code></pre>
-
-      <hr>
-      <h3>Example 5 - device orientation - 'landscape' and 'portrait' - <a href="demo/index.html">demo</a></h3>
-      <p>Want to add extra stuff only in landscape / portrait mode? Piece of cake:</p>
-
-      <pre class="prettyprint lang-scss"><code>@include ipad-retina { ... }              // common part only for iPad (3, 4) - landscape & portrait
-@include ipad-retina(landscape) { ... }
-@include ipad-retina(portrait)  { ... }
-
-@include iphone5 { ... }                  // common part only for iPhone 5 - landscape & portrait
-@include iphone5(landscape) { ... }
-@include iphone5(portrait)  { ... }
-
-@include iphone4 { ... }                  // common part only for iPhone 4/4S - landscape & portrait
-@include iphone4(landscape) { ... }
-@include iphone4(portrait)  { ... }
-</code></pre>
-
-      <p>another one:</p>
-      <pre class="prettyprint lang-scss"><code>@include ipad(landscape) { ... }           // all iPads - landscape
-@include ipad-retina(landscape) { ... }    // only iPad (3, 4) - landscape
-
-@include iphone3(landscape) { ... }        // only iPhone 2/3G/3GS - landscape
-@include iphone4(landscape) { ... }        // only iPhone 4/4S - landscape
-@include iphone5(landscape) { ... }        // only iPhone 5 - landscape
-</code></pre>
-
-      <hr>
-      <h3>Example 6 - hdpi(ratio) - <a href="demo/index.html">demo</a></h3>
-      <pre class="prettyprint lang-scss"><code>.example
-{
-  ...
-
-  @include hdpi { ... }                   // only devices with hidpi displays (including retina)
-}</code></pre>
-
-      <p>or to narrow down:</p>
-      <pre class="prettyprint lang-scss"><code>.example
-{
-  ...
-
-  @include hdpi(2) { ... }                // only devices with retina
-}</code></pre>
-
-      <hr>
-      <h3>License:</h3>
-      <p>The MIT license</p>
-      <p>Copyright © 2013 <a href="http://paranoida.com">Rafal Bromirski</a></p>
-      <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-      <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-      <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-
-      </section>
-
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a> & improved by <a href="http://paranoida.com">Rafal Bromirski</a></small></p>
-      </footer>
-
+          @import "media-queries";
+      </div>
     </div>
+  </div>
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/prettify.js"></script>
-    <script type="text/javascript" src="javascripts/lang-scss.js"></script>
-
-    <script type="text/javascript">
-        $(function () {
-            prettyPrint();
-        });
-    </script>
-
-    <script type="text/javascript">
-       var _gaq = _gaq || [];
-       _gaq.push(['_setAccount', 'UA-21199369-7']);
-       _gaq.push(['_trackPageview']);
-
-       (function() {
-         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-       })();
-    </script>
-
-  </body>
+</body>
 </html>

@@ -1,0 +1,116 @@
+// --- imports -----------------------------------------------------------------
+
+@import
+  "compass/reset",
+  "compass/css3";
+  // "../../_media-queries";
+
+// --- variables ---------------------------------------------------------------
+
+$color-white:              #fff;
+$color-gray:               #ddd;
+$color-border:             #eee;
+
+$color-active:             #667CF0;
+
+$color-text:               #212121;
+
+$base-gutter:              10px;
+
+$res-collection:           (320, 480, 768, 1024, 1280, 1680);
+$orientation-collection:   (all, portrait, landscape);
+$iphone-collection:        (iphone3, iphone4, iphone5);
+$hdpi-collection:          (1, 2);
+$hdtv-collection:          ('720p', '1080p', '2K', '4K');
+
+// --- mixins ------------------------------------------------------------------
+
+// --- core --------------------------------------------------------------------
+
+* { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; }
+
+body
+{
+  font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  background: $color-white;
+  color: $color-text;
+  -webkit-font-smoothing: antialiased
+}
+
+hr {
+  margin: $base-gutter*6 0;
+  border: 0;
+  border-top: 1px solid $color-border;
+  border-bottom: none;
+}
+
+p {
+  padding-bottom: $base-gutter;
+}
+
+// --- core: layouts -----------------------------------------------------------
+
+.l-container {
+  max-width: 800px;
+  margin: 0 auto 100px;
+  padding: 0 $base-gutter*2;
+}
+
+// --- core: header ------------------------------------------------------------
+
+.header {
+  background: mix($color-active, $color-white, 5%);
+  margin-bottom: $base-gutter*4;
+  text-align: center;
+  padding: $base-gutter*8 0;
+
+  &__title {
+    font-size: 42px;
+    line-height: 1.5;
+  }
+
+  &__subtitle {
+    margin-bottom: $base-gutter*2;
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: $base-gutter $base-gutter*2;
+    background: mix($color-active, $color-white, 20%);
+    border-radius: 2px;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-active;
+    @include transition(background .2s);
+
+    &:hover {
+      background: mix($color-active, $color-white, 25%);
+    }
+  }
+
+  // @include mobile {
+  //   padding: $base-gutter*3;
+
+  //   &__title {
+  //     padding-top: 0;
+  //     padding-bottom: $base-gutter*2;
+  //     font-size: 28px;
+  //     line-height: 1;
+  //   }
+  // }
+}
+
+
+// --- core: section -----------------------------------------------------------
+
+.section {
+  margin-bottom: $base-gutter*4;
+
+  &__title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: $base-gutter;
+  }
+}
