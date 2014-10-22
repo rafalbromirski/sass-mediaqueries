@@ -222,13 +222,10 @@
 {
   $deviceMinWidth: 375px;
   $deviceMaxWidth: 667px;
-  $devicePixelRatio: 2;
-  $deviceAspectRatio: '40/71';
 
   @if $orientation == all
   {
     @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
-    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (device-aspect-ratio: $deviceAspectRatio)
     {
       @content;
     }
@@ -236,7 +233,34 @@
   @else
   {
     @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
-    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (device-aspect-ratio: $deviceAspectRatio) and (orientation: #{$orientation})
+    and (orientation: #{$orientation})
+    {
+      @content;
+    }
+  }
+}
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// --- iphone-6 Plus --------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+@mixin iphone6plus($orientation: all)
+{
+  $deviceMinWidth: 414px;
+  $deviceMaxWidth: 736px;
+
+  @if $orientation == all
+  {
+    @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
+    {
+      @content;
+    }
+  }
+  @else
+  {
+    @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
+    and (orientation: #{$orientation})
     {
       @content;
     }
