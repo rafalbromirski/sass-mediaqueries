@@ -36,6 +36,14 @@
 //   @ iphone5(landscape)                     // only iPhone (5) only landscape
 //   @ iphone5(portrait)                      // only iPhone (5) only portrait
 //   ---
+//   @ iphone6                                // only iPhone (6) landscape & portrait
+//   @ iphone6(landscape)                     // only iPhone (6) only landscape
+//   @ iphone6(portrait)                      // only iPhone (6) only portrait
+//   ---
+//   @ iphone6plus                            // only iPhone (6 Plus) landscape & portrait
+//   @ iphone6plus(landscape)                 // only iPhone (6 Plus) only landscape
+//   @ iphone6plus(portrait)                  // only iPhone (6 Plus) only portrait
+//   ---
 //   @ ipad                                   // all iPads (1, 2, 3, 4, Mini) landscape & portrait
 //   @ ipad(landscape)                        // all iPads (1, 2, 3, 4, Mini) only landscape
 //   @ ipad(portrait)                         // all iPads (1, 2, 3, 4, Mini) only portrait
@@ -184,6 +192,36 @@
 {
   $deviceMinWidth: 320px;
   $deviceMaxWidth: 568px;
+  $devicePixelRatio: 2;
+  $deviceAspectRatio: '40/71';
+
+  @if $orientation == all
+  {
+    @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
+    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (device-aspect-ratio: $deviceAspectRatio)
+    {
+      @content;
+    }
+  }
+  @else
+  {
+    @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
+    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (device-aspect-ratio: $deviceAspectRatio) and (orientation: #{$orientation})
+    {
+      @content;
+    }
+  }
+}
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// --- iphone-6 --------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+@mixin iphone6($orientation: all)
+{
+  $deviceMinWidth: 375px;
+  $deviceMaxWidth: 667px;
   $devicePixelRatio: 2;
   $deviceAspectRatio: '40/71';
 
