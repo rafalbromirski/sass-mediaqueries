@@ -1,5 +1,5 @@
 @import "compass/reset";
-@import "../../_media-queries";
+@import "../../media-queries";
 
 // --- content variables -----------------------------------------------------------------------------------------------
 
@@ -179,6 +179,64 @@ p.attr-iphone5-landscape
 p.attr-iphone5-portrait
 {
   @include iphone5(portrait)
+  {
+    .true  { display: inline-block;}
+    .false { display: none;}
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+p.attr-iphone6
+{
+  @include iphone6
+  {
+    .true  { display: inline-block;}
+    .false { display: none;}
+  }
+}
+
+p.attr-iphone6-landscape
+{
+  @include iphone6(landscape)
+  {
+    .true  { display: inline-block;}
+    .false { display: none;}
+  }
+}
+
+p.attr-iphone6-portrait
+{
+  @include iphone6(portrait)
+  {
+    .true  { display: inline-block;}
+    .false { display: none;}
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+p.attr-iphone6p
+{
+  @include iphone6-plus
+  {
+    .true  { display: inline-block;}
+    .false { display: none;}
+  }
+}
+
+p.attr-iphone6p-landscape
+{
+  @include iphone6-plus(landscape)
+  {
+    .true  { display: inline-block;}
+    .false { display: none;}
+  }
+}
+
+p.attr-iphone6p-portrait
+{
+  @include iphone6-plus(portrait)
   {
     .true  { display: inline-block;}
     .false { display: none;}

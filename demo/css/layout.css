@@ -50,7 +50,7 @@ a img {
   border: none;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
@@ -61,8 +61,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   font: 12px Helvetica, Arial, sans-serif;
-  background: white;
-  color: #444444;
+  background: #fff;
+  color: #444;
 }
 
 .content {
@@ -212,6 +212,60 @@ p[class*="attr"] .true {
     display: inline-block;
   }
   p.attr-iphone5-portrait .false {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) {
+  p.attr-iphone6 .true {
+    display: inline-block;
+  }
+  p.attr-iphone6 .false {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+  p.attr-iphone6-landscape .true {
+    display: inline-block;
+  }
+  p.attr-iphone6-landscape .false {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+  p.attr-iphone6-portrait .true {
+    display: inline-block;
+  }
+  p.attr-iphone6-portrait .false {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) {
+  p.attr-iphone6p .true {
+    display: inline-block;
+  }
+  p.attr-iphone6p .false {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+  p.attr-iphone6p-landscape .true {
+    display: inline-block;
+  }
+  p.attr-iphone6p-landscape .false {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  p.attr-iphone6p-portrait .true {
+    display: inline-block;
+  }
+  p.attr-iphone6p-portrait .false {
     display: none;
   }
 }

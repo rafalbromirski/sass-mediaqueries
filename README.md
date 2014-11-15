@@ -26,15 +26,11 @@ Download it or use `curl`:
 curl -O https://raw.githubusercontent.com/paranoida/sass-mediaqueries/master/_media-queries.scss
 ```
 
-### Or as a [gem](http://github.com/paranoida/sass-mediaqueries-rails) in your Gemfile (inside assets group):
+### Bower
 
 ```
-group :assets do
-	...
-	gem 'sass-mediaqueries-rails'
-end
+bower install sass-mediaqueries --save-dev
 ```
-
 
 Inside your sass/scss file (ie. `application.scss`) add:
 
@@ -50,7 +46,7 @@ Requirements:
   Sass 3.2.0+
 
 Version:
-  1.3                                      // developed on 14/11/2013
+  1.4                                      // developed on 15/11/2014
 
 Mixins:
   @ min-screen(width)                      // shortcut for @media screen and (min-width ...)
@@ -72,6 +68,14 @@ Mixins:
   @ iphone5                                // only iPhone (5) landscape & portrait
   @ iphone5(landscape)                     // only iPhone (5) only landscape
   @ iphone5(portrait)                      // only iPhone (5) only portrait
+  ---
+  @ iphone6                                // only iPhone (6) landscape & portrait
+  @ iphone6(landscape)                     // only iPhone (6) only landscape
+  @ iphone6(portrait)                      // only iPhone (6) only portrait
+  ---
+  @ iphone6-plus                           // only iPhone (6 Plus) landscape & portrait
+  @ iphone6-plus(landscape)                // only iPhone (6 Plus) only landscape
+  @ iphone6-plus(portrait)                 // only iPhone (6 Plus) only portrait
   ---
   @ ipad                                   // all iPads (1, 2, 3, 4, Mini) landscape & portrait
   @ ipad(landscape)                        // all iPads (1, 2, 3, 4, Mini) only landscape
