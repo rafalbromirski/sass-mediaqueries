@@ -6,51 +6,203 @@
     <meta name="description" content="Do you like Responsive Web Design? Everyone does! Here you can find a collection of useful media queries mixins for Sass.">
     <meta name="author" content="Rafal Bromirski">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="application.css">
 </head>
 <body>
+  <header class="header">
+    <h2 class="header__title">Sass MediaQueries - demo</h2>
+    <h3 class="header__subtitle">(resize your window to play with different mixins)</h3>
+    <a href="https://github.com/paranoida/sass-mediaqueries" class="header__btn" target="_blank">read more</a>
+  </header>
 
-<!-- content -->
-<div class="content">
-    <h1>(Resize Me!)</h1>
-    <hr>
-    <p class="attr-min-width">Min Screen Width: <span class="min-width-320">320</span><span class="min-width-480">480</span><span class="min-width-768">768</span><span class="min-width-1024">1024</span><span class="min-width-1200">1200</span><span class="min-width-1400">1400</span><span class="min-width-1600">1600</span></p>
-    <p class="attr-max-width">Max Screen Width: <span class="max-width-320">320</span><span class="max-width-480">480</span><span class="max-width-768">768</span><span class="max-width-1024">1024</span><span class="max-width-1200">1200</span><span class="max-width-1400">1400</span><span class="max-width-1600">1600</span></p>
-    <hr>
-    <p class="attr-min-screen-height">Min Screen Height: <span class="min-screen-height-320">320</span><span class="min-screen-height-480">480</span><span class="min-screen-height-768">768</span><span class="min-screen-height-1024">1024</span><span class="min-screen-height-1200">1200</span><span class="min-screen-height-1400">1400</span><span class="min-screen-height-1600">1600</span></p>
-    <p class="attr-max-screen-height">Max Screen Height: <span class="max-screen-height-320">320</span><span class="max-screen-height-480">480</span><span class="max-screen-height-768">768</span><span class="max-screen-height-1024">1024</span><span class="max-screen-height-1200">1200</span><span class="max-screen-height-1400">1400</span><span class="max-screen-height-1600">1600</span></p>
-    <hr>
-    <p class="attr-hdpi">hidpi: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <hr>
-    <p class="attr-iphone3">iPhone 3: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <p class="attr-iphone3-landscape">iPhone 3 Landscape: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <p class="attr-iphone3-portrait">iPhone 3 Portrait: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <hr>
-    <p class="attr-iphone4">iPhone 4: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <p class="attr-iphone4-landscape">iPhone 4 Landscape: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <p class="attr-iphone4-portrait">iPhone 4 Portrait: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <hr>
-    <p class="attr-iphone5">iPhone 5: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <p class="attr-iphone5-landscape">iPhone 5 Landscape: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <p class="attr-iphone5-portrait">iPhone 5 Portrait: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <hr>
-    <p class="attr-iphone6">iPhone 6: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <p class="attr-iphone6-landscape">iPhone 6 Landscape: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <p class="attr-iphone6-portrait">iPhone 6 Portrait: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <hr>
-    <p class="attr-iphone6p">iPhone 6 Plus: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <p class="attr-iphone6p-landscape">iPhone 6 Plus Landscape: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <p class="attr-iphone6p-portrait">iPhone 6 Plus Portrait: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <hr>
-    <p class="attr-ipad">iPad: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <p class="attr-ipad-landscape">iPad Landscape: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <p class="attr-ipad-portrait">iPad Portrait: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <hr>
-    <p class="attr-ipad-retina">iPad Retina: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <p class="attr-ipad-retina-landscape">iPad Retina Landscape: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-    <p class="attr-ipad-retina-portrait">iPad Retina Portrait: <span class="true">TRUE</span><span class="false">FALSE</span></p>
-</div>
-<!-- end -->
+  <div class="l-container">
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">min-screen</h3>
+      </div>
+      <div class="section__body">
+        <ul class="switch">
+          <li class="switch__item switch__item--min-320">320px</li>
+          <li class="switch__item switch__item--min-480">480px</li>
+          <li class="switch__item switch__item--min-768">768px</li>
+          <li class="switch__item switch__item--min-1024">1024px</li>
+          <li class="switch__item switch__item--min-1280">1280px</li>
+          <li class="switch__item switch__item--min-1680">1680px</li>
+        </ul>
+      </div>
+    </div>
 
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">max-screen</h3>
+      </div>
+      <div class="section__body">
+        <ul class="switch">
+          <li class="switch__item switch__item--max-320">320px</li>
+          <li class="switch__item switch__item--max-480">480px</li>
+          <li class="switch__item switch__item--max-768">768px</li>
+          <li class="switch__item switch__item--max-1024">1024px</li>
+          <li class="switch__item switch__item--max-1280">1280px</li>
+          <li class="switch__item switch__item--max-1680">1680px</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">min-screen-height</h3>
+      </div>
+      <div class="section__body">
+        <ul class="switch">
+          <li class="switch__item switch__item--min-height-320">320px</li>
+          <li class="switch__item switch__item--min-height-480">480px</li>
+          <li class="switch__item switch__item--min-height-768">768px</li>
+          <li class="switch__item switch__item--min-height-1024">1024px</li>
+          <li class="switch__item switch__item--min-height-1280">1280px</li>
+          <li class="switch__item switch__item--min-height-1680">1680px</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">max-screen-height</h3>
+      </div>
+      <div class="section__body">
+        <ul class="switch">
+          <li class="switch__item switch__item--max-height-320">320px</li>
+          <li class="switch__item switch__item--max-height-480">480px</li>
+          <li class="switch__item switch__item--max-height-768">768px</li>
+          <li class="switch__item switch__item--max-height-1024">1024px</li>
+          <li class="switch__item switch__item--max-height-1280">1280px</li>
+          <li class="switch__item switch__item--max-height-1680">1680px</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">hdpi</h3>
+      </div>
+      <div class="section__body">
+        <ul class="switch">
+          <li class="switch__item switch__item--hdpi-1">hdpi 1.0</li>
+          <li class="switch__item switch__item--hdpi-2">hdpi 2.0</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">iPhone3</h3>
+      </div>
+      <div class="section__body">
+        <ul class="switch">
+          <li class="switch__item switch__item--iphone3-all">iPhone3</li>
+          <li class="switch__item switch__item--iphone3-landscape">landscape</li>
+          <li class="switch__item switch__item--iphone3-portrait">portrait</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">iPhone4</h3>
+      </div>
+      <div class="section__body">
+        <ul class="switch">
+          <li class="switch__item switch__item--iphone4-all">iPhone4</li>
+          <li class="switch__item switch__item--iphone4-landscape">landscape</li>
+          <li class="switch__item switch__item--iphone4-portrait">portrait</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">iPhone5</h3>
+      </div>
+      <div class="section__body">
+        <ul class="switch">
+          <li class="switch__item switch__item--iphone5-all">iPhone5</li>
+          <li class="switch__item switch__item--iphone5-landscape">landscape</li>
+          <li class="switch__item switch__item--iphone5-portrait">portrait</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">iPhone6</h3>
+      </div>
+      <div class="section__body">
+        <ul class="switch">
+          <li class="switch__item switch__item--iphone6-all">iPhone6</li>
+          <li class="switch__item switch__item--iphone6-landscape">landscape</li>
+          <li class="switch__item switch__item--iphone6-portrait">portrait</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">iPhone6 Plus</h3>
+      </div>
+      <div class="section__body">
+        <ul class="switch">
+          <li class="switch__item switch__item--iphone6-plus-all">iPhone6 Plus</li>
+          <li class="switch__item switch__item--iphone6-plus-landscape">landscape</li>
+          <li class="switch__item switch__item--iphone6-plus-portrait">portrait</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">iPad</h3>
+      </div>
+      <div class="section__body">
+        <ul class="switch">
+          <li class="switch__item switch__item--ipad-all">ipad</li>
+          <li class="switch__item switch__item--ipad-landscape">landscape</li>
+          <li class="switch__item switch__item--ipad-portrait">portrait</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">iPad Retina</h3>
+      </div>
+      <div class="section__body">
+        <ul class="switch">
+          <li class="switch__item switch__item--ipad-retina-all">ipad-retina</li>
+          <li class="switch__item switch__item--ipad-retina-landscape">landscape</li>
+          <li class="switch__item switch__item--ipad-retina-portrait">portrait</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">hdtv (beta)</h3>
+      </div>
+      <div class="section__body">
+        <ul class="switch">
+          <li class="switch__item switch__item--hdtv-720p">720p</li>
+          <li class="switch__item switch__item--hdtv-1080p">1080p</li>
+          <li class="switch__item switch__item--hdtv-2k">2K</li>
+          <li class="switch__item switch__item--hdtv-4k">4K</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
