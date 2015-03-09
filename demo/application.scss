@@ -146,6 +146,46 @@ hr {
 
   // --- screen
 
+  &__item--#{nth($res-collection, 1)}-#{nth($res-collection, 2)} {
+    @include screen(nth($res-collection, 1)*1px, nth($res-collection, 2)*1px) {
+      @include active-state;
+    }
+  }
+
+  &__item--#{nth($res-collection, 3)}-#{nth($res-collection, 4)} {
+    @include screen(nth($res-collection, 3)*1px, nth($res-collection, 4)*1px) {
+      @include active-state;
+    }
+  }
+
+  &__item--#{nth($res-collection, 5)}-#{nth($res-collection, 6)} {
+    @include screen(nth($res-collection, 5)*1px, nth($res-collection, 6)*1px) {
+      @include active-state;
+    }
+  }
+
+  // --- screen-height
+
+  &__item--height-#{nth($res-collection, 1)}-#{nth($res-collection, 2)} {
+    @include screen-height(nth($res-collection, 1)*1px, nth($res-collection, 2)*1px) {
+      @include active-state;
+    }
+  }
+
+  &__item--height-#{nth($res-collection, 3)}-#{nth($res-collection, 4)} {
+    @include screen-height(nth($res-collection, 3)*1px, nth($res-collection, 4)*1px) {
+      @include active-state;
+    }
+  }
+
+  &__item--height-#{nth($res-collection, 5)}-#{nth($res-collection, 6)} {
+    @include screen-height(nth($res-collection, 5)*1px, nth($res-collection, 6)*1px) {
+      @include active-state;
+    }
+  }
+
+  // --- screen - others
+
   @each $res in $res-collection {
     &__item--min-#{$res} {
       @include min-screen($res*1px) {
