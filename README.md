@@ -3,7 +3,7 @@
 It's a collection of useful **Media Queries** mixins for **Sass** (including iOS devices, TVs and more). Fully customizable and very easy to use.
 
 #### Online: <http://paranoida.github.com/sass-mediaqueries>
-#### Demo: <http://paranoida.github.com/sass-mediaqueries/demo>
+#### Demo: <http://paranoida.github.com/sass-mediaqueries/demo.html>
 
 ### How to install:
 
@@ -16,7 +16,7 @@ It's a collection of useful **Media Queries** mixins for **Sass** (including iOS
 	Or manually using **curl**:
 
 	```
-	curl -O https://raw.github.com/paranoida/sass-mediaqueries/master/_media-queries.scss
+	curl -O https://raw.githubusercontent.com/paranoida/sass-mediaqueries/master/_media-queries.scss
 	```
 
 2. After that, at the top of your sass/scss file (ie. `application.scss`) add:
