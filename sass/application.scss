@@ -2,28 +2,30 @@
 
 @import
   "compass/reset",
-  "compass/css3";
-  // "../../_media-queries";
+  "compass/css3",
+  "vendor/media-queries",
+  "vendor/prettify";
 
 // --- variables ---------------------------------------------------------------
 
 $color-white:              #fff;
 $color-gray:               #ddd;
 $color-border:             #eee;
-
-$color-active:             #667CF0;
-
+$color-primary:            #667CF0;
 $color-text:               #212121;
 
-$base-gutter:              10px;
+$base-gap:                 10px;
 
-$res-collection:           (320, 480, 768, 1024, 1280, 1680);
-$orientation-collection:   (all, portrait, landscape);
-$iphone-collection:        (iphone3, iphone4, iphone5);
-$hdpi-collection:          (1, 2);
-$hdtv-collection:          ('720p', '1080p', '2K', '4K');
+$mq-mobile:                768px;
+$mq-tablet:                1024px;
 
-// --- mixins ------------------------------------------------------------------
+// --- placeholders ------------------------------------------------------------
+
+%container {
+  max-width: 800px;
+  margin: 0 auto 100px;
+  padding: 0 $base-gap*2;
+}
 
 // --- core --------------------------------------------------------------------
 
@@ -39,31 +41,34 @@ body
 }
 
 hr {
-  margin: $base-gutter*6 0;
+  margin: $base-gap*6 0;
   border: 0;
   border-top: 1px solid $color-border;
   border-bottom: none;
 }
 
 p {
-  padding-bottom: $base-gutter;
+  margin: $base-gap 0;
+}
+
+strong {
+  font-weight: bold;
 }
 
 // --- core: layouts -----------------------------------------------------------
 
 .l-container {
-  max-width: 800px;
-  margin: 0 auto 100px;
-  padding: 0 $base-gutter*2;
+  @extend %container;
 }
 
 // --- core: header ------------------------------------------------------------
 
 .header {
-  background: mix($color-active, $color-white, 5%);
-  margin-bottom: $base-gutter*4;
+  background: $color-primary;
+  color: $color-white;
+  margin-bottom: $base-gap*4;
   text-align: center;
-  padding: $base-gutter*8 0;
+  padding: $base-gap*8 0;
 
   &__title {
     font-size: 42px;
@@ -71,46 +76,57 @@ p {
   }
 
   &__subtitle {
-    margin-bottom: $base-gutter*2;
+    margin-bottom: $base-gap*2;
   }
 
   &__btn {
     display: inline-block;
-    padding: $base-gutter $base-gutter*2;
-    background: mix($color-active, $color-white, 20%);
+    padding: $base-gap $base-gap*2;
+    background: mix($color-primary, #000, 40%);
     border-radius: 2px;
     font-size: 12px;
     text-transform: uppercase;
     text-decoration: none;
-    color: $color-active;
+    color: $color-white;
     @include transition(background .2s);
 
     &:hover {
-      background: mix($color-active, $color-white, 25%);
+      background: mix($color-primary, #000, 20%);
     }
   }
 
-  // @include mobile {
-  //   padding: $base-gutter*3;
+  @include max-screen($mq-mobile) {
+    padding: $base-gap*3;
 
-  //   &__title {
-  //     padding-top: 0;
-  //     padding-bottom: $base-gutter*2;
-  //     font-size: 28px;
-  //     line-height: 1;
-  //   }
-  // }
+    &__title {
+      padding-top: 0;
+      padding-bottom: $base-gap*2;
+      font-size: 28px;
+      line-height: 1;
+    }
+  }
 }
 
+// --- core: footer ------------------------------------------------------------
+
+.footer {
+  @extend %container;
+  font-size: 12px;
+  font-weight: normal;
+}
 
 // --- core: section -----------------------------------------------------------
 
 .section {
-  margin-bottom: $base-gutter*4;
+  margin-bottom: $base-gap*4;
 
   &__title {
     font-size: 24px;
     text-align: center;
-    margin-bottom: $base-gutter;
+    padding-bottom: $base-gap;
+  }
+
+  &__body {
+    padding: $base-gap 0;
   }
 }
