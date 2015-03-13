@@ -55,6 +55,10 @@ strong {
   font-weight: bold;
 }
 
+pre {
+  overflow: auto;
+}
+
 // --- core: layouts -----------------------------------------------------------
 
 .l-container {
@@ -68,7 +72,7 @@ strong {
   color: $color-white;
   margin-bottom: $base-gap*4;
   text-align: center;
-  padding: $base-gap*8 0;
+  padding: $base-gap*8 0 $base-gap*6;
 
   &__title {
     font-size: 42px;
@@ -88,11 +92,23 @@ strong {
     text-transform: uppercase;
     text-decoration: none;
     color: $color-white;
+    margin-bottom: $base-gap/2;
     @include transition(background .2s);
 
     &:hover {
       background: mix($color-primary, #000, 20%);
     }
+  }
+
+  &__links {
+    height: 30px;
+    margin-top: $base-gap*3;
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 $base-gap/2;
   }
 
   @include max-screen($mq-mobile) {

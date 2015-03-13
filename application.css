@@ -179,6 +179,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* Style */
 pre.prettyprint {
   background: #2d2d2d;
+  color: #f0f0f0;
   font-family: Menlo, Monaco, Consolas, monospace;
   font-size: 12px;
   line-height: 1.5;
@@ -249,12 +250,16 @@ strong {
   font-weight: bold;
 }
 
+pre {
+  overflow: auto;
+}
+
 .header {
   background: #667CF0;
   color: #fff;
   margin-bottom: 40px;
   text-align: center;
-  padding: 80px 0;
+  padding: 80px 0 60px;
 }
 .header__title {
   font-size: 42px;
@@ -272,6 +277,7 @@ strong {
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
+  margin-bottom: 5px;
   -moz-transition: background 0.2s;
   -o-transition: background 0.2s;
   -webkit-transition: background 0.2s;
@@ -279,6 +285,15 @@ strong {
 }
 .header__btn:hover {
   background: #141830;
+}
+.header__links {
+  height: 30px;
+  margin-top: 30px;
+}
+.header__link {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 5px;
 }
 @media screen and (max-width: 768px) {
   .header {
