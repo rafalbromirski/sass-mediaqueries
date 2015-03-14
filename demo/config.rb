@@ -3,6 +3,6 @@ dir = File.dirname(__FILE__)
 
 # Compass configurations
 sass_path    = dir
-css_path     = File.join(dir, "..", "css")
+css_path     = dir
 environment  = :production
 output_style = :expanded

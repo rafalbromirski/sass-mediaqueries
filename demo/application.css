@@ -1,0 +1,637 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+.l-container, .footer {
+  max-width: 800px;
+  margin: 0 auto 100px;
+  padding: 0 20px;
+}
+
+* {
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+
+body {
+  font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  background: #fff;
+  color: #212121;
+  -webkit-font-smoothing: antialiased;
+}
+
+hr {
+  margin: 60px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: none;
+}
+
+p {
+  margin: 10px 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+pre {
+  overflow: auto;
+}
+
+a {
+  color: #667CF0;
+  font-weight: bold;
+}
+
+.header {
+  background: #667CF0;
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+  padding: 80px 0 60px;
+}
+.header__title {
+  font-size: 42px;
+  line-height: 1.5;
+}
+.header__subtitle {
+  margin-bottom: 20px;
+}
+.header__btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #283160;
+  border-radius: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 5px;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+.header__btn:hover {
+  background: #141830;
+}
+.header__links {
+  height: 30px;
+  margin-top: 30px;
+}
+.header__link {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 5px;
+}
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 30px;
+  }
+  .header__title {
+    padding-top: 0;
+    padding-bottom: 20px;
+    font-size: 28px;
+    line-height: 1;
+  }
+}
+
+.footer {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+.section__title {
+  font-size: 24px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.section__body {
+  padding: 10px 0;
+}
+
+.switch {
+  text-align: center;
+}
+.switch__item {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: background 0.2s, color 0.2s;
+  -o-transition: background 0.2s, color 0.2s;
+  -webkit-transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+  padding: 15px;
+  margin: 5px;
+  border: 1px solid #eaeaea;
+  color: #ddd;
+  min-width: 100px;
+  text-align: center;
+  border-radius: 2px;
+}
+@media screen and (max-width: 768px) {
+  .switch__item {
+    width: 100%;
+    display: block;
+    margin: 0 0 5px 0;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .switch__item--320-480 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .switch__item--768-1024 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1680px) {
+  .switch__item--1280-1680 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 320px) and (max-height: 480px) {
+  .switch__item--height-320-480 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 768px) and (max-height: 1024px) {
+  .switch__item--height-768-1024 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 1280px) and (max-height: 1680px) {
+  .switch__item--height-1280-1680 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-width: 320px) {
+  .switch__item--min-320 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (max-width: 320px) {
+  .switch__item--max-320 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 320px) {
+  .switch__item--min-height-320 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 320px) {
+  .switch__item--min-height-320 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (max-height: 320px) {
+  .switch__item--max-height-320 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-width: 480px) {
+  .switch__item--min-480 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (max-width: 480px) {
+  .switch__item--max-480 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 480px) {
+  .switch__item--min-height-480 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 480px) {
+  .switch__item--min-height-480 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (max-height: 480px) {
+  .switch__item--max-height-480 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-width: 768px) {
+  .switch__item--min-768 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (max-width: 768px) {
+  .switch__item--max-768 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 768px) {
+  .switch__item--min-height-768 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 768px) {
+  .switch__item--min-height-768 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (max-height: 768px) {
+  .switch__item--max-height-768 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .switch__item--min-1024 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .switch__item--max-1024 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 1024px) {
+  .switch__item--min-height-1024 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 1024px) {
+  .switch__item--min-height-1024 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (max-height: 1024px) {
+  .switch__item--max-height-1024 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .switch__item--min-1280 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .switch__item--max-1280 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 1280px) {
+  .switch__item--min-height-1280 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 1280px) {
+  .switch__item--min-height-1280 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (max-height: 1280px) {
+  .switch__item--max-height-1280 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-width: 1680px) {
+  .switch__item--min-1680 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (max-width: 1680px) {
+  .switch__item--max-1680 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 1680px) {
+  .switch__item--min-height-1680 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (min-height: 1680px) {
+  .switch__item--min-height-1680 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (max-height: 1680px) {
+  .switch__item--max-height-1680 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (-o-min-device-pixel-ratio: 1 / 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
+  .switch__item--hdpi-1 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .switch__item--hdpi-2 {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) {
+  .switch__item--iphone3-all {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
+  .switch__item--iphone4-all {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) {
+  .switch__item--iphone5-all {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .switch__item--iphone6-all {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) {
+  .switch__item--iphone6-plus-all {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .switch__item--ipad-all {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) {
+  .switch__item--ipad-retina-all {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) and (orientation: portrait) {
+  .switch__item--iphone3-portrait {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) and (orientation: portrait) {
+  .switch__item--iphone4-portrait {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: portrait) {
+  .switch__item--iphone5-portrait {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+  .switch__item--iphone6-portrait {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  .switch__item--iphone6-plus-portrait {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .switch__item--ipad-portrait {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+  .switch__item--ipad-retina-portrait {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) and (orientation: landscape) {
+  .switch__item--iphone3-landscape {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) and (orientation: landscape) {
+  .switch__item--iphone4-landscape {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: landscape) {
+  .switch__item--iphone5-landscape {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+  .switch__item--iphone6-landscape {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+  .switch__item--iphone6-plus-landscape {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .switch__item--ipad-landscape {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+  .switch__item--ipad-retina-landscape {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 1280px) and (min-device-height: 720px) and (min-width: 1280px) and (min-height: 720px) {
+  .switch__item--hdtv-720p {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 1920px) and (min-device-height: 1080px) and (min-width: 1920px) and (min-height: 1080px) {
+  .switch__item--hdtv-1080p {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 2048px) and (min-device-height: 1080px) and (min-width: 2048px) and (min-height: 1080px) {
+  .switch__item--hdtv-2k {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media only screen and (min-device-width: 4096px) and (min-device-height: 2160px) and (min-width: 4096px) and (min-height: 2160px) {
+  .switch__item--hdtv-4k {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}

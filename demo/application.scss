@@ -1,0 +1,330 @@
+// --- imports -----------------------------------------------------------------
+
+@import
+  "compass/reset",
+  "compass/css3",
+  "../media-queries";
+
+// --- variables ---------------------------------------------------------------
+
+$color-white:              #fff;
+$color-gray:               #ddd;
+$color-border:             #eee;
+$color-primary:            #667CF0;
+$color-text:               #212121;
+
+$base-gap:                 10px;
+
+$res-collection:           (320, 480, 768, 1024, 1280, 1680);
+$orientation-collection:   (all, portrait, landscape);
+$hdpi-collection:          (1, 2);
+$hdtv-collection:          ('720p', '1080p', '2K', '4K');
+
+$mq-mobile:                768px;
+$mq-tablet:                1024px;
+
+// --- placeholders ------------------------------------------------------------
+
+%container {
+  max-width: 800px;
+  margin: 0 auto 100px;
+  padding: 0 $base-gap*2;
+}
+
+// --- mixins ------------------------------------------------------------------
+
+@mixin active-state {
+  background: $color-primary;
+  border-color: $color-primary;
+  color: $color-white;
+}
+
+// --- core --------------------------------------------------------------------
+
+* { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; }
+
+body
+{
+  font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  background: $color-white;
+  color: $color-text;
+  -webkit-font-smoothing: antialiased
+}
+
+hr {
+  margin: $base-gap*6 0;
+  border: 0;
+  border-top: 1px solid $color-border;
+  border-bottom: none;
+}
+
+p {
+  margin: $base-gap 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+pre {
+  overflow: auto;
+}
+
+a {
+  color: $color-primary;
+  font-weight: bold;
+}
+
+// --- core: layouts -----------------------------------------------------------
+
+.l-container {
+  @extend %container;
+}
+
+// --- core: header ------------------------------------------------------------
+
+.header {
+  background: $color-primary;
+  color: $color-white;
+  margin-bottom: $base-gap*4;
+  text-align: center;
+  padding: $base-gap*8 0 $base-gap*6;
+
+  &__title {
+    font-size: 42px;
+    line-height: 1.5;
+  }
+
+  &__subtitle {
+    margin-bottom: $base-gap*2;
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: $base-gap $base-gap*2;
+    background: mix($color-primary, #000, 40%);
+    border-radius: 2px;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-white;
+    margin-bottom: $base-gap/2;
+    @include transition(background .2s);
+
+    &:hover {
+      background: mix($color-primary, #000, 20%);
+    }
+  }
+
+  &__links {
+    height: 30px;
+    margin-top: $base-gap*3;
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 $base-gap/2;
+  }
+
+  @include max-screen($mq-mobile) {
+    padding: $base-gap*3;
+
+    &__title {
+      padding-top: 0;
+      padding-bottom: $base-gap*2;
+      font-size: 28px;
+      line-height: 1;
+    }
+  }
+}
+
+// --- core: footer ------------------------------------------------------------
+
+.footer {
+  @extend %container;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+// --- core: section -----------------------------------------------------------
+
+.section {
+  margin-bottom: $base-gap*4;
+
+  &__title {
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: $base-gap;
+  }
+
+  &__body {
+    padding: $base-gap 0;
+  }
+}
+
+// --- core: switch ------------------------------------------------------------
+
+.switch {
+  text-align: center;
+
+  &__item {
+    @include box-sizing(border-box);
+    @include transition(background .2s, color .2s);
+    display: inline-block;
+    padding: $base-gap*1.5;
+    margin: $base-gap/2;
+    border: 1px solid lighten($color-gray, 5%);
+    color: $color-gray;
+    min-width: 100px;
+    text-align: center;
+    border-radius: 2px;
+
+    @include max-screen($mq-mobile) {
+      width: 100%;
+      display: block;
+      margin: 0 0 $base-gap/2 0;
+    }
+  }
+
+  // --- screen
+
+  &__item--#{nth($res-collection, 1)}-#{nth($res-collection, 2)} {
+    @include screen(nth($res-collection, 1)*1px, nth($res-collection, 2)*1px) {
+      @include active-state;
+    }
+  }
+
+  &__item--#{nth($res-collection, 3)}-#{nth($res-collection, 4)} {
+    @include screen(nth($res-collection, 3)*1px, nth($res-collection, 4)*1px) {
+      @include active-state;
+    }
+  }
+
+  &__item--#{nth($res-collection, 5)}-#{nth($res-collection, 6)} {
+    @include screen(nth($res-collection, 5)*1px, nth($res-collection, 6)*1px) {
+      @include active-state;
+    }
+  }
+
+  // --- screen-height
+
+  &__item--height-#{nth($res-collection, 1)}-#{nth($res-collection, 2)} {
+    @include screen-height(nth($res-collection, 1)*1px, nth($res-collection, 2)*1px) {
+      @include active-state;
+    }
+  }
+
+  &__item--height-#{nth($res-collection, 3)}-#{nth($res-collection, 4)} {
+    @include screen-height(nth($res-collection, 3)*1px, nth($res-collection, 4)*1px) {
+      @include active-state;
+    }
+  }
+
+  &__item--height-#{nth($res-collection, 5)}-#{nth($res-collection, 6)} {
+    @include screen-height(nth($res-collection, 5)*1px, nth($res-collection, 6)*1px) {
+      @include active-state;
+    }
+  }
+
+  // --- screen - others
+
+  @each $res in $res-collection {
+    &__item--min-#{$res} {
+      @include min-screen($res*1px) {
+        @include active-state;
+      }
+    }
+
+    &__item--max-#{$res} {
+      @include max-screen($res*1px) {
+        @include active-state;
+      }
+    }
+
+    &__item--min-height-#{$res} {
+      @include min-screen-height($res*1px) {
+        @include active-state;
+      }
+    }
+
+    &__item--min-height-#{$res} {
+      @include min-screen-height($res*1px) {
+        @include active-state;
+      }
+    }
+
+    &__item--max-height-#{$res} {
+      @include max-screen-height($res*1px) {
+        @include active-state;
+      }
+    }
+  }
+
+  // --- hdpi
+
+  @each $dpi in $hdpi-collection {
+    &__item--hdpi-#{$dpi} {
+      @include hdpi($dpi) {
+        @include active-state;
+      }
+    }
+  }
+
+  // --- "i" devices
+
+  @each $o in $orientation-collection {
+    &__item--iphone3-#{$o} {
+      @include iphone3($o) {
+        @include active-state;
+      }
+    }
+
+    &__item--iphone4-#{$o} {
+      @include iphone4($o) {
+        @include active-state;
+      }
+    }
+
+    &__item--iphone5-#{$o} {
+      @include iphone5($o) {
+        @include active-state;
+      }
+    }
+
+    &__item--iphone6-#{$o} {
+      @include iphone6($o) {
+        @include active-state;
+      }
+    }
+
+    &__item--iphone6-plus-#{$o} {
+      @include iphone6-plus($o) {
+        @include active-state;
+      }
+    }
+
+    &__item--ipad-#{$o} {
+      @include ipad($o) {
+        @include active-state;
+      }
+    }
+
+    &__item--ipad-retina-#{$o} {
+      @include ipad-retina($o) {
+        @include active-state;
+      }
+    }
+  }
+
+  // --- hdtv
+
+  @each $tv in $hdtv-collection {
+    &__item--hdtv-#{to-lower-case($tv)} {
+      @include hdtv($tv) {
+        @include active-state;
+      }
+    }
+  }
+}
