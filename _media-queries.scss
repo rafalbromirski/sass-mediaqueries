@@ -80,12 +80,12 @@
 
 // --- hdtv --------------------------------------------------------------------
 
-@mixin hdtv($standard: '1080p') {
+@mixin hdtv($standard: '1080') {
   $device-min-width: false;
   $device-min-height: false;
 
   $standards: ('720p', 1280px, 720px)
-              ('1080p', 1920px, 1080px)
+              ('1080', 1920px, 1080px)
               ('2K', 2048px, 1080px)
               ('4K', 4096px, 2160px);
 
