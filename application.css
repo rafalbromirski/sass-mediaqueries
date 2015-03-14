@@ -254,6 +254,11 @@ pre {
   overflow: auto;
 }
 
+a {
+  color: #667CF0;
+  font-weight: bold;
+}
+
 .header {
   background: #667CF0;
   color: #fff;
@@ -326,7 +331,6 @@ pre {
 
 .switch {
   text-align: center;
-  padding: 10px 0;
 }
 .switch__item {
   -moz-box-sizing: border-box;

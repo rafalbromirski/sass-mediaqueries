@@ -19,7 +19,7 @@ It's a collection of useful **Media Queries** mixins for **Sass** (including iOS
 	curl -O https://raw.githubusercontent.com/paranoida/sass-mediaqueries/master/_media-queries.scss
 	```
 
-2. After that, at the top of your sass/scss file (ie. `application.scss`) add:
+2. Then, at the top of your sass/scss file (ie. `application.scss`) add:
 
 	```scss
 	@import "media-queries";

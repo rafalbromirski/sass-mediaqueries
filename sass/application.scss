@@ -72,6 +72,11 @@ pre {
   overflow: auto;
 }
 
+a {
+  color: $color-primary;
+  font-weight: bold;
+}
+
 // --- core: layouts -----------------------------------------------------------
 
 .l-container {
@@ -164,7 +169,6 @@ pre {
 
 .switch {
   text-align: center;
-  padding: $base-gap 0;
 
   &__item {
     @include box-sizing(border-box);
