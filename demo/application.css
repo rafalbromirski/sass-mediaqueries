@@ -54,6 +54,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+.l-container, .footer {
+  max-width: 800px;
+  margin: 0 auto 100px;
+  padding: 0 20px;
+}
+
 * {
   -webkit-text-size-adjust: none;
   -ms-text-size-adjust: none;
@@ -74,10 +80,21 @@ hr {
   border-bottom: none;
 }
 
-.l-container {
-  max-width: 800px;
-  margin: 0 auto 100px;
-  padding: 0 20px;
+p {
+  margin: 10px 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+pre {
+  overflow: auto;
+}
+
+a {
+  color: #667CF0;
+  font-weight: bold;
 }
 
 .header {
@@ -85,7 +102,7 @@ hr {
   color: #fff;
   margin-bottom: 40px;
   text-align: center;
-  padding: 80px 0;
+  padding: 80px 0 60px;
 }
 .header__title {
   font-size: 42px;
@@ -97,19 +114,29 @@ hr {
 .header__btn {
   display: inline-block;
   padding: 10px 20px;
-  background: #e0e4fc;
+  background: #283160;
   border-radius: 2px;
   font-size: 12px;
   text-transform: uppercase;
   text-decoration: none;
-  color: #667CF0;
+  color: #fff;
+  margin-bottom: 5px;
   -moz-transition: background 0.2s;
   -o-transition: background 0.2s;
   -webkit-transition: background 0.2s;
   transition: background 0.2s;
 }
 .header__btn:hover {
-  background: #d8defb;
+  background: #141830;
+}
+.header__links {
+  height: 30px;
+  margin-top: 30px;
+}
+.header__link {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 5px;
 }
 @media screen and (max-width: 768px) {
   .header {
@@ -123,18 +150,25 @@ hr {
   }
 }
 
+.footer {
+  font-size: 12px;
+  font-weight: normal;
+}
+
 .section {
   margin-bottom: 40px;
 }
 .section__title {
   font-size: 24px;
   text-align: center;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.section__body {
+  padding: 10px 0;
 }
 
 .switch {
   text-align: center;
-  padding: 10px 0;
 }
 .switch__item {
   -moz-box-sizing: border-box;

@@ -3,7 +3,7 @@
 @import
   "compass/reset",
   "compass/css3",
-  "../_media-queries";
+  "../media-queries";
 
 // --- variables ---------------------------------------------------------------
 
@@ -11,7 +11,6 @@ $color-white:              #fff;
 $color-gray:               #ddd;
 $color-border:             #eee;
 $color-primary:            #667CF0;
-$color-active:             $color-primary;
 $color-text:               #212121;
 
 $base-gap:                 10px;
@@ -24,11 +23,19 @@ $hdtv-collection:          ('720p', '1080p', '2K', '4K');
 $mq-mobile:                768px;
 $mq-tablet:                1024px;
 
+// --- placeholders ------------------------------------------------------------
+
+%container {
+  max-width: 800px;
+  margin: 0 auto 100px;
+  padding: 0 $base-gap*2;
+}
+
 // --- mixins ------------------------------------------------------------------
 
 @mixin active-state {
-  background: $color-active;
-  border-color: $color-active;
+  background: $color-primary;
+  border-color: $color-primary;
   color: $color-white;
 }
 
@@ -52,12 +59,27 @@ hr {
   border-bottom: none;
 }
 
+p {
+  margin: $base-gap 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+pre {
+  overflow: auto;
+}
+
+a {
+  color: $color-primary;
+  font-weight: bold;
+}
+
 // --- core: layouts -----------------------------------------------------------
 
 .l-container {
-  max-width: 800px;
-  margin: 0 auto 100px;
-  padding: 0 $base-gap*2;
+  @extend %container;
 }
 
 // --- core: header ------------------------------------------------------------
@@ -67,7 +89,7 @@ hr {
   color: $color-white;
   margin-bottom: $base-gap*4;
   text-align: center;
-  padding: $base-gap*8 0;
+  padding: $base-gap*8 0 $base-gap*6;
 
   &__title {
     font-size: 42px;
@@ -81,17 +103,29 @@ hr {
   &__btn {
     display: inline-block;
     padding: $base-gap $base-gap*2;
-    background: mix($color-active, $color-white, 20%);
+    background: mix($color-primary, #000, 40%);
     border-radius: 2px;
     font-size: 12px;
     text-transform: uppercase;
     text-decoration: none;
-    color: $color-active;
+    color: $color-white;
+    margin-bottom: $base-gap/2;
     @include transition(background .2s);
 
     &:hover {
-      background: mix($color-active, $color-white, 25%);
+      background: mix($color-primary, #000, 20%);
     }
+  }
+
+  &__links {
+    height: 30px;
+    margin-top: $base-gap*3;
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 $base-gap/2;
   }
 
   @include max-screen($mq-mobile) {
@@ -106,6 +140,13 @@ hr {
   }
 }
 
+// --- core: footer ------------------------------------------------------------
+
+.footer {
+  @extend %container;
+  font-size: 12px;
+  font-weight: normal;
+}
 
 // --- core: section -----------------------------------------------------------
 
@@ -115,7 +156,11 @@ hr {
   &__title {
     font-size: 24px;
     text-align: center;
-    margin-bottom: $base-gap;
+    padding-bottom: $base-gap;
+  }
+
+  &__body {
+    padding: $base-gap 0;
   }
 }
 
@@ -123,7 +168,6 @@ hr {
 
 .switch {
   text-align: center;
-  padding: $base-gap 0;
 
   &__item {
     @include box-sizing(border-box);
