@@ -56,7 +56,7 @@ It's a collection of useful **Media Queries** mixins for **Sass** (including iOS
 
 #### - screen($min-width, $max-width, $orientation: false)
 
-It targets group of devices or just one with particular screen resolution and orientation (optional).
+It targets group of devices or just one with particular screen width and orientation (optional).
 
 ###### # Example:
 
@@ -113,7 +113,7 @@ It will be compiled to:
 
 #### - screen-height($min-height, $max-height, $orientation: false)
 
-
+It targets group of devices or just one with particular screen height and orientation (optional).
 
 ###### # Example:
 
