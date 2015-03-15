@@ -319,6 +319,20 @@ a {
     }
   }
 
+  // --- orientations
+
+  &__item--landscape {
+    @include landscape {
+      @include active-state;
+    }
+  }
+
+  &__item--portrait {
+    @include portrait {
+      @include active-state;
+    }
+  }
+
   // --- hdtv
 
   @each $tv in $hdtv-collection {

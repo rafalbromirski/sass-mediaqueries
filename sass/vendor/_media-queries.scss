@@ -5,7 +5,7 @@
 //  Licensed under a MIT License
 //
 //  Version:
-//  1.5
+//  1.5.1
 
 // --- screen ------------------------------------------------------------------
 
@@ -105,7 +105,7 @@
   }
 }
 
-// --- iphone ------------------------------------------------------------------
+// --- iphone-3 ----------------------------------------------------------------
 
 @mixin iphone3($orientation: all) {
   $device-min-width: 320px;
@@ -131,7 +131,7 @@
   }
 }
 
-// --- iphone-retina -----------------------------------------------------------
+// --- iphone4 -----------------------------------------------------------------
 
 @mixin iphone4($orientation: all) {
   $device-min-width: 320px;
@@ -160,7 +160,7 @@
   }
 }
 
-// --- iphone-5 ----------------------------------------------------------------
+// --- iphone5 -----------------------------------------------------------------
 
 @mixin iphone5($orientation: all) {
   $device-min-width: 320px;
@@ -189,7 +189,7 @@
   }
 }
 
-// --- iphone-6 ----------------------------------------------------------------
+// --- iphone6 -----------------------------------------------------------------
 
 @mixin iphone6($orientation: all) {
   $deviceMinWidth: 375px;
@@ -215,7 +215,7 @@
   }
 }
 
-// --- iphone-6 plus -----------------------------------------------------------
+// --- iphone6 plus ------------------------------------------------------------
 
 @mixin iphone6-plus($orientation: all) {
   $deviceMinWidth: 414px;
@@ -241,7 +241,7 @@
   }
 }
 
-// --- ipads (all) -------------------------------------------------------------
+// --- ipad (all) --------------------------------------------------------------
 
 @mixin ipad($orientation: all) {
   $device-min-width: 768px;
@@ -288,5 +288,25 @@
     and (orientation:#{$orientation}) {
       @content;
     }
+  }
+}
+
+// --- orientation -------------------------------------------------------------
+
+@mixin _orientation($orientation) {
+  @media screen and (orientation: $orientation) {
+    @content;
+  }
+}
+
+@mixin landscape() {
+  @include _orientation(landscape) {
+    @content;
+  }
+}
+
+@mixin portrait() {
+  @include _orientation(portrait) {
+    @content;
   }
 }

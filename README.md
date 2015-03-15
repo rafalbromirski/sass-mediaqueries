@@ -38,6 +38,11 @@ It's a collection of useful **Media Queries** mixins for **Sass** (including iOS
 @  min-screen-height(height)
 @  max-screen-height(height)
 --
+@  hdpi(ratio)
+--
+@  landscape
+@  portrait
+--
 @  iphone3(orientation)
 @  iphone4(orientation)
 @  iphone5(orientation)
@@ -46,8 +51,6 @@ It's a collection of useful **Media Queries** mixins for **Sass** (including iOS
 --
 @  ipad(orientation)
 @  ipad-retina(orientation)
---
-@  hdpi(ratio)
 --
 @  hdtv(standard)
 ```
@@ -61,7 +64,7 @@ It targets group of devices or just one with particular screen width and orienta
 ###### # Example:
 
 ```scss
-@include screen(320px, 640px)  { ... }
+@include screen(320px, 640px) { ... }
 @include screen(768px, 1024px, landscape) { ... }
 ```
 
@@ -79,14 +82,14 @@ It's a shortcut for `@media screen and (min-width ... )`
 ###### # Example:
 
 ```scss
-@include min-screen(768px)  { ... }
+@include min-screen(768px) { ... }
 @include min-screen(1024px) { ... }
 ```
 
 It will be compiled to:
 
 ```css
-@media screen and (min-width: 768px)  { ... }
+@media screen and (min-width: 768px) { ... }
 @media screen and (min-width: 1024px) { ... }
 ```
 
@@ -99,14 +102,14 @@ It's a shortcut for `@media screen and (max-width ... )`
 
 ```scss
 @include max-screen(1024px) { ... }
-@include max-screen(768px)  { ... }
+@include max-screen(768px) { ... }
 ```
 
 It will be compiled to:
 
 ```css
-@media screen and (max-width: 1024px)  { ... }
-@media screen and (max-width: 768px)   { ... }
+@media screen and (max-width: 1024px) { ... }
+@media screen and (max-width: 768px) { ... }
 ```
 
 ---
@@ -118,15 +121,15 @@ It targets group of devices or just one with particular screen height and orient
 ###### # Example:
 
 ```scss
-@include screen-height(640px, 768px)  { ... }
-@include screen-height(640px, 768px, landscape)  { ... }
+@include screen-height(640px, 768px) { ... }
+@include screen-height(640px, 768px, landscape) { ... }
 ```
 
 It will be compiled to:
 
 ```css
 @media screen and (min-height: 768px) and (max-height: 1280px) { ... }
-@media screen and (min-height: 768px) and (max-height: 1280px) and (orientation: landscape)  { ... }
+@media screen and (min-height: 768px) and (max-height: 1280px) and (orientation: landscape) { ... }
 ```
 
 #### - min-screen-height($width)
@@ -136,14 +139,14 @@ It's a shortcut for `@media screen and (min-height ... )`
 ###### # Example:
 
 ```scss
-@include min-screen-height(768px)  { ... }
+@include min-screen-height(768px) { ... }
 @include min-screen-height(1024px) { ... }
 ```
 
 It will be compiled to:
 
 ```css
-@media screen and (min-height: 768px)  { ... }
+@media screen and (min-height: 768px) { ... }
 @media screen and (min-height: 1024px) { ... }
 ```
 
@@ -156,14 +159,52 @@ It's a shortcut for `@media screen and (max-height ... )`
 
 ```scss
 @include max-screen-height(1024px) { ... }
-@include max-screen-height(768px)  { ... }
+@include max-screen-height(768px) { ... }
 ```
 
 It will be compiled to:
 
 ```css
-@media screen and (max-height: 1024px)  { ... }
-@media screen and (max-height: 768px)   { ... }
+@media screen and (max-height: 1024px) { ... }
+@media screen and (max-height: 768px) { ... }
+```
+
+---
+
+#### - hdpi($ratio: 1.3)
+
+It targets devices with hdpi display.
+
+###### # Example:
+
+```scss
+.brand {
+	background-image: url(logo.png);
+
+	@include hdpi {
+		background-image: url(logo_2x.png);
+	}
+}
+```
+
+---
+
+#### - landscape() & portrait()
+
+Both mixins target different screen orientations.
+
+###### # Example:
+
+```scss
+@include landscape { ... }
+@include portrait { ... }
+```
+
+It will be compiled to:
+
+```css
+@media screen and (orientation: landscape) { ... }
+@media screen and (orientation: portrait) { ... }
 ```
 
 ---
@@ -218,23 +259,9 @@ It targets only **iPads with retina** display + orientation
 @include iphone5 { ... }
 
 @include iphone5(landscape) { ... }
-@include iphone5(portrait)  { ... }
+@include iphone5(portrait) { ... }
 ```
 
----
-
-#### - hdpi($ratio: 1.3)
-
-###### # Example:
-```scss
-.brand {
-	background-image: url(logo.png);
-
-	@include hdpi {
-		background-image: url(logo_2x.png);
-	}
-}
-```
 ---
 
 ```
