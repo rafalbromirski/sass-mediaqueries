@@ -18,7 +18,7 @@ $base-gap:                 10px;
 $res-collection:           (320, 480, 768, 1024, 1280, 1680);
 $orientation-collection:   (all, portrait, landscape);
 $hdpi-collection:          (1, 2);
-$hdtv-collection:          ('720p', '1080p', '2K', '4K');
+$hdtv-collection:          ('720p', '1080', '2K', '4K');
 
 $mq-mobile:                768px;
 $mq-tablet:                1024px;
@@ -315,6 +315,20 @@ a {
       @include ipad-retina($o) {
         @include active-state;
       }
+    }
+  }
+
+  // --- orientations
+
+  &__item--landscape {
+    @include landscape {
+      @include active-state;
+    }
+  }
+
+  &__item--portrait {
+    @include portrait {
+      @include active-state;
     }
   }
 

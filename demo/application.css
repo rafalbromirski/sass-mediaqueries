@@ -607,6 +607,20 @@ a {
     color: #fff;
   }
 }
+@media screen and (orientation: landscape) {
+  .switch__item--landscape {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
+@media screen and (orientation: portrait) {
+  .switch__item--portrait {
+    background: #667CF0;
+    border-color: #667CF0;
+    color: #fff;
+  }
+}
 @media only screen and (min-device-width: 1280px) and (min-device-height: 720px) and (min-width: 1280px) and (min-height: 720px) {
   .switch__item--hdtv-720p {
     background: #667CF0;
@@ -615,7 +629,7 @@ a {
   }
 }
 @media only screen and (min-device-width: 1920px) and (min-device-height: 1080px) and (min-width: 1920px) and (min-height: 1080px) {
-  .switch__item--hdtv-1080p {
+  .switch__item--hdtv-1080 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
