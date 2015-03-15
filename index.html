@@ -53,7 +53,7 @@
         <h3 class="section__title">Demo</h3>
       </div>
       <div class="section__body">
-        <p>You can preview all mixins that are included in the library by checking the <a href="demo.html" target="_blank">demo page</a></p>
+        <p>You can preview all mixins that are included in the library by checking the <a href="demo.html">demo page</a></p>
       </div>
     </div>
 
@@ -70,6 +70,11 @@
 @  min-screen-height(height)
 @  max-screen-height(height)
 --
+@  hdpi(ratio)
+--
+@  landscape
+@  portrait
+--
 @  iphone3(orientation)
 @  iphone4(orientation)
 @  iphone5(orientation)
@@ -79,11 +84,11 @@
 @  ipad(orientation)
 @  ipad-retina(orientation)
 --
-@  hdpi(ratio)
---
 @  hdtv(standard)</code></pre>
       </div>
     </div>
+
+    <hr>
 
     <div class="section">
       <div class="section__head">
@@ -179,6 +184,39 @@
       </div>
     </div>
 
+    <hr>
+
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">hdpi($ratio: 1.3)</h3>
+      </div>
+      <div class="section__body">
+        <p>It targets devices with hdpi display.</p>
+        <pre class="prettyprint lang-scss"><code>.brand {
+  background-image: url(logo.png);
+
+  @include hdpi {
+    background-image: url(logo_2x.png);
+  }
+}</code></pre>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">landscape() & portrait()</h3>
+      </div>
+      <div class="section__body">
+        <p>Both mixins target different screen orientations.</p>
+        <pre class="prettyprint lang-scss"><code>@include landscape { ... }
+@include portrait { ... }</code></pre>
+      </div>
+    </div>
+
+    <hr>
+
     <div class="section">
       <div class="section__head">
         <h3 class="section__title">iphone3($orientation: all)</h3>
@@ -263,21 +301,7 @@
       </div>
     </div>
 
-    <div class="section">
-      <div class="section__head">
-        <h3 class="section__title">hdpi($ratio: 1.3)</h3>
-      </div>
-      <div class="section__body">
-        <p></p>
-        <pre class="prettyprint lang-scss"><code>.brand {
-  background-image: url(logo.png);
-
-  @include hdpi {
-    background-image: url(logo_2x.png);
-  }
-}</code></pre>
-      </div>
-    </div>
+    <hr>
 
     <div class="section">
       <div class="section__head">
