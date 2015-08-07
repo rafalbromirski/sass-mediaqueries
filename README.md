@@ -7,23 +7,29 @@ It's a collection of useful **Media Queries** mixins for **Sass** (including iOS
 
 ### How to install:
 
-1. Using **bower**:
+Using **bower**:
 
-	```
-	bower install sass-mediaqueries
-	```
+```
+bower install sass-mediaqueries
+```
 
-	Or manually using **curl**:
+Using **npm**:
 
-	```
-	curl -O https://raw.githubusercontent.com/paranoida/sass-mediaqueries/master/_media-queries.scss
-	```
+```
+npm install sass-mediaqueries
+```
 
-2. Then, at the top of your sass/scss file (ie. `application.scss`) add:
+Using **curl**:
 
-	```scss
-	@import "media-queries";
-	```
+```
+curl -O https://raw.githubusercontent.com/paranoida/sass-mediaqueries/master/_media-queries.scss
+```
+
+Then, at the top of your sass/scss file (ie. `application.scss`) add:
+
+```scss
+@import "media-queries";
+```
 
 ## Doc:
 
