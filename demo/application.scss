@@ -275,43 +275,43 @@ a {
   // --- "i" devices
 
   @each $o in $orientation-collection {
-    &__item--iphone3-#{$o} {
-      @include iphone3($o) {
-        @include active-state;
-      }
+    $m: $o;
+
+    @if $o == all {
+      $o: false;
     }
 
-    &__item--iphone4-#{$o} {
+    &__item--iphone4-#{$m} {
       @include iphone4($o) {
         @include active-state;
       }
     }
 
-    &__item--iphone5-#{$o} {
+    &__item--iphone5-#{$m} {
       @include iphone5($o) {
         @include active-state;
       }
     }
 
-    &__item--iphone6-#{$o} {
+    &__item--iphone6-#{$m} {
       @include iphone6($o) {
         @include active-state;
       }
     }
 
-    &__item--iphone6-plus-#{$o} {
+    &__item--iphone6-plus-#{$m} {
       @include iphone6-plus($o) {
         @include active-state;
       }
     }
 
-    &__item--ipad-#{$o} {
+    &__item--ipad-#{$m} {
       @include ipad($o) {
         @include active-state;
       }
     }
 
-    &__item--ipad-retina-#{$o} {
+    &__item--ipad-retina-#{$m} {
       @include ipad-retina($o) {
         @include active-state;
       }
