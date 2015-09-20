@@ -33,7 +33,80 @@ Then, at the top of your sass/scss file (ie. `application.scss`) add:
 
 ## Doc:
 
-#### Mixins:
+#### Generator (v1.6.0):
+
+```
+mq($media-type: 'only screen', $args...)
+```
+
+Generator allows you to create custom media-queries mixins by passing [**keywords arguments**](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#keyword_arguments) based on w3c [**media features**](http://www.w3.org/TR/css3-mediaqueries/#media1) specification (make sure you always provide key and value).
+
+It's also a syntactic sugar for the standard media queries [syntax](http://www.w3.org/TR/css3-mediaqueries/#media0) (CSS).
+
+**Examples**:
+
+```
+@include mq($max-width: 1000px) {
+  ...
+}
+
+// will generate
+
+@media only screen and (max-width: 1000px) {
+  ...
+}
+
+```
+
+Creating new mixins (like `max-screen`) is even easier:
+
+```
+@mixin max-screen($max)
+  @include mq($max-width: $max) {
+    @content;
+  }
+}
+
+// usage
+
+@include max-screen(1000px) {
+  ...
+}
+
+// will generate
+
+@media only screen and (max-width: 1000px) {
+  ...
+}
+```
+
+Or if you want to change `$media-type` and other properies:
+
+```
+@mixin custom-device($min, $max)
+  @include mq($media-type: 'all', $min-width: $min, $max-width: $max) {
+    @content;
+  }
+}
+
+// usage
+
+@include custom-device(500px, 1000px) {
+  ...
+}
+
+// will generate
+
+@media all and (min-width: 500px) and (max-width: 1000px) {
+  ...
+}
+```
+
+How cool is that?
+
+---
+
+#### Other Mixins:
 
 ```
 @  screen(min-width, max-width, orientation)
@@ -49,7 +122,6 @@ Then, at the top of your sass/scss file (ie. `application.scss`) add:
 @  landscape
 @  portrait
 --
-@  iphone3(orientation)
 @  iphone4(orientation)
 @  iphone5(orientation)
 @  iphone6(orientation)
@@ -219,10 +291,6 @@ It will be compiled to:
 $orientation: all | portrait | landscape
 ```
 
-#### - iphone3($orientation: all)
-
-It targets only **iPhone 3** + orientation
-
 #### - iphone4($orientation: all)
 
 It targets only **iPhone 4** + orientation
@@ -255,7 +323,6 @@ It targets only **iPads with retina** display + orientation
 
 @include iphone5 { ... }              // only iPhone 5
 @include iphone4 { ... }              // only iPhone 4/4S
-@include iphone3 { ... }              // only iPhone 2/3G/3GS
 ```
 
 ###### # Example:

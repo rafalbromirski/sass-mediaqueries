@@ -114,7 +114,7 @@ a {
 .header__btn {
   display: inline-block;
   padding: 10px 20px;
-  background: #283160;
+  background: #293260;
   border-radius: 2px;
   font-size: 12px;
   text-transform: uppercase;
@@ -127,7 +127,7 @@ a {
   transition: background 0.2s;
 }
 .header__btn:hover {
-  background: #141830;
+  background: #141930;
 }
 .header__links {
   height: 30px;
@@ -138,7 +138,7 @@ a {
   vertical-align: top;
   padding: 0 5px;
 }
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .header {
     padding: 30px;
   }
@@ -187,294 +187,287 @@ a {
   text-align: center;
   border-radius: 2px;
 }
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .switch__item {
     width: 100%;
     display: block;
     margin: 0 0 5px 0;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   .switch__item--320-480 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .switch__item--768-1024 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-width: 1280px) and (max-width: 1680px) {
+@media only screen and (min-width: 1280px) and (max-width: 1680px) {
   .switch__item--1280-1680 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 320px) and (max-height: 480px) {
+@media only screen and (min-height: 320px) and (max-height: 480px) {
   .switch__item--height-320-480 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 768px) and (max-height: 1024px) {
+@media only screen and (min-height: 768px) and (max-height: 1024px) {
   .switch__item--height-768-1024 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 1280px) and (max-height: 1680px) {
+@media only screen and (min-height: 1280px) and (max-height: 1680px) {
   .switch__item--height-1280-1680 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-width: 320px) {
+@media only screen and (min-width: 320px) {
   .switch__item--min-320 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (max-width: 320px) {
+@media only screen and (max-width: 320px) {
   .switch__item--max-320 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 320px) {
+@media only screen and (min-height: 320px) {
   .switch__item--min-height-320 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 320px) {
+@media only screen and (min-height: 320px) {
   .switch__item--min-height-320 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (max-height: 320px) {
+@media only screen and (max-height: 320px) {
   .switch__item--max-height-320 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-width: 480px) {
+@media only screen and (min-width: 480px) {
   .switch__item--min-480 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .switch__item--max-480 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 480px) {
+@media only screen and (min-height: 480px) {
   .switch__item--min-height-480 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 480px) {
+@media only screen and (min-height: 480px) {
   .switch__item--min-height-480 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (max-height: 480px) {
+@media only screen and (max-height: 480px) {
   .switch__item--max-height-480 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .switch__item--min-768 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .switch__item--max-768 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 768px) {
+@media only screen and (min-height: 768px) {
   .switch__item--min-height-768 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 768px) {
+@media only screen and (min-height: 768px) {
   .switch__item--min-height-768 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (max-height: 768px) {
+@media only screen and (max-height: 768px) {
   .switch__item--max-height-768 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .switch__item--min-1024 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .switch__item--max-1024 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 1024px) {
+@media only screen and (min-height: 1024px) {
   .switch__item--min-height-1024 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 1024px) {
+@media only screen and (min-height: 1024px) {
   .switch__item--min-height-1024 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (max-height: 1024px) {
+@media only screen and (max-height: 1024px) {
   .switch__item--max-height-1024 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-width: 1280px) {
+@media only screen and (min-width: 1280px) {
   .switch__item--min-1280 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (max-width: 1280px) {
+@media only screen and (max-width: 1280px) {
   .switch__item--max-1280 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 1280px) {
+@media only screen and (min-height: 1280px) {
   .switch__item--min-height-1280 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 1280px) {
+@media only screen and (min-height: 1280px) {
   .switch__item--min-height-1280 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (max-height: 1280px) {
+@media only screen and (max-height: 1280px) {
   .switch__item--max-height-1280 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-width: 1680px) {
+@media only screen and (min-width: 1680px) {
   .switch__item--min-1680 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (max-width: 1680px) {
+@media only screen and (max-width: 1680px) {
   .switch__item--max-1680 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 1680px) {
+@media only screen and (min-height: 1680px) {
   .switch__item--min-height-1680 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (min-height: 1680px) {
+@media only screen and (min-height: 1680px) {
   .switch__item--min-height-1680 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (max-height: 1680px) {
+@media only screen and (max-height: 1680px) {
   .switch__item--max-height-1680 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min--moz-device-pixel-ratio: 1), only screen and (-o-min-device-pixel-ratio: 1 / 1), only screen and (min-resolution: 96dpi), only screen and (min-resolution: 1dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 1), only screen and (min-resolution: 96dpi) {
   .switch__item--hdpi-1 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
   .switch__item--hdpi-2 {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) {
-  .switch__item--iphone3-all {
-    background: #667CF0;
-    border-color: #667CF0;
-    color: #fff;
-  }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (device-aspect-ratio: 2 / 3) and (-webkit-device-pixel-ratio: 2) {
   .switch__item--iphone4-all {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (device-aspect-ratio: 40 / 71) and (-webkit-device-pixel-ratio: 2) {
   .switch__item--iphone5-all {
     background: #667CF0;
     border-color: #667CF0;
@@ -509,35 +502,28 @@ a {
     color: #fff;
   }
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) and (orientation: portrait) {
-  .switch__item--iphone3-portrait {
-    background: #667CF0;
-    border-color: #667CF0;
-    color: #fff;
-  }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) and (orientation: portrait) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (device-aspect-ratio: 2 / 3) and (-webkit-device-pixel-ratio: 2) {
   .switch__item--iphone4-portrait {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: portrait) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) and (device-aspect-ratio: 40 / 71) and (-webkit-device-pixel-ratio: 2) {
   .switch__item--iphone5-portrait {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
   .switch__item--iphone6-portrait {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
   .switch__item--iphone6-plus-portrait {
     background: #667CF0;
     border-color: #667CF0;
@@ -551,42 +537,35 @@ a {
     color: #fff;
   }
 }
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
   .switch__item--ipad-retina-portrait {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) and (orientation: landscape) {
-  .switch__item--iphone3-landscape {
-    background: #667CF0;
-    border-color: #667CF0;
-    color: #fff;
-  }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) and (orientation: landscape) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (device-aspect-ratio: 2 / 3) and (-webkit-device-pixel-ratio: 2) {
   .switch__item--iphone4-landscape {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: landscape) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) and (device-aspect-ratio: 40 / 71) and (-webkit-device-pixel-ratio: 2) {
   .switch__item--iphone5-landscape {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
   .switch__item--iphone6-landscape {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
   .switch__item--iphone6-plus-landscape {
     background: #667CF0;
     border-color: #667CF0;
@@ -600,21 +579,21 @@ a {
     color: #fff;
   }
 }
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
   .switch__item--ipad-retina-landscape {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (orientation: landscape) {
+@media only screen and (orientation: landscape) {
   .switch__item--landscape {
     background: #667CF0;
     border-color: #667CF0;
     color: #fff;
   }
 }
-@media screen and (orientation: portrait) {
+@media only screen and (orientation: portrait) {
   .switch__item--portrait {
     background: #667CF0;
     border-color: #667CF0;
