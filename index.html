@@ -36,17 +36,22 @@
         <h3 class="section__title">How to install?</h3>
       </div>
       <div class="section__body">
-        <p>1. Using <strong>bower</strong>:</p>
-        <pre class="prettyprint"><code>bower install sass-mediaqueries</code></pre>
+        <p>Using <strong>bower</strong>:</p>
+        <pre class="prettyprint lang-html"><code>bower install sass-mediaqueries</code></pre>
 
-        <p>Or manually using <strong>curl</strong>:</p>
-        <pre class="prettyprint"><code>curl -O https://raw.githubusercontent.com/paranoida/sass-mediaqueries/master/_media-queries.scss</code></pre>
+        <p>Using <strong>npm</strong>:</p>
+        <pre class="prettyprint lang-html"><code>npm install sass-mediaqueries</code></pre>
 
-        <p>2. Then at the top of your sass/scss file (ie. <strong>application.scss</strong>) add:</strong>
+        <p>Using <strong>curl</strong>:</p>
+        <pre class="prettyprint lang-html"><code>curl -O https://raw.githubusercontent.com/paranoida/sass-mediaqueries/master/_media-queries.scss</code></pre>
+
+        <p>Then at the top of your sass/scss file (ie. <strong>application.scss</strong>) add:</strong>
 
         <pre class="prettyprint lang-scss"><code>@import "media-queries";</code></pre>
       </div>
     </div>
+
+    <hr>
 
     <div class="section">
       <div class="section__head">
@@ -57,9 +62,68 @@
       </div>
     </div>
 
+    <hr>
+
     <div class="section">
       <div class="section__head">
-        <h3 class="section__title">Mixins</h3>
+        <h3 class="section__title">Generator (v1.6.0)</h3>
+      </div>
+      <div class="section__body">
+        <pre class="prettyprint lang-html"><code> mq($media-type: 'only screen', $args...)</code></pre>
+        <p>Generator allows you to create custom media-queries mixins by passing <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#keyword_arguments"><strong>keywords arguments</strong></a> based on w3c <a href="http://www.w3.org/TR/css3-mediaqueries/#media1"><strong>media features</strong></a> specification (make sure you always provide key and value).</p>
+        <p>It's also a syntactic sugar for the standard media queries <a href="http://www.w3.org/TR/css3-mediaqueries/#media0">syntax</a> (CSS).</p>
+        <pre class="prettyprint lang-scss"><code>@include mq($max-width: 1000px) {
+  ...
+}
+
+// will generate
+
+@media only screen and (max-width: 1000px) {
+  ...
+}</code></pre>
+        <p>Creating new mixins (like <strong>max-screen</strong>) is even easier:</p>
+        <pre class="prettyprint lang-scss"><code>@mixin max-screen($max)
+  @include mq($max-width: $max) {
+    @content;
+  }
+}
+
+// usage
+
+@include max-screen(1000px) {
+  ...
+}
+
+// will generate
+
+@media only screen and (max-width: 1000px) {
+  ...
+}</code></pre>
+        <p>Or if you want to change <strong>$media-type</strong> and other properies:</p>
+        <pre class="prettyprint lang-scss"><code>@mixin custom-device($min, $max)
+  @include mq($media-type: 'all', $min-width: $min, $max-width: $max) {
+    @content;
+  }
+}
+
+// usage
+
+@include custom-device(500px, 1000px) {
+  ...
+}
+
+// will generate
+
+@media all and (min-width: 500px) and (max-width: 1000px) {
+  ...
+}</code></pre>
+        <p>How cool is that?</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <h3 class="section__title">Other Mixins</h3>
       </div>
       <div class="section__body">
         <pre class="prettyprint lang-scss"><code>@  screen(min-width, max-width, orientation)
@@ -75,7 +139,6 @@
 @  landscape
 @  portrait
 --
-@  iphone3(orientation)
 @  iphone4(orientation)
 @  iphone5(orientation)
 @  iphone6(orientation)
@@ -216,18 +279,6 @@
     </div>
 
     <hr>
-
-    <div class="section">
-      <div class="section__head">
-        <h3 class="section__title">iphone3($orientation: all)</h3>
-      </div>
-      <div class="section__body">
-        <p>It targets only <strong>iPhone 3</strong> + orientation</p>
-        <pre class="prettyprint lang-scss"><code>@include iphone3 { ... }
-@include iphone3(landscape) { ... }
-@include iphone3(portrait) { ... }</code></pre>
-      </div>
-    </div>
 
     <div class="section">
       <div class="section__head">
