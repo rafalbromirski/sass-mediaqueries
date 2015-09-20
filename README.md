@@ -45,7 +45,7 @@ It's also a syntactic sugar for the standard media queries [syntax](http://www.w
 
 **Examples**:
 
-```
+```scss
 @include mq($max-width: 1000px) {
   ...
 }
@@ -55,12 +55,11 @@ It's also a syntactic sugar for the standard media queries [syntax](http://www.w
 @media only screen and (max-width: 1000px) {
   ...
 }
-
 ```
 
 Creating new mixins (like `max-screen`) is even easier:
 
-```
+```scss
 @mixin max-screen($max)
   @include mq($max-width: $max) {
     @content;
@@ -82,7 +81,7 @@ Creating new mixins (like `max-screen`) is even easier:
 
 Or if you want to change `$media-type` and other properies:
 
-```
+```scss
 @mixin custom-device($min, $max)
   @include mq($media-type: 'all', $min-width: $min, $max-width: $max) {
     @content;
