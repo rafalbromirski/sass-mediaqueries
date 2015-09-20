@@ -5,13 +5,20 @@
 //  Licensed under a MIT License
 //
 //  Version:
-//  1.6.0
+//  1.6.1
 
 // --- generator ---------------------------------------------------------------
 
-@mixin mq($media-type: 'only screen', $args...) {
+@mixin mq($args...) {
+  $media-type: 'only screen';
+  $media-type-key: 'media-type';
   $args: keywords($args);
   $expr: '';
+
+  @if map-has-key($args, $media-type-key) {
+    $media-type: map-get($args, $media-type-key);
+    $args: map-remove($args, $media-type-key);
+  }
 
   @each $key, $value in $args {
     @if $value {
