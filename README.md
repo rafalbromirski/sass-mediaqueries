@@ -36,7 +36,7 @@ Then, at the top of your sass/scss file (ie. `application.scss`) add:
 #### Generator (v1.6.0):
 
 ```
-mq($media-type: 'only screen', $args...)
+mq($args...)
 ```
 
 Generator allows you to create custom media-queries mixins by passing [**keywords arguments**](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#keyword_arguments) based on w3c [**media features**](http://www.w3.org/TR/css3-mediaqueries/#media1) specification (make sure you always provide key and value).
