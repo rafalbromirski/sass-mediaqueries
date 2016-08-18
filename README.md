@@ -148,8 +148,8 @@ It targets group of devices or just one with particular screen width and orienta
 It will be compiled to:
 
 ```css
-@media screen and (min-width: 768px) and (max-width: 1280px) { ... }
-@media screen and (min-width: 320px) and (max-width: 640px) and (orientation: landscape) { ... }
+@media screen and (min-width: 320px) and (max-width: 640px) { ... }
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) { ... }
 ```
 
 #### - min-screen($width)
