@@ -2,8 +2,8 @@
 
 It's a collection of useful **Media Queries** mixins for **Sass** (including iOS devices, TVs and more). Fully customizable and very easy to use.
 
-#### Online: <http://paranoida.github.com/sass-mediaqueries>
-#### Demo: <http://paranoida.github.com/sass-mediaqueries/demo.html>
+#### Online: <http://rafalbromirski.github.com/sass-mediaqueries>
+#### Demo: <http://rafalbromirski.github.com/sass-mediaqueries/demo.html>
 
 ### How to install:
 
@@ -22,7 +22,7 @@ npm install sass-mediaqueries
 Using **curl**:
 
 ```
-curl -O https://raw.githubusercontent.com/paranoida/sass-mediaqueries/master/_media-queries.scss
+curl -O https://raw.githubusercontent.com/rafalbromirski/sass-mediaqueries/master/_media-queries.scss
 ```
 
 Then, at the top of your sass/scss file (ie. `application.scss`) add:
@@ -363,7 +363,7 @@ It targets TVs with particular standard like `1080` or `4K`
 
 ### Credits:
 
-Feel free to check my <a href="http://rafalbromirski.com">website</a> or follow me on <a href="https://twitter.com/paranoida">twitter</a>.
+Feel free to check my <a href="http://rafalbromirski.com">website</a> or follow me on <a href="https://twitter.com/rafalbromirski">twitter</a>.
 
 ---
 
