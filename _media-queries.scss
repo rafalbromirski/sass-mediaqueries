@@ -125,6 +125,11 @@
   }
 }
 
+// --- iphone4s alias ----------------------------------------------------------
+@mixin iphone4s($orientation: false) { 
+  @include iphone4($orientation);
+}
+
 // --- iphone5 -----------------------------------------------------------------
 
 @mixin iphone5($orientation: false) {
@@ -144,6 +149,21 @@
   }
 }
 
+// --- iphone5s alias ----------------------------------------------------------
+@mixin iphone5s($orientation: false) { 
+  @include iphone5($orientation);
+}
+
+// --- iphone5c alias ----------------------------------------------------------
+@mixin iphone5c($orientation: false) { 
+  @include iphone5($orientation);
+}
+
+// --- iphoneSE alias ----------------------------------------------------------
+@mixin iphoneSE($orientation: false) { 
+  @include iphone5($orientation);
+}
+
 // --- iphone6 -----------------------------------------------------------------
 
 @mixin iphone6($orientation: false) {
@@ -161,6 +181,21 @@
   }
 }
 
+// --- iphone6s alias ----------------------------------------------------------
+@mixin iphone6s($orientation: false) { 
+  @include iphone6($orientation);
+}
+
+// --- iphone7 alias -----------------------------------------------------------
+@mixin iphone7($orientation: false) { 
+  @include iphone6($orientation);
+}
+
+// --- iphone8 alias -----------------------------------------------------------
+@mixin iphone8($orientation: false) { 
+  @include iphone6($orientation);
+}
+
 // --- iphone6 plus ------------------------------------------------------------
 
 @mixin iphone6-plus($orientation: false) {
@@ -176,6 +211,21 @@
   ) {
     @content;
   }
+}
+
+// --- iphone6s-plus alias -----------------------------------------------------
+@mixin iphone6s-plus($orientation: false) { 
+  @include iphone6-plus($orientation);
+}
+
+// --- iphone7-plus alias ------------------------------------------------------
+@mixin iphone7-plus($orientation: false) { 
+  @include iphone6-plus($orientation);
+}
+
+// --- iphone8-plus alias ------------------------------------------------------
+@mixin iphone8-plus($orientation: false) { 
+  @include iphone6-plus($orientation);
 }
 
 // --- ipad (all) --------------------------------------------------------------
