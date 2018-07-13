@@ -60,7 +60,7 @@ It's also a syntactic sugar for the standard media queries [syntax](http://www.w
 Creating new mixins (like `max-screen`) is even easier:
 
 ```scss
-@mixin max-screen($max)
+@mixin max-screen($max) {
   @include mq($max-width: $max) {
     @content;
   }
@@ -82,7 +82,7 @@ Creating new mixins (like `max-screen`) is even easier:
 Or if you want to change `$media-type` and other properies:
 
 ```scss
-@mixin custom-device($min, $max)
+@mixin custom-device($min, $max) {
   @include mq($media-type: 'all', $min-width: $min, $max-width: $max) {
     @content;
   }
@@ -256,11 +256,11 @@ It targets devices with hdpi display.
 
 ```scss
 .brand {
-	background-image: url(logo.png);
+  background-image: url(logo.png);
 
-	@include hdpi {
-		background-image: url(logo_2x.png);
-	}
+  @include hdpi {
+    background-image: url(logo_2x.png);
+  }
 }
 ```
 
@@ -347,15 +347,15 @@ It targets TVs with particular standard like `1080` or `4K`
 ###### # Example:
 ```scss
 .title {
-	font-size: 5vm;
+  font-size: 5vm;
 
-	@include hdtv {
-		font-size: 10vm;
-	}
+  @include hdtv {
+    font-size: 10vm;
+  }
 
-	@include hdtv('4K') {
-		font-size: 15vm;
-	}
+  @include hdtv('4K') {
+    font-size: 15vm;
+  }
 }
 ```
 
